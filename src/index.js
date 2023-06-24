@@ -9,7 +9,7 @@ import {addPost} from './state';
 import state from './state';
 
 
-addPost("hey-hey!");
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

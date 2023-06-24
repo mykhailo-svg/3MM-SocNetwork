@@ -56,12 +56,14 @@ let state = {
 }
 
 export let addPost = (postMessage) => {
+    
     let newPost = {
         id: 5,
-        post_text: postMessage,
+        post_text:postMessage,
         likes:0,
     };
     state.Profile.Posts.push(newPost);
+    debugger;
 
     
 
