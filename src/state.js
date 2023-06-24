@@ -63,7 +63,7 @@ export let addPost = (postMessage) => {
         likes:0,
     };
     state.Profile.Posts.push(newPost);
-    debugger;
+    rerenderEntireTree(state,addPost);
 
     
 
