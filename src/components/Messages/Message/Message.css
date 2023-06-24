@@ -1,0 +1,45 @@
+
+.chat__message{
+    display: flex;
+    gap: 11px;
+    margin-bottom:19px;
+
+} 
+
+.message__avatar {
+    min-width: 34px;
+
+}
+
+.chat__message-content {
+    padding: 11px 6px 5px 14px;
+    max-width: 50%;
+    width: 100%;
+    background: rgba(73, 0, 87, 0.8);
+    border-radius: 10px 10px 0px 10px;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 20px;
+
+    color: #FBB03B;
+
+}
+
+.chat__message-text {
+
+}
+
+.chat__message-info {
+    display: flex;
+    gap:5px;
+
+
+}
+
+.chat__message-time {
+
+}
+
+.chat__message-state {
+
+}
