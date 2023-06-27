@@ -1,7 +1,7 @@
 
 import reportWebVitals from './reportWebVitals';
 
-import {addPost, subscribe} from './state';
+import {addPost, store, subscribe} from './state';
 
 import state from './state';
 
@@ -19,7 +19,7 @@ const rerenderEntireTree = () =>{
   root.render(
     <React.StrictMode>
       
-      <App state = {state} addPost={addPost} />
+      <App state = {store.getState()} addPost={addPost} />
     </React.StrictMode>
   );
 }
