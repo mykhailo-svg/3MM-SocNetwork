@@ -1,9 +1,9 @@
 
 import reportWebVitals from './reportWebVitals';
 
-import {addPost, store, subscribe} from './state';
+import {subscribe} from './state';
 
-import state from './state';
+import store from './state';
 
 
 import React from 'react';
@@ -19,13 +19,15 @@ const rerenderEntireTree = () =>{
   root.render(
     <React.StrictMode>
       
-      <App state = {store.getState()} addPost={addPost} />
+      <App state = {store.getState()} addPost={store.addPost.bind(store)} />
     </React.StrictMode>
   );
 }
 
 
 rerenderEntireTree();
+
+
 
 subscribe(rerenderEntireTree);
 // If you want to start measuring performance in your app, pass a function

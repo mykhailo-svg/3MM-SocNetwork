@@ -1,7 +1,7 @@
 // import rerenderEntireTree from "./render";
 
-export let store = {
-
+let store = {
+    title:"dfdfdf",
     _state:{
 
         Messages:{
@@ -59,7 +59,26 @@ export let store = {
 
     getState(){
         return this._state;
+    },
+    addPost(postMessage) {
+    
+        let newPost = {
+            id: 5,
+            post_text:postMessage,
+            likes:0,
+        };
+        // console.log(this.profileData);
+        
+
+        
+        this._state.Profile.Posts.push(newPost);
+        rerenderEntireTree();
+        console.log("dfd");
+    
+        
+    
     }
+    
 
 
 }
@@ -130,19 +149,19 @@ export const subscribe = (observer) => {
 }
 
 
-export let addPost = (postMessage) => {
+// export let addPost = (postMessage) => {
     
-    let newPost = {
-        id: 5,
-        post_text:postMessage,
-        likes:0,
-    };
-    // state.Profile.Posts.push(newPost);
-    rerenderEntireTree();
+//     let newPost = {
+//         id: 5,
+//         post_text:postMessage,
+//         likes:0,
+//     };
+//     // state.Profile.Posts.push(newPost);
+//     rerenderEntireTree();
 
     
 
-}
+// }
 
 
 export default store;
