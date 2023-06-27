@@ -1,4 +1,4 @@
-import rerenderEntireTree from "./render";
+// import rerenderEntireTree from "./render";
 
 let state = {
 
@@ -55,6 +55,16 @@ let state = {
  
 }
 
+let rerenderEntireTree = () => {
+    
+}
+
+
+export const subscribe = (observer) => {
+        rerenderEntireTree = observer;
+}
+
+
 export let addPost = (postMessage) => {
     
     let newPost = {
@@ -63,7 +73,7 @@ export let addPost = (postMessage) => {
         likes:0,
     };
     state.Profile.Posts.push(newPost);
-    rerenderEntireTree(state,addPost);
+    rerenderEntireTree();
 
     
 

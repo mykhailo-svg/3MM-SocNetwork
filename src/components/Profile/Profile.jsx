@@ -40,7 +40,7 @@ const Profile = (props) => {
 
 
     function addPsot (){
-        debugger;
+     
         props.addPost(postsTextArea.current.value);
     }
 
