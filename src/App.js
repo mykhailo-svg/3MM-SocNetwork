@@ -49,7 +49,7 @@ function App(props) {
                         
                         <Routes>
                             <Route path='/Home' element={<Home />}/> 
-                            <Route exact path='/' element={<Profile profileData = {props.state.Profile} addPost = {props.addPost} />}/> 
+                            <Route exact path='/' element={<Profile dispatch = {props.dispatch}  profileData = {props.state.Profile} addPost = {props.addPost} />}/> 
                             <Route path='/Messages' element={<Messages contactsData = {props.state.Messages.Contacts} />}/> 
                             
                             <Route path='/Purchases' element={<Purchases />}/> 

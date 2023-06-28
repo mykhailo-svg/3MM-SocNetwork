@@ -87,7 +87,10 @@ body {
 #root{
   min-height: 100%;
   display: flex;
+  width: 100vw;
+  overflow-x: hidden;
 }
+
 
 
 .wrapper {
@@ -118,6 +121,8 @@ a {
   background: #F7F7F8;
   padding-left:32px;
   overflow-y: hidden;
+
+  
 
 } 
 

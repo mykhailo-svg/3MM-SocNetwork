@@ -1,6 +1,9 @@
 
 let store = {
     title:"dfdfdf",
+
+
+
     _state:{
 
         Messages:{
@@ -55,10 +58,13 @@ let store = {
     
      
     },
+    
 
     getState(){
         return this._state;
     },
+
+
     addPost(postMessage) {
     
         let newPost = {
@@ -87,11 +93,38 @@ let store = {
             this.rerenderEntireTree = observer;
     },
     
-
+    dispatch(action){
+        if (action.type === 'ADD-POST') {
+            let newPost = {
+                id: 5,
+                post_text: action.message,
+                likes:0,
+            };
+            // console.log(this.profileData);
+            
+    
+            
+            this._state.Profile.Posts.push(newPost);
+            this.rerenderEntireTree();
+            console.log("dfd");
+        
+        }
+        else if(action.type === 'POST-WINDOW-CLOSE'){
+            console.log("close");
+        }
+    }
 
 }
 
 
+
+export let addPostActionCreator = (message) =>{
+
+    return{
+        type: "ADD-POST",
+        message:message,
+    }
+}
 
 
 export default store;

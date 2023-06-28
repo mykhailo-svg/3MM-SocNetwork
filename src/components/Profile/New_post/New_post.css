@@ -1,0 +1,142 @@
+.newp {
+    position: absolute;
+   
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    z-index: 2;
+
+    background: rgba(255, 255, 255, 0.70);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px;
+    display: none;
+
+}
+
+.new_post_dialog-show{
+    display: flex;
+}
+
+.newp__container {
+    position: absolute;
+
+    /* transform: translate(100%,0); */
+    border-radius: 10px;
+    background: #FDFDFD;
+    box-shadow: 0px 4px 26px -3px rgba(0, 0, 0, 0.25);
+    width: 100%;
+    height: 100%;
+    max-width: 662px;
+    max-height: 489px;
+
+    display: flex;
+
+    flex-direction: column;
+    
+    
+}
+
+.newp__content{
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
+    padding:22px;
+    padding-top:0px;
+}
+
+.newp__title{
+    font-size: 20px;
+    font-weight: 700;
+    text-align: center;
+    padding-top:18px;
+    padding-bottom:15px;
+    border-bottom: 1px solid #E4E4E8;
+    margin-bottom:36px;
+    
+
+
+    
+} 
+
+
+
+.newp__main{
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
+
+    
+} 
+
+.newp__person {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: #490057;
+    font-size: 14px;
+  
+    font-weight: 700;
+    
+}
+
+.newp__avatar {
+    
+    
+}
+.newp__zone{
+
+    width: 100%;
+    height: 100%;
+   
+}
+
+.newp__person-info {
+    
+}
+
+.newp__person-name {
+    
+}
+
+.newp__input , .newp__input::placeholder{
+    margin-top:25px;
+    color: #A303A0;
+    font-size: 24px;
+    font-weight: 700;
+    width: 100%;
+    flex: 1 1 auto;
+    resize: none;
+    
+}
+
+.newp__add {
+    padding:17px 22px;
+        border-radius: 7px;
+    background: #F7F7F8;
+
+        color: #490057;
+    font-size: 14px;
+
+    font-weight: 700;
+    
+}
+
+.newp__add-title {
+    
+}
+
+.newp__publish{
+    border-radius: 10px;
+    border: 1px solid #FDFDFD;
+    background: #490057;
+    padding: 12px;
+
+    color: #FBB03B;
+    font-size: 16px;
+    margin-top:15px;
+    font-weight: 700;
+    
+}
