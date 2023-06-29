@@ -6,14 +6,6 @@ import Contact from './Contact/Contact';
 import './Messages.css';
 
 
-const NewMessage  = (props) =>{
-
-    return(
-        <div className="messages__chat-item">
-                {props.message}
-        </div>
-    )
-}
 
 const  Messages = (props) => {
     
@@ -43,7 +35,7 @@ const  Messages = (props) => {
                             </div>
                         </div>
                         <div className="messages__main">
-                            <Chat />
+                            <Chat dispatch = {props.dispatch} />
                         </div>
                  </div>
             </section>

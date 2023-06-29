@@ -89,7 +89,12 @@
 }
 
 .posts__nav-new-post {
+    cursor: pointer;
 
+}
+
+.posts__nav-new-post:hover{
+    opacity:0.6;
 }
 
 .posts {

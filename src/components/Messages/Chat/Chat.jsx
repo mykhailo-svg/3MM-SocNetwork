@@ -20,6 +20,8 @@ const  Chat = () => {
             <div className="chat__messages">
                 
                 <Message message="sdsd" />
+                <Message message="sdsd" />
+                <Message message="sdsd" />
                 
 
             </div>

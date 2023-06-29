@@ -1,11 +1,24 @@
+
+
+import React from 'react';
 import postAvatar from '../../../img/avatar.jpg'
 import './New_post.css';
+import { addPostActionCreator } from '../../../state';
 const New_post = (props) => {
 
     
-    debugger;
+    let postsTextArea = React.createRef();
+    
+
+  
+    function newPost() {
+        props.dispatch(addPostActionCreator(postsTextArea.current.value));
+        props.dialog_window();
+    }
 
     return (
+
+        
 
         
         <div className="newp" ref={props.reff} >
@@ -32,13 +45,13 @@ const New_post = (props) => {
                             </div>
                         </div>
     
-                        <textarea type="text" placeholder='What is in your mind?' className="newp__input" />
+                        <textarea ref={postsTextArea} type="text" placeholder='What is in your mind?' className="newp__input" />
                     </div>
                     <div className="newp__add">
                         <div className="newp__add-title">Add something...</div>
                     </div>  
 
-                    <button className="newp__publish">Publish</button>
+                    <button onClick={newPost} className="newp__publish">Publish</button>
                 </div>
 
 

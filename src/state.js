@@ -104,14 +104,17 @@ let store = {
             
     
             
-            this._state.Profile.Posts.push(newPost);
+            this._state.Profile.Posts.unshift(newPost);
             this.rerenderEntireTree();
             console.log("dfd");
         
         }
-        else if(action.type === 'POST-WINDOW-CLOSE'){
-            console.log("close");
+        else if(action.type === 'NEW-MESSAGE'){
+
+            console.log("new-msg");
+
         }
+
     }
 
 }

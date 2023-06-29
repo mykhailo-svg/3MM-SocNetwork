@@ -2,6 +2,7 @@
 import chat_avatar from '../../../img/chat_profile.jpg';
 import './Message.css';
 
+
 const  Message = (props) => {
 
    
