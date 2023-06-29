@@ -95,5 +95,7 @@
 }
 
 .chat__send {
+    max-height: 27px;
+    background: transparent;
 
 }

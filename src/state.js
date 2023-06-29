@@ -19,10 +19,16 @@ let store = {
                     {id:3,name:"Olivia Brown",online:""},
                     {id:4,name:"James Taylor",online:""}
                 ],
+
+                New_messages:[
+                    {id:1, message:"sdsdssd", time:"20:10",state:"Read", isUser:"User" },
+                ],
+                
                 
     
     
         },
+        
     
         Profile:{
     
@@ -58,6 +64,8 @@ let store = {
     
      
     },
+
+    
     
 
     getState(){
@@ -113,6 +121,18 @@ let store = {
 
             console.log("new-msg");
 
+            let newMessage = {
+                
+                message:action.messages_text,
+                time:"20:10",
+                state:"notRead",
+                isUser:"User",
+            }
+
+            this._state.Messages.New_messages.push(newMessage);
+            console.log(this._state.Messages.New_messages);
+            this.rerenderEntireTree();
+            debugger;
         }
 
     }

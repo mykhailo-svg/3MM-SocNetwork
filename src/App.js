@@ -50,7 +50,9 @@ function App(props) {
                         <Routes>
                             <Route path='/Home' element={<Home />}/> 
                             <Route exact path='/' element={<Profile dispatch = {props.dispatch}  profileData = {props.state.Profile} addPost = {props.addPost} />}/> 
-                            <Route path='/Messages' element={<Messages dispatch = {props.dispatch}   contactsData = {props.state.Messages.Contacts} />}/> 
+                            <Route path='/Messages' element={<Messages dispatch = {props.dispatch}   messagesData = {props.state.Messages} />}/> 
+
+                            
                             
                             <Route path='/Purchases' element={<Purchases />}/> 
                             <Route path='/Returns' element={<Returns />}/>

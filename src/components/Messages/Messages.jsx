@@ -9,14 +9,16 @@ import './Messages.css';
 
 const  Messages = (props) => {
     
-
-    let a = props.contactsData;
-
-    
-
+        
+    let contactsData = props.messagesData.Contacts;
 
     
-    let ContactElements = a.map(contact => 
+
+    let b = props.New_messages;
+
+    debugger;
+    
+    let ContactElements = contactsData.map(contact => 
         <Contact id={contact.id} online={contact.online} name={contact.name} />
     );
 
@@ -35,12 +37,13 @@ const  Messages = (props) => {
                             </div>
                         </div>
                         <div className="messages__main">
-                            <Chat dispatch = {props.dispatch} />
+                            <Chat chatData={props.messagesData.New_messages} dispatch = {props.dispatch} />
                         </div>
                  </div>
             </section>
         
         
         )
+        
 }
 export default Messages;
