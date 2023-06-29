@@ -10,7 +10,7 @@ const New_post = (props) => {
         
         <div className="newp" ref={props.reff} >
 
-            <div className="newp__zone" onClick={console.log("d")}>
+            <div className="newp__zone" onClick={props.dialog_window}>
 
             </div>
 

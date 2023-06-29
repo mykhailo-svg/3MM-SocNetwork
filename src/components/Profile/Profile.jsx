@@ -51,9 +51,9 @@ const Profile = (props) => {
 
    
 
-      function postDialogWindow (){
-        props.dispatch('POST-WINDOW-CLOSE');
-        // new_post_dialog.current.classList.toggle("new_post_dialog-show");
+    const postDialogWindow = () => {
+        // props.dispatch('POST-WINDOW-CLOSE');
+        new_post_dialog.current.classList.toggle("new_post_dialog-show");
     }
 
     return (
@@ -65,7 +65,7 @@ const Profile = (props) => {
 
             <section className="cover">
 
-                <New_post reff={new_post_dialog} />
+                <New_post dialog_window={postDialogWindow} reff={new_post_dialog} />
 
                
 
