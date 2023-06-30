@@ -10,11 +10,14 @@ const profileReducer = (state, action) => {
         
 
         
-        Profile.Posts.unshift(newPost);
-        this.rerenderEntireTree();
+        state.Posts.unshift(newPost);
+      
        
     
     }
 
     return state;
 }
+
+
+export default profileReducer;

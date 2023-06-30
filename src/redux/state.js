@@ -1,3 +1,5 @@
+import messagesReducer from "./messages-reducer";
+import profileReducer from "./profile-reducer";
 
 let store = {
     title:"dfdfdf",
@@ -90,39 +92,44 @@ let store = {
     },
     
     dispatch(action){
-        if (action.type === 'ADD-POST') {
-            let newPost = {
-                id: 5,
-                post_text: action.message,
-                likes:0,
-            };
-            // console.log(this.profileData);
+
+        profileReducer(this._state.Profile,action);
+
+        messagesReducer(this._state.Messages,action)
+
+        // if (action.type === 'ADD-POST') {
+        //     let newPost = {
+        //         id: 5,
+        //         post_text: action.message,
+        //         likes:0,
+        //     };
+        //     // console.log(this.profileData);
             
     
             
-            this._state.Profile.Posts.unshift(newPost);
-            this._callSubscriber();
-            console.log("dfd");
+        //     this._state.Profile.Posts.unshift(newPost);
+        //     this._callSubscriber();
+        //     console.log("dfd");
         
-        }
-        else if(action.type === 'NEW-MESSAGE'){
+        // }
+        // else if(action.type === 'NEW-MESSAGE'){
 
-            console.log("new-msg");
+        //     console.log("new-msg");
 
-            let newMessage = {
+        //     let newMessage = {
                 
-                message:action.messages_text,
-                time:"20:10",
-                state:"notRead",
-                isUser:"User",
-            }
+        //         message:action.messages_text,
+        //         time:"20:10",
+        //         state:"notRead",
+        //         isUser:"User",
+        //     }
 
-            this._state.Messages.New_messages.push(newMessage);
-            console.log(this._state.Messages.New_messages);
-            this._callSubscriber();
-            debugger;
-        }
-
+        //     this._state.Messages.New_messages.push(newMessage);
+        //     console.log(this._state.Messages.New_messages);
+        //     this._callSubscriber();
+        //     debugger;
+        // }
+        this._callSubscriber();
     }
 
 }
