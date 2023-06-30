@@ -80,8 +80,13 @@ let store = {
     
     },
     
+    _callSubscriber() {
+        console.log("state_updated");
+    },
+
     subscribe (observer) {
-            this.rerenderEntireTree = observer;
+        this._callSubscriber = observer;
+            // this.rerenderEntireTree = observer;
     },
     
     dispatch(action){
@@ -96,7 +101,7 @@ let store = {
     
             
             this._state.Profile.Posts.unshift(newPost);
-            this.rerenderEntireTree();
+            this._callSubscriber();
             console.log("dfd");
         
         }
@@ -114,7 +119,7 @@ let store = {
 
             this._state.Messages.New_messages.push(newMessage);
             console.log(this._state.Messages.New_messages);
-            this.rerenderEntireTree();
+            this._callSubscriber();
             debugger;
         }
 
