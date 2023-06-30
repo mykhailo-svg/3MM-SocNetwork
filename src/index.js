@@ -1,9 +1,9 @@
 
 import reportWebVitals from './reportWebVitals';
 
-import {subscribe} from './redux/state';
+import {subscribe} from './redux/redux-store';
 
-import store from './redux/state';
+import store from './redux/store';
 
 
 import React from 'react';

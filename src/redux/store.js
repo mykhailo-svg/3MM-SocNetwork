@@ -1,4 +1,4 @@
-import messagesReducer from "./messages-reducer";
+import messagesReducer from "./messages_reducer";
 import profileReducer from "./profile-reducer";
 
 let store = {

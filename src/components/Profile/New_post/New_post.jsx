@@ -3,7 +3,7 @@
 import React from 'react';
 import postAvatar from '../../../img/avatar.jpg'
 import './New_post.css';
-import { addPostActionCreator } from '../../../redux/state';
+import { addPostActionCreator } from '../../../redux/store';
 const New_post = (props) => {
 
     
