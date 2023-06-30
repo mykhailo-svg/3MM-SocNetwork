@@ -1,9 +1,9 @@
 
 import reportWebVitals from './reportWebVitals';
 
-import {subscribe} from './state';
+import {subscribe} from './redux/state';
 
-import store from './state';
+import store from './redux/state';
 
 
 import React from 'react';
@@ -19,7 +19,7 @@ const rerenderEntireTree = () =>{
   root.render(
     <React.StrictMode>
       
-      <App state = {store.getState()} dispatch = {store.dispatch.bind(store)} addPost={store.addPost.bind(store)} />
+      <App state = {store.getState()} dispatch = {store.dispatch.bind(store)} />
     </React.StrictMode>
   );
 }

@@ -73,24 +73,7 @@ let store = {
     },
 
 
-    addPost(postMessage) {
-    
-        let newPost = {
-            id: 5,
-            post_text:postMessage,
-            likes:0,
-        };
-        // console.log(this.profileData);
-        
 
-        
-        this._state.Profile.Posts.push(newPost);
-        this.rerenderEntireTree();
-        console.log("dfd");
-    
-        
-    
-    },
     
 
     rerenderEntireTree () {
