@@ -57,7 +57,7 @@ const Profile = (props) => {
 
             <section className="cover">
 
-                <New_post dispatch ={props.dispatch} dialog_window={postDialogWindow} reff={new_post_dialog} />
+                <New_post newPost = {props.newPost} dispatch ={props.dispatch} dialog_window={postDialogWindow} reff={new_post_dialog} />
 
                
 

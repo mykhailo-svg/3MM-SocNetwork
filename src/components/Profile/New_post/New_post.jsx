@@ -3,17 +3,22 @@
 import React from 'react';
 import postAvatar from '../../../img/avatar.jpg'
 import './New_post.css';
-import { addPostActionCreator } from '../../../redux/store';
+import { addPostActionCreator } from '../../../redux/profile-reducer';
+
 const New_post = (props) => {
 
     
     let postsTextArea = React.createRef();
-    
 
   
     function newPost() {
-        props.dispatch(addPostActionCreator(postsTextArea.current.value));
+        // props.dispatch(addPostActionCreator(postsTextArea.current.value));
+        props.newPost(postsTextArea.current.value);
         props.dialog_window();
+
+        
+
+        debugger;
     }
 
     return (

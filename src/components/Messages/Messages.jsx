@@ -2,6 +2,7 @@
 
 
 import Chat from './Chat/Chat';
+import ChatContainer from './Chat/ChatContainer';
 import Contact from './Contact/Contact';
 import './Messages.css';
 
@@ -37,7 +38,7 @@ const  Messages = (props) => {
                             </div>
                         </div>
                         <div className="messages__main">
-                            <Chat chatData={props.messagesData.New_messages} dispatch = {props.dispatch} />
+                            <ChatContainer chatData={props.messagesData.New_messages} dispatch = {props.dispatch} />
                         </div>
                  </div>
             </section>

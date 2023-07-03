@@ -44,4 +44,8 @@
         return state;
     }
 
+    export const newMessageActionCreator = (message) =>{
+        return({type:'NEW-MESSAGE',messages_text:message})
+    }
+
 export default messagesReducer;

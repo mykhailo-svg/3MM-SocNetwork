@@ -47,5 +47,9 @@ const profileReducer = (state = initialState, action) => {
     return state;
 }
 
+export const addPostActionCreator=(postMessage)=>{
+    debugger;
+    return {type:'ADD-POST', message:postMessage}
+}
 
 export default profileReducer;

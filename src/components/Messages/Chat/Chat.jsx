@@ -17,7 +17,7 @@ const  Chat = (props) => {
 
     let newMessage = () => {
 
-        props.dispatch({type:'NEW-MESSAGE' , messages_text:messageInput.current.value});
+        props.newMessage(messageInput.current.value);
     }
 
     return (
@@ -31,9 +31,6 @@ const  Chat = (props) => {
             </div>
             <div className="chat__messages">
                 
-                <Message message="sdsd" />
-                <Message message="sdsd" />
-                <Message message="sdsd" />
                 {chatElems}
                 
 
