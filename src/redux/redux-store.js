@@ -5,7 +5,7 @@ import messagesReducer from "./messages_reducer";
 
 let reducers = combineReducers({
     Messages:messagesReducer,
-    // Profile:profileReducer,
+    Profile:profileReducer,
 
 });
 
