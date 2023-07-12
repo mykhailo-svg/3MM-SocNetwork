@@ -1,5 +1,5 @@
 import { NavLink } from 'react-router-dom';
-import avatar from '../../../img/avatar.jpg';
+import avatar from '../../../../img/avatar.jpg';
 import './Contact.scss';
 
 const  Contact = (props) => {

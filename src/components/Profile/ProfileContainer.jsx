@@ -18,7 +18,7 @@ const ProfileContainer = (props) => {
     }
 
     return (
-
+ 
         
         <Profile dispatch = {props.dispatch}  profileData = {props.profileData} newPost = {newPost} />
 
