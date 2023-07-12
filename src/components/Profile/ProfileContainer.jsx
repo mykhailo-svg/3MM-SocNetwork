@@ -1,4 +1,5 @@
 import { addPostActionCreator } from "../../redux/profile-reducer";
+import StoreContext from "../../store-context";
 import Profile from "./Profile";
 
 
@@ -18,9 +19,23 @@ const ProfileContainer = (props) => {
     }
 
     return (
- 
+
+
+        <StoreContext.Consumer>{
+
+            (store) => {
+                
+
+                return (<Profile dispatch = {props.dispatch}  profileData = {props.profileData} newPost = {newPost} />)
+            }
+
+
+            }
+            
+        </StoreContext.Consumer>
         
-        <Profile dispatch = {props.dispatch}  profileData = {props.profileData} newPost = {newPost} />
+        
+        
 
     )
 }

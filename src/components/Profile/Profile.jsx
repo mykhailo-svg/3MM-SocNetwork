@@ -11,6 +11,8 @@ import Friend from './Friends/Friend';
 import React from 'react';
 
 import New_post from './New_post/New_post';
+import User_coverContainer from './User_cover/User_coverContainer';
+import User_aboutContainer from './User_about/User_aboutContainer';
 
 
 
@@ -61,7 +63,7 @@ const Profile = (props) => {
 
                
 
-                <div className="cover__main">
+                {/* <div className="cover__main">
                     <div className="cover__avatar">
                         <img src="" alt="" />
                     </div>
@@ -74,14 +76,19 @@ const Profile = (props) => {
                             {userInfo.Occupation}
                         </div>
                     </div>
-                </div>
+                </div> */}
+
+                <User_coverContainer/>
+
+                
                 <div className="cover__actions">
                     <button className="cover__edit-cover _button">Edit Cover Photo</button>
                     <button className="cover__edit-profile" >Edit Profile</button>
                 </div>
             </section>
+            
             <div className="profile__main-row">
-                <section className="about">
+                {/* <section className="about">
                     <div className="about__title"></div>
                     <ul className="about__list">
                         <li className="about__item"> <img src={prsonIcon} alt="" />{userInfo.Gender}</li>
@@ -90,7 +97,11 @@ const Profile = (props) => {
                         <li className="about__item"> <img src={mailIcon} alt="" />{userInfo.Mail}</li>
                         <li className="about__item"> <img src={phoneIcon} alt="" />{userInfo.Phone}</li>
                     </ul>
-                </section>
+                </section> */}
+
+                <User_aboutContainer />
+
+
                 <section className="posts__container">
                     <nav className="posts__nav">
                         <ul className="posts__nav-list">
