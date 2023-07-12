@@ -1,0 +1,101 @@
+.messages__main{
+    display: flex;
+    padding-bottom:20px;
+ 
+    height: calc(100vh - 104px);
+    width: 100%;
+}
+
+.chat__container{
+
+    border-radius: 10px;
+    padding:0px 27px;
+    background: #FFFF;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+    
+  
+} 
+
+.chat__current{
+
+
+} 
+
+.chat__current-avatar{
+
+} 
+
+.chat__current-name{
+
+} 
+
+.chat__messages{
+    background: #F7F7F8;
+    border-radius: 10px;
+    padding:17px 14px;
+    flex: 1 1 auto;
+    /* max-height:fill-avalible; */
+    overflow: auto;
+    margin-bottom:18px;
+    
+    min-height:107px;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: flex-end; */
+    
+    
+
+} 
+
+
+
+
+.chat__actions {
+    padding:12px 14px 12px 22px;
+    display: flex;
+    align-items: center;
+    background: #FBB03B;
+    border-radius: 10px;
+    margin-bottom:20px;
+    gap: 18px;
+
+}
+
+.chat__actions svg{
+    cursor: pointer;
+}
+
+.chat__actions svg:hover{
+    opacity:0.8;
+}
+.chat__pin-file {
+
+}
+
+.chat__type {
+    flex: 1 1 auto;
+}
+
+.chat__input ,.chat__input::placeholder{
+    width: 100%;
+    background: transparent;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 19px;
+
+    color: #490057;
+
+}
+
+.chat__smiles {
+
+}
+
+.chat__send {
+    max-height: 27px;
+    background: transparent;
+
+}
