@@ -1,0 +1,141 @@
+.cover {
+
+}
+
+.cover__main {
+
+}
+
+.cover__avatar {
+
+}
+
+.cover__info {
+
+}
+
+.cover__name {
+
+}
+
+.cover__occupation {
+
+}
+
+.cover__actions {
+
+}
+
+.cover__edit-cover {
+
+}
+
+._button {
+
+}
+
+.cover__edit-profile {
+
+}
+
+.profile__main-row {
+    display: flex;
+    gap: 30px;
+
+}
+
+.about {
+    background: #fff;
+    min-width:260px;
+    padding:26px;
+
+}
+
+.about__title {
+
+}
+
+.about__list {
+
+}
+
+.about__item {
+
+}
+
+.posts__container {
+  
+    height: calc(100vh - 204px);
+    display: flex;
+    flex-direction: column;
+   
+}
+
+.posts__nav {
+    display: flex;
+    
+
+}
+
+.posts__nav-list {
+    flex: 1 1 auto;
+    display: flex;
+    gap: 28px;
+
+}
+
+.posts__nav-item {
+
+}
+
+.posts__nav-new-post {
+    cursor: pointer;
+
+}
+
+.posts__nav-new-post:hover{
+    opacity:0.6;
+}
+
+.posts {
+    overflow: auto;
+    flex: 1 1 auto;
+    
+}
+
+.people {
+    min-width: 260px;
+
+}
+
+.people__might-know {
+
+}
+
+.peope__active {
+
+}
+
+.people__active-item {
+
+}
+
+.people__active-avatar {
+
+}
+
+.people__active-info {
+
+}
+
+.people__active-name {
+
+}
+
+.people__active-state {
+
+}
+
+.people__active-time {
+
+}
