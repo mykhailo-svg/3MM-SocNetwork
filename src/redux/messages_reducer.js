@@ -19,6 +19,7 @@
             { id: 1, message: "sdsdssd", time: "20:10", state: "Read", isUser: "User" },
         ],
 
+        
 
 
     }
@@ -43,6 +44,8 @@
 
         return state;
     }
+
+    debugger;
 
     export const newMessageActionCreator = (message) =>{
         return({type:'NEW-MESSAGE',messages_text:message})

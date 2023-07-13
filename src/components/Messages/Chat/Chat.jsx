@@ -7,6 +7,7 @@ import './Chat.scss';
 
 
 const  Chat = (props) => {
+    debugger;
 
     const messageInput = React.createRef();    
 

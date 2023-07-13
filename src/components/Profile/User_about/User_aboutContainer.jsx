@@ -1,4 +1,5 @@
-import StoreContext from "../../../store-context";
+import { connect } from "react-redux";
+
 import User_about from "./User_about";
 
 
@@ -8,27 +9,42 @@ import User_about from "./User_about";
 
 
 
-const User_aboutContainer = (props) => {
+// const User_aboutContainer = (props) => {
 
 
-    return (
+//     return (
 
-        <StoreContext.Consumer>{
-            (store) => {
+//         <StoreContext.Consumer>{
+//             (store) => {
 
-                let userAboutData = store.getState().Profile.User;
+//                 let userAboutData = store.getState().Profile.User;
 
-                return (<User_about userData = {userAboutData} />)
-            }
+//                 return (<User_about userData = {userAboutData} />)
+//             }
 
-        }
-        </StoreContext.Consumer>
-
-
-
+//         }
+//         </StoreContext.Consumer>
 
 
 
-    )
+
+
+
+//     )
+// }
+
+
+let mapStateToProps = (state) => {
+
+    return {
+        userData: state.Profile.User,
+    }
+
 }
+
+
+
+const User_aboutContainer = connect(mapStateToProps)(User_about);
+
+
 export default User_aboutContainer;

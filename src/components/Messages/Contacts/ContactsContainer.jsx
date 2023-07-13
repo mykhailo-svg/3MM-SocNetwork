@@ -1,4 +1,5 @@
-import StoreContext from "../../../store-context";
+import { connect } from "react-redux";
+
 import Contacts from "./Contacts";
 
 
@@ -7,38 +8,59 @@ import Contacts from "./Contacts";
 
 
 
-const ContactsContainer = (props) => {
+// const ContactsContainer = (props) => {
 
 
-    // let contactsData = props.messagesData.Contacts;
+//     // let contactsData = props.messagesData.Contacts;
 
 
 
-    // let b = props.New_messages;
+//     // let b = props.New_messages;
 
-    debugger;
+//     debugger;
 
-    // let ContactElements = contactsData.map(contact =>
-    //     <Contact id={contact.id} online={contact.online} name={contact.name} />
-    // );
+//     // let ContactElements = contactsData.map(contact =>
+//     //     <Contact id={contact.id} online={contact.online} name={contact.name} />
+//     // );
 
-    return (
-        <StoreContext.Consumer>{
+//     return (
+//         <StoreContext.Consumer>{
 
-            (store) => {
+//             (store) => {
 
-                let contactsData = store.getState().Messages.Contacts;
+//                 let contactsData = store.getState().Messages.Contacts;
 
-                return (<Contacts contactsData = {contactsData}/>
-                )
-            }
-
-
-        }
-        </StoreContext.Consumer>
+//                 return (<Contacts contactsData = {contactsData}/>
+//                 )
+//             }
 
 
-    )
+//         }
+//         </StoreContext.Consumer>
+
+
+//     )
+
+// }
+
+
+let mapStateToProps = (state) => {
+
+    return {
+        contactsData: state.Messages.Contacts,
+    }
 
 }
+
+let mapDispatchToProps = () => {
+    return {
+
+    }
+
+
+}
+
+const ContactsContainer = connect(mapStateToProps, mapDispatchToProps)(Contacts);
+
+
 export default ContactsContainer;

@@ -18,7 +18,7 @@ import Purchases from './components/Purchases/Purchases';
 import Returns from './components/Returns/Returns';
 import Gallery from './components/Gallery/Gallery';
 import Analytics from './components/Analytics/Analytics';
-import ProfileContainer from './components/Profile/ProfileContainer';
+
 
 
 
@@ -52,7 +52,7 @@ function App(props) {
                         
                         <Routes>
                             <Route path='/Home' element={<Home />}/> 
-                            <Route exact path='/' element={<ProfileContainer dispatch = {props.dispatch} />}/> 
+                            <Route exact path='/' element={<Profile dispatch = {props.dispatch} />}/> 
                             <Route path='/Messages' element={<Messages/>}/> 
 
                             

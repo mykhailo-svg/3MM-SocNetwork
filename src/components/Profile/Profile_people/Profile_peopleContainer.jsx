@@ -1,4 +1,5 @@
-import StoreContext from "../../../store-context";
+import { connect } from "react-redux";
+
 import Profile_people from "./Profile_people";
 
 
@@ -6,34 +7,22 @@ import Profile_people from "./Profile_people";
 
 
 
+let mapStateToProps = (state) => {
 
+    return {
+        activePeopleData: state.Profile.Active,
+    }
 
-const Profile_peopleContainer = (props) => {
-
-    // let activeInfo = props.profileData.Active;
-    // let activeItems = activeInfo.map(
-    //     active => <Friend name={active.name} friend_state={active.friend_state} time={active.time} />);
-
-    return (
-
-        <StoreContext.Consumer>{
-            (store) => {
-
-                let ActivePeopleInfo = store.getState().Profile.Active;
-
-                return (
-
-
-
-                    <Profile_people activePeopleData = {ActivePeopleInfo} />
-                )
-            }
-
-        }
-
-        </StoreContext.Consumer>
-
-
-    )
 }
+
+let mapDispatchToProps = () => {
+    return {
+
+    }
+
+
+}
+
+const Profile_peopleContainer = connect(mapStateToProps, mapDispatchToProps)(Profile_people);
+
 export default Profile_peopleContainer;

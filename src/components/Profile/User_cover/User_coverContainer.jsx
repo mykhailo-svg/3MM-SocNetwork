@@ -1,40 +1,17 @@
-import StoreContext from "../../../store-context";
+import { connect } from "react-redux";
+
 import User_cover from "./User_cover";
 
 
+let mapStateToProps = (state) => {
 
+    return {
+        userCoverInfo: state.Profile.User,
+    }
 
-
-
-const User_coverContainer = (props) => {
-
-
-    // let userInfo = props.profileData.User;
-
-    return (
-
-        <StoreContext.Consumer>{
-
-            (store) => {
-
-
-                let userCoverInfo = store.getState().Profile.User;
-
-
-                return (<User_cover userCoverInfo = {userCoverInfo}/>)
-            }
-
-
-        }
-
-
-
-        </StoreContext.Consumer>
-
-
-
-
-
-    )
 }
+
+
+
+const User_coverContainer = connect(mapStateToProps)(User_cover);
 export default User_coverContainer;

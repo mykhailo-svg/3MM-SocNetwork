@@ -19,7 +19,7 @@ const  Messages = (props) => {
 
     // let b = props.New_messages;
 
-    debugger;
+  
     
     // let ContactElements = contactsData.map(contact => 
     //     <Contact id={contact.id} online={contact.online} name={contact.name} />

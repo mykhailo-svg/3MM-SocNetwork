@@ -18,7 +18,7 @@ const New_post = (props) => {
 
         
 
-        debugger;
+       
     }
 
     return (

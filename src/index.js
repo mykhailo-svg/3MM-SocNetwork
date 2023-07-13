@@ -10,7 +10,8 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
-import StoreContext from './store-context';
+import { Provider } from 'react-redux';
+// import StoreContext, { Provider } from './store-context';
 
 
 
@@ -19,12 +20,12 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 const rerenderEntireTree = () => {
   root.render(
     <React.StrictMode>
-      <StoreContext.Provider value={store}>
+      <Provider store = {store}>
 
 
         <App dispatch={store.dispatch.bind(store)} />
 
-      </StoreContext.Provider>
+      </Provider>
     </React.StrictMode>
   );
 }
