@@ -1,8 +1,8 @@
-import './Post.scss';
+import './MyPost.scss';
 
-import postAvatar from '../../../img/avatar.jpg';
+import postAvatar from '../../../../img/avatar.jpg';
 
-const Post = (props) => {
+const MyPost = (props) => {
     return (
         <div className="posts__item">
             <div className="post__person">
@@ -47,4 +47,4 @@ const Post = (props) => {
 
     )
 }
-export default Post;
+export default MyPost;

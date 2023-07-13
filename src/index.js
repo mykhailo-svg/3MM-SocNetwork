@@ -22,7 +22,7 @@ const rerenderEntireTree = () => {
       <StoreContext.Provider value={store}>
 
 
-        <App state={store.getState()} dispatch={store.dispatch.bind(store)} />
+        <App dispatch={store.dispatch.bind(store)} />
 
       </StoreContext.Provider>
     </React.StrictMode>

@@ -1,12 +1,7 @@
 
 import './User_cover.scss';
 
-import prsonIcon from '../../../img/person-ic.svg';
 
-import birthIcon from '../../../img/birth-ic.svg';
-import placeIcon from '../../../img/place-ic.svg';
-import mailIcon from '../../../img/Mail-ic.svg';
-import phoneIcon from '../../../img/phone-ic.svg';
 
 import React from 'react';
 
