@@ -14,6 +14,7 @@ const  Chat = (props) => {
     let chatData = props.chatData;
 
     let chatElems = chatData.map(chatElement => <Message message = {chatElement.message} /> )
+
     debugger;
 
     let newMessage = () => {

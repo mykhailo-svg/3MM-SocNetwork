@@ -1,25 +1,4 @@
-.newp {
-    position: absolute;
-   
-    width: 100vw;
-    height: 100vh;
-    top: 0;
-    left: 0;
-    z-index: 2;
 
-    
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 50px;
-
-
-    pointer-events: none;
-    
-
-    transition: opacity 0.6s ease;
-
-}
 
 .new_post_dialog-show{
   

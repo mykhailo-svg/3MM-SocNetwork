@@ -38,11 +38,20 @@
                 state: "notRead",
                 isUser: "User",
             }
-            state.New_messages.push(newMessage);
+
+            let state_copy = {...state};
+
+            state_copy.New_messages = [...state.New_messages];
+
+
+            state_copy.New_messages.push(newMessage);
+            return state_copy;
             
         }
-
-        return state;
+        else{
+            return state;
+        }
+        
     }
 
     debugger;
