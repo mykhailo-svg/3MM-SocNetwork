@@ -81,9 +81,9 @@ let mapStateToProps = (state) => {
 
 let mapDispatchToProps = (dispatch) => {
     return {
-        newPost: (postText) => {
-            dispatch(addPostActionCreator(postText))
-        }
+        // newPost: (postText) => {
+        //     dispatch(addPostActionCreator(postText))
+        // }
 
 
     }
@@ -93,11 +93,11 @@ let mapDispatchToProps = (dispatch) => {
 
 
 
-const New_post_container = () => {
+const New_post_container = (props) => {
 
-    <New_post />
+    <New_post reff={props.reff}/>
 
 };
 
 
-export default connect(mapStateToProps, mapDispatchToProps)(New_post);
+export default connect(mapStateToProps, mapDispatchToProps)(New_post_container);

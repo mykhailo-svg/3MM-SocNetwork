@@ -36,15 +36,22 @@ const profileReducer = (state = initialState, action) => {
         };
         // console.log(this.profileData);
 
+        let state_copy = { ...state };
+
+        state_copy.Posts = [...state.Posts]
+        debugger;
+        state_copy.Posts.unshift(newPost);
 
 
-        state.Posts.unshift(newPost);
-
+        return state_copy
 
 
     }
+    else {
+        return state;
+    }
 
-    return state;
+
 }
 
 export const addPostActionCreator = (postMessage) => {

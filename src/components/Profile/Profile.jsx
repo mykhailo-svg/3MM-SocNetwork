@@ -4,7 +4,7 @@ import './Profile.scss';
 
 import Friend from './Profile_people/Friends/Friend';
 import React from 'react';
-
+import postAvatar from '../../img/avatar.jpg'
 import New_post from './New_post/New_post';
 import User_coverContainer from './User_cover/User_coverContainer';
 import User_aboutContainer from './User_about/User_aboutContainer';
@@ -22,7 +22,18 @@ const Profile = (props) => {
 
 
 
+    let postsTextArea = React.createRef();
 
+
+    function newPost() {
+        // props.dispatch(addPostActionCreator(postsTextArea.current.value));
+        props.newPost(postsTextArea.current.value);
+        postDialogWindow();
+
+
+
+
+    }
 
 
 
@@ -54,7 +65,36 @@ const Profile = (props) => {
                     <div className="newp__zone" onClick={postDialogWindow}>
 
                     </div>
-                    <New_post />
+                    <div className="newp__container">
+                        <div className="newp__title">
+                            Add post
+                        </div>
+
+                        <div className='newp__content'>
+                            <div className="newp__main">
+                                <div className="newp__person">
+                                    <div className="newp__avatar">
+                                        <img src={postAvatar} alt="" />
+                                    </div>
+                                    <div className="newp__person-info">
+                                        <div className="newp__person-name">Charles Deo</div>
+
+                                    </div>
+                                </div>
+
+                                <textarea ref={postsTextArea} type="text" placeholder='What is in your mind?' className="newp__input" />
+                            </div>
+                            <div className="newp__add">
+                                <div className="newp__add-title">Add something...</div>
+                            </div>
+
+                            <button onClick={newPost} className="newp__publish">Publish</button>
+                        </div>
+
+
+
+
+                    </div>
                 </div>
 
 
@@ -105,6 +145,8 @@ const Profile = (props) => {
 
     )
 }
+
+
 
 
 export default Profile;
