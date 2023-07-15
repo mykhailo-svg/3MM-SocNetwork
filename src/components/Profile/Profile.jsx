@@ -2,10 +2,10 @@
 import './Profile.scss';
 
 
-import Friend from './Profile_people/Friends/Friend';
+
 import React from 'react';
 import postAvatar from '../../img/avatar.jpg'
-import New_post from './New_post/New_post';
+
 import User_coverContainer from './User_cover/User_coverContainer';
 import User_aboutContainer from './User_about/User_aboutContainer';
 import Profile_peopleContainer from './Profile_people/Profile_peopleContainer';
