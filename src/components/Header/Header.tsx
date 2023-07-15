@@ -1,3 +1,5 @@
+import React from 'react';
+
 import avatar from '../../img/avatar.jpg';
 import './Header.scss';
 const  Header = () => {

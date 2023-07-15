@@ -9,7 +9,7 @@ import './App.scss';
 
 import Sidebar from './components/Nav/Nav';
 import Header from './components/Header/Header';
-import Profile from './components/Profile/Profile';
+
 import Messages from './components/Messages/Messages';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Settings from './components/Settings/Settings';
@@ -19,6 +19,7 @@ import Returns from './components/Returns/Returns';
 import Gallery from './components/Gallery/Gallery';
 import Analytics from './components/Analytics/Analytics';
 import Profile_container from './components/Profile/Profile_container';
+import React from 'react';
 
 
 
@@ -27,7 +28,7 @@ import Profile_container from './components/Profile/Profile_container';
 
 
 
-function App(props) {
+function App() {
    
   return (
         
@@ -53,7 +54,7 @@ function App(props) {
                         
                         <Routes>
                             <Route path='/Home' element={<Home />}/> 
-                            <Route exact path='/' element={<Profile_container/>}/> 
+                            <Route path='/' element={<Profile_container/>}/> 
                             <Route path='/Messages' element={<Messages/>}/> 
 
                             

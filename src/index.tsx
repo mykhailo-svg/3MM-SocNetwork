@@ -1,7 +1,6 @@
 
 import reportWebVitals from './reportWebVitals';
 
-import { subscribe } from './redux/redux-store';
 
 import store from './redux/redux-store';
 
@@ -15,7 +14,7 @@ import { Provider } from 'react-redux';
 
 
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const root = ReactDOM.createRoot(document.getElementById('root')!);
 
 
 root.render(
@@ -23,7 +22,7 @@ root.render(
     <Provider store={store}>
 
 
-      <App dispatch={store.dispatch.bind(store)} />
+      <App/>
 
     </Provider>
   </React.StrictMode>
