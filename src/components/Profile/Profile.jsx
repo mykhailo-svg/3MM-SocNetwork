@@ -19,7 +19,7 @@ import MyPosts_container from './Posts/MyPosts_container';
 
 const Profile = (props) => {
 
-
+    
 
 
     let postsTextArea = React.createRef();

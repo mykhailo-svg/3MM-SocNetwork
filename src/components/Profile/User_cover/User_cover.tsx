@@ -1,4 +1,5 @@
 
+import { type } from 'os';
 import './User_cover.scss';
 
 
@@ -8,13 +9,22 @@ import React from 'react';
 
 
 
+type typeUser_coverProps = {
 
+    dispatch:any,
 
+    userCoverInfo:{
+        Name: String,
+        Occupation: String
+    }
 
-const User_cover = (props) => {
+    
+}
 
-
-    let userInfo = props.userCoverInfo;
+const User_cover:React.FC<typeUser_coverProps> = ({dispatch,userCoverInfo }) => {
+    
+    debugger;
+    // let userInfo = props.userCoverInfo;
 
     return (
 
@@ -24,11 +34,11 @@ const User_cover = (props) => {
                     </div>
                     <div className="cover__info">
                         <div className="cover__name">
-                            {userInfo.Name}
+                            {userCoverInfo.Name}
 
                         </div>
                         <div className="cover__occupation">
-                            {userInfo.Occupation}
+                            {userCoverInfo.Occupation}
                         </div>
                     </div>
                 </div>

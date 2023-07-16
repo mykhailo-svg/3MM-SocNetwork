@@ -1,7 +1,7 @@
 
 
 
-
+import React from "react";
 import ChatContainer from './Chat/ChatContainer';
 
 import ContactsContainer from './Contacts/ContactsContainer';
@@ -10,7 +10,7 @@ import './Messages.scss';
 
 
 
-const  Messages = (props) => {
+const  Messages = () => {
     
         
     // let contactsData = props.messagesData.Contacts;
