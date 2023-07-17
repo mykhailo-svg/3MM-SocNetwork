@@ -1,10 +1,12 @@
+
+
 let initialState = {
     Posts: [
-        { id: "1", post_text: "I just finished knitting a cozy sweater!", likes: 10, comments: 3, time: "10:30" },
-        { id: "2", post_text: "Spent the afternoon painting a beautiful landscape.", likes: 5, comments: 2, time: "15:45" },
-        { id: "3", post_text: "I scored a goal in today's soccer match!", likes: 15, comments: 6, time: "18:15" },
-        { id: "4", post_text: "Experimented with a new recipe and baked a delicious cake.", likes: 8, comments: 1, time: "12:00" },
-        { id: "5", post_text: "Took my dog for a long walk in the park. Such a fun day!", likes: 20, comments: 4, time: "09:00" },
+        { id: 1, post_text: "I just finished knitting a cozy sweater!", likes: 10, comments: 3, time: "10:30" },
+        { id: 2, post_text: "Spent the afternoon painting a beautiful landscape.", likes: 5, comments: 2, time: "15:45" },
+        { id: 3, post_text: "I scored a goal in today's soccer match!", likes: 15, comments: 6, time: "18:15" },
+        { id: 4, post_text: "Experimented with a new recipe and baked a delicious cake.", likes: 8, comments: 1, time: "12:00" },
+        { id: 5, post_text: "Took my dog for a long walk in the park. Such a fun day!", likes: 20, comments: 4, time: "09:00" },
     ],
 
     User: {
@@ -26,13 +28,17 @@ let initialState = {
     ]
 }
 
-const profileReducer = (state = initialState, action) => {
+type TypeInitialState = typeof initialState;
+
+const profileReducer = (state:TypeInitialState = initialState, action:any):TypeInitialState => {
 
     if (action.type === 'ADD-POST') {
         let newPost = {
             id: 5,
             post_text: action.message,
             likes: 0,
+            comments:1,
+            time:"12"
         };
         // console.log(this.profileData);
 
@@ -41,7 +47,7 @@ const profileReducer = (state = initialState, action) => {
         state_copy.Posts = [...state.Posts]
         debugger;
         state_copy.Posts.unshift(newPost);
-
+        
 
         return state_copy
 
@@ -54,7 +60,14 @@ const profileReducer = (state = initialState, action) => {
 
 }
 
-export const addPostActionCreator = (postMessage) => {
+
+type  typeAddPostActionCreator = {
+    type:'ADD-POST'
+    message:string
+}
+
+
+export const addPostActionCreator = (postMessage:string):typeAddPostActionCreator => {
     debugger;
     return { type: 'ADD-POST', message: postMessage }
 }

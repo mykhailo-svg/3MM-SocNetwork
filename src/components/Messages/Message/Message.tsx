@@ -1,7 +1,7 @@
 import React from "react";
 import chat_avatar from '../../../img/chat_profile.jpg';
 import './Message.scss';
-import { type } from "os";
+
 
     type typeMessageProps = {
         message:String
