@@ -61,13 +61,13 @@ const profileReducer = (state:TypeInitialState = initialState, action:any):TypeI
 }
 
 
-type  typeAddPostActionCreator = {
+type  typeAddPostActionCreatorr = {
     type:'ADD-POST'
     message:string
 }
 
 
-export const addPostActionCreator = (postMessage:string):typeAddPostActionCreator => {
+export const addPostActionCreator = (postMessage:string):typeAddPostActionCreatorr => {
     debugger;
     return { type: 'ADD-POST', message: postMessage }
 }

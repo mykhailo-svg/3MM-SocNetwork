@@ -22,7 +22,7 @@ root.render(
     <Provider store={store}>
 
 
-      <App/>
+      <App />
 
     </Provider>
   </React.StrictMode>

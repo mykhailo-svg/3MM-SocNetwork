@@ -1,7 +1,7 @@
 
 
 
-// type typeInitialState
+
 
 type ContactType = {
     id: number

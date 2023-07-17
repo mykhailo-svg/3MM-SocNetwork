@@ -29,64 +29,50 @@ import React from 'react';
 
 
 function App() {
-   
-  return (
-        
+
+    return (
+
 
         <BrowserRouter>
             <div className='wrapper'>
 
                 <div className="content">
-    
-                    
-                        <Sidebar />
-                        {/* {props.contactsData[1].name} */}
-                        {/* {props.state.contactsData[1].name} */}
-                        
+
+
+                    <Sidebar />
+
                     <main className="main">
-    
-    
-    
+
+
+
                         <Header />
-                        
-                        
-                         {/* {props.state.Profile.Posts[0].id}    */}
-                        
+
                         <Routes>
-                            <Route path='/Home' element={<Home />}/> 
-                            <Route path='/' element={<Profile_container/>}/> 
-                            <Route path='/Messages' element={<Messages/>}/> 
+                            <Route path='/Home' element={<Home />} />
+                            <Route path='/' element={<Profile_container />} />
+                            <Route path='/Messages' element={<Messages />} />
 
-                            
-                            
-                            <Route path='/Purchases' element={<Purchases />}/> 
-                            <Route path='/Returns' element={<Returns />}/>
-                            <Route path='/Gallery' element={<Gallery />}/>  
 
-                            <Route path='/Analytics' element={<Analytics />}/> 
 
-                            <Route path='/Settings' element={<Settings />}/> 
+                            <Route path='/Purchases' element={<Purchases />} />
+                            <Route path='/Returns' element={<Returns />} />
+                            <Route path='/Gallery' element={<Gallery />} />
 
-                            
-                            
+                            <Route path='/Analytics' element={<Analytics />} />
+
+                            <Route path='/Settings' element={<Settings />} />
+
+
+
                         </Routes>
-                        
-                        
-    
-                        {/* <Profile />
-    
-                        <Messages /> */}
-    
-    
-    
-    
+
                     </main>
-    
+
                 </div>
-                
+
             </div>
         </BrowserRouter>
-  );
+    );
 }
 
 

@@ -11,39 +11,39 @@ import React from 'react';
 
 type typeUser_coverProps = {
 
-    dispatch:any,
+    dispatch: any,
 
-    userCoverInfo:{
+    userCoverInfo: {
         Name: String,
         Occupation: String
     }
 
-    
+
 }
 
-const User_cover:React.FC<typeUser_coverProps> = ({dispatch,userCoverInfo }) => {
-    
+const User_cover: React.FC<typeUser_coverProps> = ({ dispatch, userCoverInfo }) => {
+
     debugger;
     // let userInfo = props.userCoverInfo;
 
     return (
 
-                <div className="cover__main">
-                    <div className="cover__avatar">
-                        <img src="" alt="" />
-                    </div>
-                    <div className="cover__info">
-                        <div className="cover__name">
-                            {userCoverInfo.Name}
+        <div className="cover__main">
+            <div className="cover__avatar">
+                <img src="" alt="" />
+            </div>
+            <div className="cover__info">
+                <div className="cover__name">
+                    {userCoverInfo.Name}
 
-                        </div>
-                        <div className="cover__occupation">
-                            {userCoverInfo.Occupation}
-                        </div>
-                    </div>
                 </div>
+                <div className="cover__occupation">
+                    {userCoverInfo.Occupation}
+                </div>
+            </div>
+        </div>
 
-            
+
 
     )
 }

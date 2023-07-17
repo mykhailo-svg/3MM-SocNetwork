@@ -10,34 +10,21 @@ import './Messages.scss';
 
 
 
-const  Messages = () => {
-    
-        
-    // let contactsData = props.messagesData.Contacts;
-
-    
-
-    // let b = props.New_messages;
-
-  
-    
-    // let ContactElements = contactsData.map(contact => 
-    //     <Contact id={contact.id} online={contact.online} name={contact.name} />
-    // );
+const Messages = () => {
 
     return (
-            <section className='messages'>
-                
-                 <div className="messages__container _container">
-                        <ContactsContainer/>
-                        <div className="messages__main">
-                            <ChatContainer/>
-                        </div>
-                 </div>
-            </section>
-        
-        
-        )
-        
+        <section className='messages'>
+
+            <div className="messages__container _container">
+                <ContactsContainer />
+                <div className="messages__main">
+                    <ChatContainer />
+                </div>
+            </div>
+        </section>
+
+
+    )
+
 }
 export default Messages;

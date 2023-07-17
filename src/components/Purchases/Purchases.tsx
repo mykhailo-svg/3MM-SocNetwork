@@ -7,7 +7,7 @@ const Purchases = () => {
 
     return (
         <div>
-
+            purchases
         </div>
 
 

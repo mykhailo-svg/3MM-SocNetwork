@@ -1,14 +1,11 @@
 
 import React from "react";
 
-// type TypeSettingsProps = {
-//     settingsData:String
-// }
 
 const Settings = () => {
     return (
         <div>
-        
+
         </div>
 
 

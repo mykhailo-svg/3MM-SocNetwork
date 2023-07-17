@@ -1,11 +1,11 @@
 import React from "react";
-const  Returns = () => {
+const Returns = () => {
     return (
         <div>
             Returns
         </div>
-        
-        
-        )
+
+
+    )
 }
 export default Returns;
