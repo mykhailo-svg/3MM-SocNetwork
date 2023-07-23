@@ -1,25 +1,38 @@
 
-import React from 'react';
+import React, { useRef } from 'react';
 import chat_avatar from '../../../img/chat_profile.jpg';
 import Message from '../Message/Message';
 import './Chat.scss';
 
 
+type TypeChatProps = {
+    newMessage:(a:any) => void
+    
+    
+    chatData:{
 
-const  Chat = (props) => {
-    debugger;
+    }[]
 
-    const messageInput = React.createRef();    
+}
 
-    let chatData = props.chatData;
 
-    let chatElems = chatData.map(chatElement => <Message message = {chatElement.message} /> )
 
-    debugger;
+const  Chat:React.FC<TypeChatProps> = ({chatData,newMessage}) => {
+   
 
-    let newMessage = () => {
+    const messageInput = useRef<null | HTMLInputElement>(null);    
 
-        props.newMessage(messageInput.current.value);
+    let chatInfo = chatData;
+
+    let chatElems = chatInfo.map((chatElement:any) => <Message message = {chatElement.message} /> )
+
+   
+
+    
+
+    let addMessage = () => {
+
+        newMessage(messageInput.current?.value);
     }
 
     return (
@@ -46,7 +59,7 @@ const  Chat = (props) => {
                 </div>
                 
                 <svg width="27" height="27" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M13.5 0C6.0561 0 0 6.0561 0 13.5S6.0561 27 13.5 27 27 20.9439 27 13.5 20.9439 0 13.5 0Zm0 24.5455c-6.09055 0-11.04545-4.955-11.04545-11.0455 0-6.09046 4.9549-11.04545 11.04545-11.04545 6.0905 0 11.0455 4.95499 11.0455 11.04545 0 6.0905-4.955 11.0455-11.0455 11.0455Z" fill="#490057"/><path d="M17.6654 16.4383H9.33444c-.49639 0-.94394.2989-1.13384.7576-.1899.4586-.08493.9865.26607 1.3375 1.34444 1.3443 3.13203 2.0848 5.03333 2.0848 1.9013 0 3.6888-.7405 5.0333-2.0848.351-.351.4559-.8788.266-1.3375-.19-.4587-.6375-.7576-1.1339-.7576ZM9.42047 12.0387c.30436-.3043.47945-.7265.47945-1.1569 0-.4303-.17509-.8525-.47945-1.15697-.30436-.30429-.72655-.47938-1.15691-.47938-.43118 0-.85254.17509-1.15691.47938-.30518.30447-.47945.72667-.47945 1.15697 0 .4304.17427.8526.47945 1.1569.30437.3044.72655.4795 1.15691.4795.43036 0 .85255-.1752 1.15691-.4795ZM18.7365 9.24545c-.4304 0-.8526.17509-1.1569.47938-.3044.30447-.4795.72577-.4795 1.15697 0 .4304.1751.8526.4795 1.1569.3043.3044.7265.4795 1.1569.4795.4303 0 .8525-.1752 1.1569-.4795.3052-.3043.4794-.7265.4794-1.1569 0-.4303-.1742-.8525-.4794-1.15697-.3044-.30429-.7258-.47938-1.1569-.47938Z" fill="#490057"/></svg>
-                <button className='chat__send' onClick={() => {newMessage()}}>
+                <button className='chat__send' onClick={() => {addMessage()}}>
                     <svg  width="27" height="27" viewBox="0 0 27 27" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M27 14.2642L0 0L3 12.2264L14.5 13.2453L16 14.2642H3L0 27L27 14.2642Z" fill="#490057"/>
                     </svg>

@@ -23,8 +23,7 @@ type typeUser_coverProps = {
 
 const User_cover: React.FC<typeUser_coverProps> = ({ dispatch, userCoverInfo }) => {
 
-    debugger;
-    // let userInfo = props.userCoverInfo;
+
 
     return (
 

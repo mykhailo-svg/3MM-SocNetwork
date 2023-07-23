@@ -59,7 +59,7 @@ export type InitialStateType = typeof initialState;
 
 
 const messagesReducer = (state: InitialStateType = initialState, action: ActionType): InitialStateType => {
-    debugger;
+  
     if (action.type === 'NEW-MESSAGE') {
 
         console.log("new-msg");
@@ -89,7 +89,7 @@ const messagesReducer = (state: InitialStateType = initialState, action: ActionT
 
 }
 
-debugger;
+
 
 
 

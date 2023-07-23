@@ -43,7 +43,7 @@ import { connect } from "react-redux";
 
 
 
-let mapStateToProps = (state) => {
+let mapStateToProps = (state:any) => {
 
     return {
         chatData: state.Messages.New_messages,
@@ -51,9 +51,9 @@ let mapStateToProps = (state) => {
 
 }
 
-let mapDispatchToProps = (dispatch) => {
+let mapDispatchToProps = (dispatch:any) => {
     return {
-        newMessage : (messageText) => {
+        newMessage : (messageText:string) => {
             dispatch(newMessageActionCreator(messageText));
         }
     }

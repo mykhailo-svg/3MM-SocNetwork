@@ -45,7 +45,7 @@ const profileReducer = (state:TypeInitialState = initialState, action:any):TypeI
         let state_copy = { ...state };
 
         state_copy.Posts = [...state.Posts]
-        debugger;
+       
         state_copy.Posts.unshift(newPost);
         
 
@@ -68,7 +68,7 @@ type  typeAddPostActionCreatorr = {
 
 
 export const addPostActionCreator = (postMessage:string):typeAddPostActionCreatorr => {
-    debugger;
+
     return { type: 'ADD-POST', message: postMessage }
 }
 

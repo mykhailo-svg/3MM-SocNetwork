@@ -31,9 +31,9 @@ const Sidebar = () => {
                                                 </NavLink>
                                         </li>
                                         <li className="sidebar__nav-item">
-                                                <NavLink to='/Returns'>
-                                                        <svg width="24" height="24" fill="none" xmlns="http://www.w3.org/2000/svg"><g clip-path="url(#a)" opacity=".8"><path d="M20 6h-2.18c.11-.31.18-.65.18-1 0-1.66-1.34-3-3-3-1.05 0-1.96.54-2.5 1.35l-.5.67-.5-.68C10.96 2.54 10.05 2 9 2 7.34 2 6 3.34 6 5c0 .35.07.69.18 1H4c-1.11 0-1.99.89-1.99 2L2 19c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V8c0-1.11-.89-2-2-2Zm-5-2c.55 0 1 .45 1 1s-.45 1-1 1-1-.45-1-1 .45-1 1-1ZM9 4c.55 0 1 .45 1 1s-.45 1-1 1-1-.45-1-1 .45-1 1-1Zm11 15H4v-2h16v2Zm0-5H4V8h5.08L7 10.83 8.62 12 11 8.76l1-1.36 1 1.36L15.38 12 17 10.83 14.92 8H20v6Z" fill="#fff" /></g><defs><clipPath id="a"><path fill="#fff" d="M0 0h24v24H0z" /></clipPath></defs></svg>
-                                                        Returns
+                                                <NavLink to='/People'>
+                                                <svg width="24" height="24" fill="none" xmlns="http://www.w3.org/2000/svg"><g clip-path="url(#a)" fill-rule="evenodd" clip-rule="evenodd" fill="#DBCCDD"><path d="M12.594 10.999a9.523 9.523 0 0 1 1.47.71 5.945 5.945 0 0 0-1.867 4.32c0 3.336 2.778 6.04 6.206 6.04h.053A23.293 23.293 0 0 1 18.274 24L.148 23.808C-.417 18.78.455 13.12 5.913 11.007c-1.805-1.064-3.003-2.4-2.973-5.12C2.97 3.164 5.829-.037 9.31 0c3.48.037 6.266 3.325 6.236 6.02-.03 2.695-1.198 3.938-2.952 4.979Z"/><path d="M18.657 11.033c2.95 0 5.343 2.247 5.343 5.018 0 2.772-2.392 5.019-5.343 5.019-2.952 0-5.344-2.247-5.344-5.019 0-2.771 2.392-5.018 5.344-5.018Zm-.881 8.449h1.762V16.93h2.65v-1.757h-2.65v-2.552h-1.762v2.552h-2.65v1.757h2.65v2.552Z"/></g><defs><clipPath id="a"><path fill="#fff" d="M0 0h24v24H0z"/></clipPath></defs></svg>
+                                                        People
                                                 </NavLink>
                                         </li>
                                         <li className="sidebar__nav-item">

@@ -15,7 +15,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Settings from './components/Settings/Settings';
 import Home from './components/Home/Home';
 import Purchases from './components/Purchases/Purchases';
-import Returns from './components/Returns/Returns';
+import Returns from './components/People/People';
 import Gallery from './components/Gallery/Gallery';
 import Analytics from './components/Analytics/Analytics';
 import Profile_container from './components/Profile/Profile_container';
@@ -55,7 +55,7 @@ function App() {
 
 
                             <Route path='/Purchases' element={<Purchases />} />
-                            <Route path='/Returns' element={<Returns />} />
+                            <Route path='/People' element={<Returns />} />
                             <Route path='/Gallery' element={<Gallery />} />
 
                             <Route path='/Analytics' element={<Analytics />} />
