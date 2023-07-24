@@ -2,29 +2,14 @@ import React, { useEffect } from "react";
 import Person from "../Person";
 import axios from "axios";
 import loader from '../../../../img/people_loader.svg'
-// type TypePersonItemsProps = {
-
-
-//     PeopleData: {
-
-
-//             id: number;
-//         name: string;
-//         occupation: string;
-
-
-//     }
-
-
-// }
-
+import PersonItems from "./PersonItems";
 
 let setUsers = () => {
 
 }
 
 
-const PersonItems: React.FC = (props: any) => {
+const PersonItemsRequest: React.FC = (props: any) => {
 
 
     let peopleInfo = props.PeopleData;
@@ -85,33 +70,11 @@ const PersonItems: React.FC = (props: any) => {
 
 
     return (
-
-
-        <div className="people__discover">
-
-            <div className="people__list">
-                {/* <Person name={peopleInfo[0].name} /> */}
-
-                {peopleItems}
-
-                {/* {a.People.id}sd */}
-
-            </div>
-
-
-            <div ref={loaderContainer} className="people__show-more">
-                <button onClick={updateUsers} className="people__show-more-button">Show more</button>
-                <div className="people__loader-container"><img src={loader} alt="" className="people__loader" /></div>
-            </div>
-        </div>
-
-
-
-
+            <PersonItems/>
 
     )
 }
-export default PersonItems;
+export default PersonItemsRequest;
 
 
 

@@ -25,7 +25,7 @@ const Person: React.FC<TypePersonProps> = ({ name, occupation, id, follow, func 
         <div className="people__item">
             <div className="people__item-container">
                 <div className="people__item-avatar">
-                    <img src={person_avatar} alt="" />
+                    <img src='https://drive.google.com/uc?export=view&id=0B6wwyazyzml-OGQ3VUo0Z2thdmc' alt="" />
                 </div>
                 <div className="people__item-info">
                     <div className="people__item-info-name">{name}</div>
