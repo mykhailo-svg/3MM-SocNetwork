@@ -54,11 +54,11 @@ type ActionType = {
 
 }
 
-export type InitialStateType = typeof initialState;
+export type MessagesInitialStateType = typeof initialState;
 
 
 
-const messagesReducer = (state: InitialStateType = initialState, action: ActionType): InitialStateType => {
+const messagesReducer = (state: MessagesInitialStateType = initialState, action: ActionType): MessagesInitialStateType => {
   
     if (action.type === 'NEW-MESSAGE') {
 

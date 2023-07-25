@@ -3,7 +3,7 @@ import './Profile.scss';
 
 
 
-import React from 'react';
+import React, { RefObject } from 'react';
 import postAvatar from '../../img/avatar.jpg'
 
 import User_coverContainer from './User_cover/User_coverContainer';
@@ -15,19 +15,23 @@ import MyPosts_container from './Posts/MyPosts_container';
 
 
 
+type TypeProfileProps = {
+    newPost:(postText:string)=>void
+}
 
 
-const Profile = (props) => {
 
-    
+const Profile:React.FC<TypeProfileProps> = ({newPost}) => {
+
+        
+    debugger;
+
+    let postsTextArea:RefObject<HTMLTextAreaElement> = React.useRef(null);
 
 
-    let postsTextArea = React.createRef();
-
-
-    function newPost() {
+    function addPost() {
         // props.dispatch(addPostActionCreator(postsTextArea.current.value));
-        props.newPost(postsTextArea.current.value);
+        newPost(postsTextArea.current?.value ?? '');
         postDialogWindow();
 
 
@@ -41,13 +45,13 @@ const Profile = (props) => {
 
 
 
-    let new_post_dialog = React.createRef();
+    let new_post_dialog:RefObject<HTMLDivElement> = React.createRef();
 
 
 
     const postDialogWindow = () => {
 
-        new_post_dialog.current.classList.toggle("new_post_dialog-show");
+        new_post_dialog.current?.classList.toggle("new_post_dialog-show");
     }
 
     return (
@@ -82,13 +86,13 @@ const Profile = (props) => {
                                     </div>
                                 </div>
 
-                                <textarea ref={postsTextArea} type="text" placeholder='What is in your mind?' className="newp__input" />
+                                <textarea ref={postsTextArea}  placeholder='What is in your mind?' className="newp__input" />
                             </div>
                             <div className="newp__add">
                                 <div className="newp__add-title">Add something...</div>
                             </div>
 
-                            <button onClick={newPost} className="newp__publish">Publish</button>
+                            <button onClick={addPost} className="newp__publish">Publish</button>
                         </div>
 
 
