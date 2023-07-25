@@ -1,5 +1,3 @@
-import './Friend.scss';
-
 import React from 'react';
 
 import postAvatar from '../../../../img/avatar.jpg';

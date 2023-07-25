@@ -1,6 +1,6 @@
 import React from "react";
 import chat_avatar from '../../../img/chat_profile.jpg';
-import './Message.scss';
+
 
 
 type typeMessageProps = {
@@ -18,7 +18,7 @@ const Message = (props: typeMessageProps) => {
 
 
         <div className="chat__message">
-            <div className="message__avatar">
+            <div className="chat__message-avatar">
                 <img src={chat_avatar} alt="" />
             </div>
             <div className="chat__message-content">

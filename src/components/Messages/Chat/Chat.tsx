@@ -1,8 +1,7 @@
-
 import React, { useRef } from 'react';
 import chat_avatar from '../../../img/chat_profile.jpg';
 import Message from '../Message/Message';
-import './Chat.scss';
+
 
 
 type TypeChatProps = {

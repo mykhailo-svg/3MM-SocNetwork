@@ -1,7 +1,3 @@
-
-import './User_about.scss';
-
-
 import React from 'react';
 
 import prsonIcon from '../../../img/person-ic.svg';
@@ -32,7 +28,7 @@ const User_about: React.FC<typeUserAboutProps> = ({ userData }) => {
     return (
 
         <section className="about">
-            <div className="about__title"></div>
+            <div className="about__title">About</div>
             <ul className="about__list">
                 <li className="about__item"> <img src={prsonIcon} alt="" />{userInfo.Gender}</li>
                 <li className="about__item"> <img src={birthIcon} alt="" />{userInfo.Born}</li>

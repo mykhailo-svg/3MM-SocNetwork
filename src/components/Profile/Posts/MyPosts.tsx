@@ -1,10 +1,7 @@
-
-import MyPost from './MyPost/MyPost';
-import './MyPosts.scss';
-
-
-
 import React from 'react';
+import MyPost from './MyPost/MyPost';
+
+
 
 
 
@@ -30,7 +27,7 @@ const MyPosts: React.FC<TypeMyPostsProps> = ({ myPostsData }) => {
 
 
     let postsInfo = myPostsData;
-    let postsComponents = postsInfo.map((post: any) => <MyPost time={post.time}  post_text={post.post_text} likes={post.likes} comments={post.comments} />);
+    let postsComponents = postsInfo.map((post: any) => <MyPost time={post.time} post_text={post.post_text} likes={post.likes} comments={post.comments} />);
 
 
 

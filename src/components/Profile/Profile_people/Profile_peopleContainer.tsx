@@ -7,7 +7,7 @@ import Profile_people from "./ProfilePeople";
 
 
 
-let mapStateToProps = (state) => {
+let mapStateToProps = (state:any) => {
 
     return {
         activePeopleData: state.Profile.Active,

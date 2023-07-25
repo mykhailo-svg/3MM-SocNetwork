@@ -307,3 +307,150 @@
 .people__active-time {
 
 }
+
+
+.posts{
+    padding:0px 46px;
+}
+
+.post {
+    &__item{
+        padding-bottom:18px;
+        padding-top:18px;
+
+        border-bottom:#E6E6EA 1px solid;
+    }
+    &__person {
+   
+        display: flex;
+        padding-bottom:14px;
+        align-items: center;
+        gap: 8px;
+    }
+
+    &__avatar {
+        border-radius:100%;
+        overflow: hidden;
+    }
+
+    &__person-info {}
+
+    &__person-name, &__author , &__likes-count ,&__comments-count{
+        color: #490057;
+ 
+        font-size: 16px;
+
+        font-weight: 700;
+      
+    }
+
+    &__preson-time {}
+
+    &__content {}
+
+    &__cover {
+        max-width:100%;
+        height: 256px;
+        margin-bottom: 21px;
+    }
+
+    &__cover-img {
+        object-fit: cover;
+        height: 100%;
+        width: 100%;
+        border-radius: 10px;
+    }
+
+    &__text {
+        display: flex;
+        gap: 10px;
+        margin-bottom:15px;
+    }
+
+    &__author {
+        white-space: nowrap;
+    }
+
+    &__article {}
+
+    &__data {
+        display: flex;
+        gap: 21px;
+    }
+
+    &__info-item {
+        display: flex;
+        align-items: center;
+        gap: 5px;;    
+    }   
+
+    &__likes-count {}
+
+    &__comments-count {}
+}
+
+
+
+
+
+.people {
+
+    &__active-item {
+        display: flex;
+    }
+
+    &__active-avatar {
+         width:35px;
+            margin-right:6.2px;
+    }
+
+    &__active-info {
+         flex: 1 1 auto;
+    }
+
+    &__active-name {
+    }
+
+    &__active-state {
+    }
+
+    &__active-time {
+    }
+}
+
+
+
+
+.about {
+    background: #fff;
+    width: 100%;
+    max-width:260px;
+    min-width:260px;
+    padding:26px;
+    border-radius: 10px;
+    &__title {
+        color: #A303A0;
+        padding-bottom: 12px;
+        font-size: 20px;
+
+        font-weight: 700;
+
+    }
+
+    &__list {
+
+
+        font-size: 16px;
+
+        font-weight: 400;
+
+    }
+
+    &__item {
+        padding:16px 0px;
+        display: flex;
+        gap:6px;
+        align-items: center;
+        border-bottom: #E6E6EA 1px solid;
+    }
+}

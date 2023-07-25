@@ -1,4 +1,3 @@
-import './MyPost.scss';
 import like_icon from '../../../../img/like.svg';
 import comment_icon from '../../../../img/comment.svg';
 import postAvatar from '../../../../img/avatar.jpg';
@@ -15,7 +14,7 @@ type TypeMyPostProps =  {
 
 const MyPost:React.FC<TypeMyPostProps> = ({time,post_text,likes,comments}) => {
     return (
-        <div className="posts__item">
+        <div className="post__item">
             <div className="post__person">
                 <div className="post__avatar">
 

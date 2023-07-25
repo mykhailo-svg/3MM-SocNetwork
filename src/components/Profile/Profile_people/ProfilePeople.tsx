@@ -1,6 +1,5 @@
 import React from 'react';
 import Friend from './Friends/Friend';
-import './Profile_people.scss';
 
 
 

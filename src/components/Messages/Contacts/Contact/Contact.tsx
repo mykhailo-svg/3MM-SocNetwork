@@ -2,7 +2,7 @@ import React from 'react';
 
 
 import avatar from '../../../../img/avatar.jpg';
-import './Contact.scss';
+
 import { type } from 'os';
 
 type typeContactProps = {
