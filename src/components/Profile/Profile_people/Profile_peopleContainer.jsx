@@ -1,6 +1,6 @@
 import { connect } from "react-redux";
 
-import Profile_people from "./Profile_people";
+import Profile_people from "./ProfilePeople";
 
 
 

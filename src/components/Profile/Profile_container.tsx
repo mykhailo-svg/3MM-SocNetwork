@@ -5,16 +5,16 @@ import { connect } from 'react-redux';
 import { addPostActionCreator } from '../../redux/profile-reducer';
 
 
-let mapStateToProps = (state) => {
+let mapStateToProps = (state:any) => {
 
     return {
 
 
     }
 }
-let mapDispatchToProps = (dispatch) => {
+let mapDispatchToProps = (dispatch:any) => {
     return {
-        newPost: (postText) => {
+        newPost: (postText:string) => {
             dispatch(addPostActionCreator(postText))
         },
     }
