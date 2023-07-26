@@ -49,6 +49,9 @@ let mapStateToProps = (state:any) => {
         chatData: state.Messages.New_messages,
     }
 
+
+     
+
 }
 
 let mapDispatchToProps = (dispatch:any) => {

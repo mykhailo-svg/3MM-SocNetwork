@@ -8,53 +8,58 @@ import PersonItems from "./PersonItems";
 const PersonItemsAPI: React.FC = (props: any) => {
     debugger;
 
-    let peopleInfo:any = props.PeopleData;
-    const loaderContainer:any = React.createRef();
+    // let peopleInfo:any = props.PeopleData;
+    // const loaderContainer:any = React.createRef();
 
-    let setUsers = (users: any) => {
-        props.SetUsers(users);
-    }
+    // let setUsers = (users: any) => {
+    //     props.SetUsers(users);
+    // }
 
-    let updateUsers = () => {
-        loaderContainer.current.classList.toggle('loader_active');
-        axios.get(`http://localhost:3001/update-users?step=${1}`)
+    let updateUsers = (loader:any) => {
+        loader.classList.toggle('loader_active');
+        axios.get(`https://vrrr.vercel.app/update-users?step=${1}`)
             .then(response => {
-                
-                // setUsers(response.data);
-                setUsers(response.data)
-                loaderContainer.current.classList.toggle('loader_active');
-                console.log("loaded");
+                debugger;
+          
+                props.SetUsers(response.data)
+                loader.classList.toggle('loader_active');
+               
 
 
             })
             .catch((err) => {
+
+                loader.classList.toggle('loader_active');
                 
-                loaderContainer.current.classList.toggle('loader_active');
-
+                console.log("errr");
+                
             })
     }
 
-    if (props.PeopleData.length == 2) {
 
-        axios.get("http://localhost:3001/all-users")
-            .then(response => {
+    let firstPeopleLoad = () => {
+        debugger;
+        if (props.PeopleData.length == 2) {
 
-                setUsers(response.data);
+            axios.get("http://localhost:3001/all-users")
+                .then(response => {
+                    debugger;
+                    props.SetUsers(response.data);
 
-                console.log(response.data);
+                    console.log(response.data);
 
 
-            })
-            .catch((err) => {
-                alert("some error");
+                })
+                .catch((err) => {
+                    // alert("some error");
 
-            })
+                })
 
+        }
     }
-
 
     return (
-            <PersonItems  />
+        <PersonItems updateUsersFetch = {updateUsers} firstPeopleLoad= {firstPeopleLoad} PeopleData={props.PeopleData} UnFollow={props.UnFollow} SetUsers={props.SetUsers} Follow={props.Follow} />
 
     )
 }

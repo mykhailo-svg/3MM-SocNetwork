@@ -16,9 +16,9 @@ let initialState = {
     ] as Array<TypePerson>
 }
 
-type TypeInitialState = typeof initialState;
+export type TypePeopleInitialState = typeof initialState;
 
-const peopleReducer = (state: TypeInitialState = initialState, action: any): TypeInitialState => {
+const peopleReducer = (state: TypePeopleInitialState = initialState, action: any): TypePeopleInitialState => {
     
     if (action.type === 'FOLLOW-USER') {
         return {

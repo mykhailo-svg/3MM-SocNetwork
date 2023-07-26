@@ -2,6 +2,7 @@
 import { connect } from "react-redux";
 import PersonItems from "./PersonItems";
 import { SetUSersAC, UnFollowUSerAC, followUSerAC } from "../../../../redux/people-reducer";
+import PersonItemsAPI from "./PersonItemsAPI";
 
 
 
@@ -10,6 +11,7 @@ let mapStateToProps = (state: any) => {
 
     return {
         PeopleData: state.People.People
+      
     }
 
 }
@@ -33,7 +35,7 @@ let mapDispatchToProps = (dispatch: any) => {
 
 
 
-const PersonItems_container = connect(mapStateToProps, mapDispatchToProps)(PersonItems)
+const PersonItems_container = connect(mapStateToProps, mapDispatchToProps)(PersonItemsAPI)
 
 
 

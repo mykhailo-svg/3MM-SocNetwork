@@ -2,84 +2,55 @@ import React, { useEffect } from "react";
 import Person from "../Person";
 import axios from "axios";
 import loader from '../../../../img/people_loader.svg'
-// type TypePersonItemsProps = {
+type TypePersonItemsProps = {
 
 
-//     PeopleData: {
+    PeopleData: Array<any>
 
+    Follow: () => void
 
-//             id: number;
-//         name: string;
-//         occupation: string;
+    UnFollow: () => void
 
+    SetUsers: (users: any) => void
 
-//     }
+    firstPeopleLoad: () => void
 
+    updateUsersFetch:(loader:any)=>void
 
-// }
-
-
-let setUsers = () => {
 
 }
 
 
-const PersonItems: React.FC = (props: any) => {
 
+const PersonItems: React.FC<TypePersonItemsProps> = ({ Follow, UnFollow, SetUsers, PeopleData, firstPeopleLoad,updateUsersFetch }) => {
+    debugger
 
-    let peopleInfo = props.PeopleData;
-    const loaderContainer:any = React.createRef();
+    let peopleInfo = PeopleData;
+    const loaderContainer: any = React.createRef();
 
     let setUsers = (users: any) => {
-        props.SetUsers(users);
+        SetUsers(users);
     }
 
     let updateUsers = () => {
-        loaderContainer.current.classList.toggle('loader_active');
-        axios.get(`http://localhost:3001/update-users?step=${1}`)
-            .then(response => {
-                
-                // setUsers(response.data);
-                setUsers(response.data)
-                loaderContainer.current.classList.toggle('loader_active');
-                console.log("loaded");
-
-
-            })
-            .catch((err) => {
-                
-                loaderContainer.current.classList.toggle('loader_active');
-
-            })
+        updateUsersFetch(loaderContainer.current)
     }
 
-    if (props.PeopleData.length == 2) {
-
-        axios.get("http://localhost:3001/all-users")
-            .then(response => {
-
-                setUsers(response.data);
-
-                console.log(response.data);
 
 
-            })
-            .catch((err) => {
-                alert("some error");
+    firstPeopleLoad()
 
-            })
 
-    }
 
 
 
 
     let peopleItems = peopleInfo.map((item: any) => {
         if (item.follow == "Follow") {
-            return <Person key={item.id} func={props.UnFollow} id={item.id} occupation={item.occupation} name={item.name} follow={item.follow} />
+            return <Person key={item.id} func={UnFollow} id={item.id} occupation={item.occupation} name={item.name} follow={item.follow} />
         }
         else {
-            return <Person key={item.id} func={props.Follow} id={item.id} occupation={item.occupation} name={item.name} follow={item.follow} />
+            return <Person key={item.id} func={Follow} id={item.id} occupation={item.occupation} name={item.name} follow={item.follow} />
         }
     })
 
@@ -90,11 +61,8 @@ const PersonItems: React.FC = (props: any) => {
         <div className="people__discover">
 
             <div className="people__list">
-                {/* <Person name={peopleInfo[0].name} /> */}
 
                 {peopleItems}
-
-                {/* {a.People.id}sd */}
 
             </div>
 
