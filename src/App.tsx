@@ -20,6 +20,7 @@ import Gallery from './components/Gallery/Gallery';
 import Analytics from './components/Analytics/Analytics';
 import Profile_container from './components/Profile/Profile_container';
 import React from 'react';
+import UserView from './components/Profile/UserView/UserView';
 
 
 
@@ -50,6 +51,7 @@ function App() {
                         <Routes>
                             <Route path='/Home' element={<Home />} />
                             <Route path='/' element={<Profile_container />} />
+                            <Route path='/User/:id' element={<UserView />} />
                             <Route path='/Messages' element={<Messages />} />
 
 

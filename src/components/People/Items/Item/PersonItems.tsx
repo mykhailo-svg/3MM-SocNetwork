@@ -15,14 +15,14 @@ type TypePersonItemsProps = {
 
     firstPeopleLoad: () => void
 
-    updateUsersFetch:(loader:any)=>void
+    updateUsersFetch: (loader: any) => void
 
 
 }
 
 
 
-const PersonItems: React.FC<TypePersonItemsProps> = ({ Follow, UnFollow, SetUsers, PeopleData, firstPeopleLoad,updateUsersFetch }) => {
+const PersonItems: React.FC<TypePersonItemsProps> = ({ Follow, UnFollow, SetUsers, PeopleData, firstPeopleLoad, updateUsersFetch }) => {
     debugger
 
     let peopleInfo = PeopleData;

@@ -6,14 +6,6 @@ import PersonItems from "./PersonItems";
 
 
 const PersonItemsAPI: React.FC = (props: any) => {
-    debugger;
-
-    // let peopleInfo:any = props.PeopleData;
-    // const loaderContainer:any = React.createRef();
-
-    // let setUsers = (users: any) => {
-    //     props.SetUsers(users);
-    // }
 
     let updateUsers = (loader:any) => {
         loader.classList.toggle('loader_active');
