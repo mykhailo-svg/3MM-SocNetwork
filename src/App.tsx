@@ -49,13 +49,13 @@ function App() {
 
                         <Routes>
                             <Route path='/Home' element={<Home />} />
-                            <Route path='/' element={<Profile_container />} />
+                            {/* <Route path='/' element={<Profile_container />} /> */}
                             <Route path='/Messages' element={<Messages />} />
 
 
 
                             <Route path='/Purchases' element={<Purchases />} />
-                            <Route path='/People' element={<Returns />} />
+                            {/* <Route path='/People' element={<Returns />} /> */}
                             <Route path='/Gallery' element={<Gallery />} />
 
                             <Route path='/Analytics' element={<Analytics />} />

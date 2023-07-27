@@ -5,21 +5,30 @@ import {configureStore} from '@reduxjs/toolkit';
 import profileReducer from "./profile-reducer";
 import messagesReducer from "./messages_reducer";
 import peopleReducer from "./people-reducer";
+import { reducer } from "./messages_slice.slice";
 
 
-let reducers = combineReducers({
-    Messages:messagesReducer,
-    Profile:profileReducer,
-    People:peopleReducer
+// let reducers = combineReducers({
+//     Messages:messagesReducer,
+//     Profile:profileReducer,
+//     People:peopleReducer
 
-});
-
-
+// });
 
 
-let store = configureStore({
-    reducer:reducers
-});
+let reducers = combineReducers(reducer);
+
+
+
+// let store = createStore(reducers);
+
+export const store = configureStore({
+    reducer:reducers,
+    
+})
+debugger;
+
+
 
 
 
