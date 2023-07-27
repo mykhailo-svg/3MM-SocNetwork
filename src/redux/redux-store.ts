@@ -1,4 +1,7 @@
 import {combineReducers, legacy_createStore as createStore} from "redux";
+
+import {configureStore} from '@reduxjs/toolkit';
+
 import profileReducer from "./profile-reducer";
 import messagesReducer from "./messages_reducer";
 import peopleReducer from "./people-reducer";
@@ -13,7 +16,10 @@ let reducers = combineReducers({
 
 
 
-let store = createStore(reducers);
+
+let store = configureStore({
+    reducer:reducers
+});
 
 
 
