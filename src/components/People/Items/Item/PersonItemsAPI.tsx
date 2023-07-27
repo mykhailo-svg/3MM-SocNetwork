@@ -33,7 +33,7 @@ const PersonItemsAPI: React.FC = (props: any) => {
         debugger;
         if (props.PeopleData.length == 2) {
 
-            axios.get("http://localhost:3001/all-users")
+            axios.get("https://vrrr.vercel.app/all-users")
                 .then(response => {
                     debugger;
                     props.SetUsers(response.data);
