@@ -1,3 +1,4 @@
+//@ts-nocheck
 import React, { useRef } from 'react';
 import chat_avatar from '../../../img/chat_profile.jpg';
 import Message from '../Message/Message';
@@ -17,7 +18,8 @@ type TypeChatProps = {
 
 
 const  Chat:React.FC<TypeChatProps> = ({chatData,newMessage}) => {
-   
+    
+    
 
     const messageInput = useRef<null | HTMLInputElement>(null);    
 

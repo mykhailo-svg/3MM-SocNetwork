@@ -5,7 +5,8 @@ import {configureStore} from '@reduxjs/toolkit';
 import profileReducer from "./profile-reducer";
 import messagesReducer from "./messages_reducer";
 import peopleReducer from "./people-reducer";
-import { reducer } from "./messages_slice.slice";
+import { reducer as contactsReducer } from "./slices/Messages/contacts_slice.slice";
+import { reducer  as chatReducer} from "./slices/Messages/chat_slice.slice";
 
 
 // let reducers = combineReducers({
@@ -16,7 +17,10 @@ import { reducer } from "./messages_slice.slice";
 // });
 
 
-let reducers = combineReducers(reducer);
+let reducers = combineReducers({
+    contacts_reducer:contactsReducer,
+    chat_reducer:chatReducer
+});
 
 
 

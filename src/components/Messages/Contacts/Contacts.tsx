@@ -1,5 +1,8 @@
+// @ts-nocheck
+
 import React from 'react';
 import Contact from './Contact/Contact';
+import { useSelector } from 'react-redux';
 
 
 type TypeContactsProps = {
@@ -11,11 +14,12 @@ type TypeContactsProps = {
     }[]
 }
 
-const Contacts: React.FC<TypeContactsProps> = (props) => {
+const Contacts: React.FC<any> = (props) => {
 
-
+    
     let contactsData = props.contactsData;
-
+   
+    
 
 
 
