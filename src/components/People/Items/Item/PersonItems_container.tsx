@@ -1,8 +1,9 @@
-
-import { connect } from "react-redux";
+//@ts-nocheck
+import { connect, useSelector } from "react-redux";
 import PersonItems from "./PersonItems";
 import { SetUSersAC, UnFollowUSerAC, followUSerAC } from "../../../../redux/people-reducer";
 import PersonItemsAPI from "./PersonItemsAPI";
+import React from "react";
 
 
 
@@ -35,7 +36,15 @@ let mapDispatchToProps = (dispatch: any) => {
 
 
 
-const PersonItems_container = connect(mapStateToProps, mapDispatchToProps)(PersonItemsAPI)
+const PersonItems_container = () =>{
+
+    
+
+
+    return(
+        <PersonItemsAPI />
+    )
+}
 
 
 

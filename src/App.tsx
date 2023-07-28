@@ -2,7 +2,7 @@
 
 
 
-
+//@ts-nocheck
 
 
 import './App.scss';
@@ -20,6 +20,7 @@ import Gallery from './components/Gallery/Gallery';
 import Analytics from './components/Analytics/Analytics';
 import Profile_container from './components/Profile/Profile_container';
 import React from 'react';
+import { useGetUsersQuery } from './redux/api/api';
 
 
 
@@ -29,7 +30,10 @@ import React from 'react';
 
 
 function App() {
+    const { data, error, isLoading } = useGetUsersQuery();
 
+    console.log(data);
+    
     return (
 
 
@@ -55,7 +59,7 @@ function App() {
 
 
                             <Route path='/Purchases' element={<Purchases />} />
-                            {/* <Route path='/People' element={<Returns />} /> */}
+                            <Route path='/People' element={<Returns />} />
                             <Route path='/Gallery' element={<Gallery />} />
 
                             <Route path='/Analytics' element={<Analytics />} />
