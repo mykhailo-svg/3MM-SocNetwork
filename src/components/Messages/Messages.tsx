@@ -2,11 +2,12 @@
 
 
 import React from "react";
-import ChatContainer from './Chat/ChatContainer';
 
-import ContactsContainer from './Contacts/ContactsContainer';
+
 
 import './Messages.scss';
+import Chat from "./Chat/Chat";
+import Contacts from "./Contacts/Contacts";
 
 
 
@@ -16,9 +17,9 @@ const Messages = () => {
         <section className='messages'>
 
             <div className="messages__container _container">
-                <ContactsContainer />
+                <Contacts />
                 <div className="messages__main">
-                    <ChatContainer />
+                    <Chat />
                 </div>
             </div>
         </section>

@@ -20,7 +20,7 @@ export const chatSlice = createSlice({
     initialState: initialState,
     reducers: {
         addMessage: (state, action) => {
-            debugger
+
             let newMessage = {
 
                 message: action.payload.messages_text,
@@ -45,7 +45,6 @@ export const chatSlice = createSlice({
 })
 
 
-    debugger
 
 
 

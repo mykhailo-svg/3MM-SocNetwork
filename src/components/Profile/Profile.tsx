@@ -24,7 +24,7 @@ type TypeProfileProps = {
 const Profile:React.FC<TypeProfileProps> = ({newPost}) => {
 
         
-    debugger;
+
 
     let postsTextArea:RefObject<HTMLTextAreaElement> = React.useRef(null);
 

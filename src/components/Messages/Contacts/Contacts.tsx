@@ -1,23 +1,12 @@
-// @ts-nocheck
-
 import React from 'react';
 import Contact from './Contact/Contact';
 import { useSelector } from 'react-redux';
 
 
-type TypeContactsProps = {
-
-    contactsData: {
-        online: string
-        name: string;
-
-    }[]
-}
-
-const Contacts: React.FC<any> = (props) => {
+const Contacts: React.FC= () => {
 
     
-    let contactsData = props.contactsData;
+    let contactsData = useSelector((state:any)  =>  state.contacts_reducer.Contacts);
    
     
 

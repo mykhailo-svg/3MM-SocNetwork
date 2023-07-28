@@ -127,7 +127,7 @@ let store = {
         //     this._state.Messages.New_messages.push(newMessage);
         //     console.log(this._state.Messages.New_messages);
         //     this._callSubscriber();
-        //     debugger;
+
         // }
         this._callSubscriber();
     }

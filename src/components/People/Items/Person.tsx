@@ -19,7 +19,7 @@ const Person: React.FC<TypePersonProps> = ({ name, occupation, id, follow, func 
         func(id)
     }
 
-    // debugger;
+
     return (
 
         <div className="people__item">

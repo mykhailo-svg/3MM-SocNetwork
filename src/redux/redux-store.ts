@@ -36,7 +36,9 @@ export const store = configureStore({
     getDefaultMiddleware().concat(api.middleware)
     
 })
-debugger;
+
+console.log(store.getState());
+
 
 
 

@@ -6,7 +6,7 @@ import {createApi, fetchBaseQuery} from '@reduxjs/toolkit/query/react'
 const base_URL = 'https://vrrr.vercel.app/';
 
 export const api = createApi({
-    tagTypes:['Users'],
+    // tagTypes:['Users'],
     reducerPath:'api',
     baseQuery:fetchBaseQuery({
         baseUrl:base_URL

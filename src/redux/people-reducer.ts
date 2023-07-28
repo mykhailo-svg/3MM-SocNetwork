@@ -91,7 +91,7 @@ export const SetUSersAC = (users: any): any => ({ type: "SET-USERS", users:users
 
 
 // export const addPostActionCreator = (postMessage:string):typeAddPostActionCreatorr => {
-//     debugger;
+
 //     return { type: 'ADD-POST', message: postMessage }
 // }
 

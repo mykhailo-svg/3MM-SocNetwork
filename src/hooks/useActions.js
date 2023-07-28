@@ -6,7 +6,7 @@ import { actions } from "../redux/slices/Messages/chat_slice.slice";
 const rootActions = {
     ...actions
 }
-debugger
+
 export const useActions = () => {
     const dispatch = useDispatch()
 

@@ -9,7 +9,7 @@ import { useSelector } from "react-redux";
 
 
 const PersonItemsAPI: React.FC = (props: any) => {
-    debugger;
+   
 
 
     const PeopleData = useSelector((state) => state.people_reducer.People)   
@@ -24,8 +24,7 @@ const PersonItemsAPI: React.FC = (props: any) => {
         // loader.classList.toggle('loader_active');
         // axios.get(`https://vrrr.vercel.app/update-users?step=${1}`)
         //     .then(response => {
-        //         debugger;
-          
+
         //         props.SetUsers(response.data)
         //         loader.classList.toggle('loader_active');
                
@@ -43,12 +42,12 @@ const PersonItemsAPI: React.FC = (props: any) => {
 
 
     let firstPeopleLoad = () => {
-        // debugger;
+
         // if (props.PeopleData.length == 2) {
 
         //     axios.get("http://localhost:3001/all-users")
         //         .then(response => {
-        //             debugger;
+
         //             props.SetUsers(response.data);
 
         //             console.log(response.data);
