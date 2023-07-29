@@ -1,4 +1,4 @@
-//@ts-nocheck
+
 import {combineReducers, legacy_createStore as createStore} from "redux";
 
 import {configureStore, getDefaultMiddleware} from '@reduxjs/toolkit';
@@ -23,6 +23,7 @@ let reducers = combineReducers({
     contacts_reducer:contactsReducer,
     chat_reducer:chatReducer,
     people_reducer: peopleReducer,
+    profile_reducer:profileReducer,
     [api.reducerPath]:api.reducer,
 });
 
@@ -42,7 +43,7 @@ console.log(store.getState());
 
 
 
-
+export type RootState = ReturnType<typeof store.getState>
 
   
 

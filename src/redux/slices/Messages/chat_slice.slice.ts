@@ -1,4 +1,4 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { PayloadAction, createSlice } from "@reduxjs/toolkit";
 
 
 
@@ -19,7 +19,7 @@ export const chatSlice = createSlice({
     name: 'chatSlice',
     initialState: initialState,
     reducers: {
-        addMessage: (state, action) => {
+        addMessage: (state, action:PayloadAction<any>) => {
 
             let newMessage = {
 

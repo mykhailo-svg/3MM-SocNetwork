@@ -1,12 +1,13 @@
 import React from 'react';
 import Contact from './Contact/Contact';
-import { useSelector } from 'react-redux';
+import { RootState } from '../../../redux/redux-store';
+import { useTypedSelector } from '../../../hooks/useTypedSelector';
 
 
 const Contacts: React.FC= () => {
 
     
-    let contactsData = useSelector((state:any)  =>  state.contacts_reducer.Contacts);
+    let contactsData = useTypedSelector((state)  =>  state.contacts_reducer.Contacts);
    
     
 

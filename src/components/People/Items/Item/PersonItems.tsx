@@ -5,6 +5,7 @@ import Person from "../Person";
 import axios from "axios";
 import loader from '../../../../img/people_loader.svg'
 import { useGetUsersQuery } from "../../../../redux/api/api";
+import { useDispatch } from "react-redux";
 type TypePersonItemsProps = {
 
 
@@ -28,9 +29,13 @@ type TypePersonItemsProps = {
 const PersonItems: React.FC = (props) => {
 
     const { isLoading, data, refetch } = useGetUsersQuery();
+    let dispatch  = useDispatch();
 
-
-
+    let update_users = () =>{
+           
+        
+        alert(data);
+    }
 
     // if (isLoading) {
     //     alert("loading")
@@ -85,7 +90,7 @@ const PersonItems: React.FC = (props) => {
 
 
             <div ref={loaderContainer} className="people__show-more">
-                <button onClick={updateUsers} className="people__show-more-button">Show more</button>
+                <button onClick={update_users} className="people__show-more-button">Show more</button>
                 <div className="people__loader-container"><img src={loader} alt="" className="people__loader" /></div>
             </div>
         </div>
