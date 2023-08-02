@@ -14,7 +14,7 @@ import Gallery from './components/Gallery/Gallery';
 import Analytics from './components/Analytics/Analytics';
 
 import React from 'react';
-import { useGetUsersQuery } from './redux/api/api';
+
 import Profile from './components/Profile/Profile';
 
 

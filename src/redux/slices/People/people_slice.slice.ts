@@ -1,8 +1,9 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
 
-export const fetchUsers = createAsyncThunk('all-users/fetchAllUsers', async () => {
-    const { data } = await axios.get('http://localhost:3001/all-users');
+export const fetchUsers = createAsyncThunk('all-users/fetchAllUsers', async (step:number) => {
+    const { data } = await axios.get(`http://localhost:3001/all-users?step=${step}`);
+    
     return data;
 });
 
@@ -12,6 +13,8 @@ const initialState = {
         { id: 1, name: "People Names", occupation: "some occup", follow: "Unfollow" },
         { id: 3, name: "People Name", occupation: "some occup", follow: "Follow" }
     ],
+    isLoading:false,
+    error:false,
     
 };
 
@@ -25,25 +28,30 @@ export const peopleSlice = createSlice({
     },
     extraReducers: builder =>{
 
-        builder.addCase(fetchUsers.pending, state=>{
+        builder.addCase(fetchUsers.pending, (state)=>{
             console.log("is loading")
+            state.isLoading = true;
         })
         
         
 
         builder.addCase(fetchUsers.fulfilled, (state,action)=>{
             console.log("got data")
-            alert(action.payload)
+            // alert(action.payload)
+            
             return(
                 {
                     ...state,
+                    isLoading:false,
+                    error:false,
                      People: [...state.People,...action.payload]
                 }
             )
         })
 
         builder.addCase(fetchUsers.rejected, state=>{
-            console.log("rejected")
+            state.error = true;
+            state.isLoading = false;
         })
     }
 });

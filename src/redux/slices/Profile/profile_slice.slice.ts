@@ -1,4 +1,8 @@
 
+import { PayloadAction, createSlice } from "@reduxjs/toolkit";
+
+
+
 
 let initialState = {
     Posts: [
@@ -28,48 +32,43 @@ let initialState = {
     ]
 }
 
-type TypeInitialState = typeof initialState;
 
-const profileReducer = (state:TypeInitialState = initialState, action:any):TypeInitialState => {
 
-    if (action.type === 'ADD-POST') {
-        let newPost = {
-            id: 5,
-            post_text: action.message,
-            likes: 0,
-            comments:1,
-            time:"12"
-        };
-        // console.log(this.profileData);
-
-        let state_copy = { ...state };
-
-        state_copy.Posts = [...state.Posts]
+export const profileSlice = createSlice({
+    name: 'chatSlice',
+    initialState: initialState,
+    reducers: {
+        addPost: (state, action:PayloadAction<any>) => {
+            let newPost = {
+                id: 5,
+                post_text: action.payload.message,
+                likes: 0,
+                comments:1,
+                time:"12"
+            };
+            // console.log(this.profileData);
+    
+            let state_copy = { ...state };
+    
+            state_copy.Posts = [...state.Posts]
+           
+            state_copy.Posts.unshift(newPost);
+            
+    
+            return state_copy
+    
        
-        state_copy.Posts.unshift(newPost);
-        
-
-        return state_copy
-
-
+            
+        }
     }
-    else {
-        return state;
-    }
+})
 
 
-}
 
 
-type  typeAddPostActionCreatorr = {
-    type:'ADD-POST'
-    message:string
-}
 
 
-export const addPostActionCreator = (postMessage:string):typeAddPostActionCreatorr => {
 
-    return { type: 'ADD-POST', message: postMessage }
-}
 
-export default profileReducer;
+export const {actions,reducer} = profileSlice
+

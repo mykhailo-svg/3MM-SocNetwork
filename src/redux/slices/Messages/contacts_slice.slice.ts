@@ -1,4 +1,4 @@
-//@ts-nocheck
+
 
 import { createSlice } from "@reduxjs/toolkit";
 
@@ -28,6 +28,7 @@ let initialState = {
 export const contactsSlice = createSlice({
     name: 'ContactsSlice',
     initialState: initialState,
+    reducers:{}
  
 })
 
