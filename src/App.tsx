@@ -1,10 +1,4 @@
 
-
-
-
-//@ts-nocheck
-
-
 import './App.scss';
 
 import Sidebar from './components/Nav/Nav';
@@ -18,9 +12,10 @@ import Purchases from './components/Purchases/Purchases';
 import Returns from './components/People/People';
 import Gallery from './components/Gallery/Gallery';
 import Analytics from './components/Analytics/Analytics';
-import Profile_container from './components/Profile/Profile_container';
+
 import React from 'react';
 import { useGetUsersQuery } from './redux/api/api';
+import Profile from './components/Profile/Profile';
 
 
 
@@ -30,9 +25,7 @@ import { useGetUsersQuery } from './redux/api/api';
 
 
 function App() {
-    const { data, error, isLoading } = useGetUsersQuery();
 
-    console.log(data);
     
     return (
 
@@ -53,7 +46,7 @@ function App() {
 
                         <Routes>
                             <Route path='/Home' element={<Home />} />
-                            {/* <Route path='/' element={<Profile_container />} /> */}
+                            <Route path='/' element={<Profile />} />
                             <Route path='/Messages' element={<Messages />} />
 
 

@@ -8,15 +8,15 @@ type TypePersonProps = {
     name: string
     occupation: string
     follow: string
-    func: (id:number) => void;
+    
 }
 
 
 
-const Person: React.FC<TypePersonProps> = ({ name, occupation, id, follow, func }) => {
+const Person: React.FC<TypePersonProps> = ({ name, occupation, id, follow}) => {
 
     let action = () => {
-        func(id)
+        
     }
 
 

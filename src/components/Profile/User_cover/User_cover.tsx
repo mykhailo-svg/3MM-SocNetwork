@@ -1,5 +1,4 @@
 
-import { type } from 'os';
 import './User_cover.scss';
 
 
@@ -11,7 +10,6 @@ import React from 'react';
 
 type typeUser_coverProps = {
 
-    dispatch: any,
 
     userCoverInfo: {
         Name: String,
@@ -21,7 +19,7 @@ type typeUser_coverProps = {
 
 }
 
-const User_cover: React.FC<typeUser_coverProps> = ({ dispatch, userCoverInfo }) => {
+const User_cover: React.FC<typeUser_coverProps> = ({userCoverInfo }) => {
 
 
 

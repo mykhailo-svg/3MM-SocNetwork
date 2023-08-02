@@ -1,4 +1,4 @@
-// import Post from './Posts/Post/Post';
+//@ts-nocheck
 import './Profile.scss';
 
 
@@ -6,33 +6,36 @@ import './Profile.scss';
 import React, { RefObject } from 'react';
 import postAvatar from '../../img/avatar.jpg'
 
-import User_coverContainer from './User_cover/User_coverContainer';
-import User_aboutContainer from './User_about/User_aboutContainer';
-import Profile_peopleContainer from './Profile_people/Profile_peopleContainer';
-import MyPosts_container from './Posts/MyPosts_container';
+import { useTypedSelector } from '../../hooks/useTypedSelector';
+import User_cover from './User_cover/User_cover';
+import User_about from './User_about/User_about';
+import MyPosts from './Posts/MyPosts';
+import ProfilePeople from './Profile_people/ProfilePeople';
 
 
 
 
 
-type TypeProfileProps = {
-    newPost:(postText:string)=>void
-}
 
 
 
-const Profile:React.FC<TypeProfileProps> = ({newPost}) => {
+const Profile: React.FC = (props) => {
 
-        
+    
+   
+    debugger
+    
+    let AboutMeData = useTypedSelector((state) => state.profile_reducer.User);
+    let MyPostsData = useTypedSelector((state) => state.profile_reducer.Posts)
+    let activePeopleData = useTypedSelector((state) => state.profile_reducer.Active)
 
-
-    let postsTextArea:RefObject<HTMLTextAreaElement> = React.useRef(null);
+    let postsTextArea: RefObject<HTMLTextAreaElement> = React.useRef(null);
 
 
     function addPost() {
-        // props.dispatch(addPostActionCreator(postsTextArea.current.value));
-        newPost(postsTextArea.current?.value ?? '');
-        postDialogWindow();
+        // // props.dispatch(addPostActionCreator(postsTextArea.current.value));
+        // newPost(postsTextArea.current?.value ?? '');
+        // postDialogWindow();
 
 
 
@@ -45,7 +48,7 @@ const Profile:React.FC<TypeProfileProps> = ({newPost}) => {
 
 
 
-    let new_post_dialog:RefObject<HTMLDivElement> = React.createRef();
+    let new_post_dialog: RefObject<HTMLDivElement> = React.createRef();
 
 
 
@@ -86,7 +89,7 @@ const Profile:React.FC<TypeProfileProps> = ({newPost}) => {
                                     </div>
                                 </div>
 
-                                <textarea ref={postsTextArea}  placeholder='What is in your mind?' className="newp__input" />
+                                <textarea ref={postsTextArea} placeholder='What is in your mind?' className="newp__input" />
                             </div>
                             <div className="newp__add">
                                 <div className="newp__add-title">Add something...</div>
@@ -102,7 +105,7 @@ const Profile:React.FC<TypeProfileProps> = ({newPost}) => {
                 </div>
 
 
-                <User_coverContainer />
+                <User_cover userCoverInfo={AboutMeData} />
 
 
                 <div className="cover__actions">
@@ -115,7 +118,7 @@ const Profile:React.FC<TypeProfileProps> = ({newPost}) => {
 
 
 
-                <User_aboutContainer />
+                <User_about userData={AboutMeData} />
 
 
 
@@ -132,14 +135,14 @@ const Profile:React.FC<TypeProfileProps> = ({newPost}) => {
 
                     </nav>
 
-                    <MyPosts_container />
+                    <MyPosts myPostsData={MyPostsData} />
 
                 </section>
 
 
 
 
-                <Profile_peopleContainer />
+                <ProfilePeople activePeopleData={activePeopleData} />
 
 
             </div>
