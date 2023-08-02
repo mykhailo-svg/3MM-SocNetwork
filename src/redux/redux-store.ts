@@ -9,6 +9,7 @@ import peopleReducer from "./people-reducer";
 import { reducer as contactsReducer } from "./slices/Messages/contacts_slice.slice";
 import { reducer  as chatReducer} from "./slices/Messages/chat_slice.slice";
 import { api } from "./api/api";
+import { reducer as people_reducer } from "./slices/Messages/people_slice.slice";
 
 
 // let reducers = combineReducers({
@@ -22,7 +23,7 @@ import { api } from "./api/api";
 let reducers = combineReducers({
     contacts_reducer:contactsReducer,
     chat_reducer:chatReducer,
-    people_reducer: peopleReducer,
+    people_reducer: people_reducer,
     profile_reducer:profileReducer,
     [api.reducerPath]:api.reducer,
 });
@@ -37,6 +38,8 @@ export const store = configureStore({
     getDefaultMiddleware().concat(api.middleware)
     
 })
+
+console.log(store.getState());
 
 
 

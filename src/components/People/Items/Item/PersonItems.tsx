@@ -4,12 +4,14 @@ import Person from "../Person";
 import loader from '../../../../img/people_loader.svg'
 
 import { useDispatch } from "react-redux";
+import { actions } from "../../../../redux/slices/Messages/people_slice.slice";
+import { useActions } from "../../../../hooks/useActions";
 
 
 
 const PersonItems: React.FC = () => {
-    const dispatch = useDispatch()
-
+    
+    const {fetchUsers} = useActions()
     const loaderContainer: any = useRef(null);
     let peopleItems = [];
     let peopleinfo:any = [];
@@ -18,8 +20,8 @@ const PersonItems: React.FC = () => {
    
     const getAllUsers = () =>{
         try{
-          
-            dispatch()
+        
+           fetchUsers()
         }
         catch(error){
             alert(error);
