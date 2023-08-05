@@ -51,10 +51,10 @@ const PersonItems: React.FC = () => {
     if (peopleInfo) {
         peopleItems = peopleInfo.map((item: any) => {
             if (item.follow == "Follow") {
-                return <Person key={item.id} id={item.id} occupation={item.occupation} name={item.name} follow={item.follow} />
+                return <Person key={item.id} _id={item._id} occupation={item.occupation} name={item.name} follow={item.follow} />
             }
             else {
-                return <Person key={item.id} id={item.id} occupation={item.occupation} name={item.name} follow={item.follow} />
+                return <Person key={item.id} _id={item._id} occupation={item.occupation} name={item.name} follow={item.follow} />
             }
         })
         usersListElement.current?.scrollTo(0, usersListElement.current.scrollHeight)

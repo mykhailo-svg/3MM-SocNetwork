@@ -1,13 +1,13 @@
 .newp {
     position: absolute;
-   
+
     width: 100vw;
     height: 100vh;
     top: 0;
     left: 0;
     z-index: 2;
 
-    
+
     display: flex;
     justify-content: center;
     align-items: center;
@@ -15,7 +15,7 @@
 
 
     pointer-events: none;
-    
+
 
     transition: opacity 0.6s ease;
 
@@ -23,30 +23,30 @@
 
 
 
-.new_post_dialog-show{
-  
+.new_post_dialog-show {
 
-   
+
+
 
     pointer-events: all;
 }
 
 
-.newp__zone{
+.newp__zone {
     position: absolute;
     background: #000;
     width: 100%;
     height: 100%;
     background: rgba(255, 255, 255, 0.70);
-    opacity:0;
+    opacity: 0;
     transition: opacity 0.6s ease;
-   
+
 }
 
 .newp__container {
     position: absolute;
 
-    transform: translate(0,-140%);
+    transform: translate(0, -140%);
     border-radius: 10px;
     background: #FDFDFD;
     box-shadow: 0px 4px 26px -3px rgba(0, 0, 0, 0.25);
@@ -59,45 +59,50 @@
     display: flex;
 
     flex-direction: column;
-    
-    
+
+
 }
 
 
-.new_post_dialog-show .newp__zone{opacity:1;}
-.new_post_dialog-show .newp__container{transform: translate(0);}
+.new_post_dialog-show .newp__zone {
+    opacity: 1;
+}
 
-.newp__content{
+.new_post_dialog-show .newp__container {
+    transform: translate(0);
+}
+
+.newp__content {
     flex: 1 1 auto;
     display: flex;
     flex-direction: column;
-    padding:22px;
-    padding-top:0px;
+    padding: 22px;
+    padding-top: 0px;
 }
 
-.newp__title{
+.newp__title {
     font-size: 20px;
     font-weight: 700;
     text-align: center;
-    padding-top:18px;
-    padding-bottom:15px;
+    padding-top: 18px;
+    padding-bottom: 15px;
     border-bottom: 1px solid #E4E4E8;
-    margin-bottom:36px;
-    
-
-
-    
-} 
+    margin-bottom: 36px;
 
 
 
-.newp__main{
+
+}
+
+
+
+.newp__main {
     flex: 1 1 auto;
     display: flex;
     flex-direction: column;
 
-    
-} 
+
+}
 
 .newp__person {
     display: flex;
@@ -105,53 +110,45 @@
     gap: 12px;
     color: #490057;
     font-size: 14px;
-  
+
     font-weight: 700;
-    
+
 }
 
-.newp__avatar {
-    
-    
-}
+.newp__avatar {}
 
 
-.newp__person-info {
-    
-}
+.newp__person-info {}
 
-.newp__person-name {
-    
-}
+.newp__person-name {}
 
-.newp__input , .newp__input::placeholder{
-    margin-top:25px;
+.newp__input,
+.newp__input::placeholder {
+    margin-top: 25px;
     color: #A303A0;
     font-size: 24px;
     font-weight: 700;
     width: 100%;
     flex: 1 1 auto;
     resize: none;
-    
+
 }
 
 .newp__add {
-    padding:17px 22px;
-        border-radius: 7px;
+    padding: 17px 22px;
+    border-radius: 7px;
     background: #F7F7F8;
 
-        color: #490057;
+    color: #490057;
     font-size: 14px;
 
     font-weight: 700;
-    
+
 }
 
-.newp__add-title {
-    
-}
+.newp__add-title {}
 
-.newp__publish{
+.newp__publish {
     border-radius: 10px;
     border: 1px solid #FDFDFD;
     background: #490057;
@@ -159,50 +156,30 @@
 
     color: #FBB03B;
     font-size: 16px;
-    margin-top:15px;
+    margin-top: 15px;
     font-weight: 700;
-    
-}
-
-.cover {
 
 }
 
-.cover__main {
+.cover {}
 
-}
+.cover__main {}
 
-.cover__avatar {
+.cover__avatar {}
 
-}
+.cover__info {}
 
-.cover__info {
+.cover__name {}
 
-}
+.cover__occupation {}
 
-.cover__name {
+.cover__actions {}
 
-}
+.cover__edit-cover {}
 
-.cover__occupation {
+._button {}
 
-}
-
-.cover__actions {
-
-}
-
-.cover__edit-cover {
-
-}
-
-._button {
-
-}
-
-.cover__edit-profile {
-
-}
+.cover__edit-profile {}
 
 .profile__main-row {
     display: flex;
@@ -212,36 +189,30 @@
 
 .about {
     background: #fff;
-    min-width:260px;
-    padding:26px;
+    min-width: 260px;
+    padding: 26px;
 
 }
 
-.about__title {
+.about__title {}
 
-}
+.about__list {}
 
-.about__list {
-
-}
-
-.about__item {
-
-}
+.about__item {}
 
 .posts__container {
     background: #fff;
     height: calc(100vh - 204px);
     display: flex;
     flex-direction: column;
-    border-radius:10px;
-   
+    border-radius: 10px;
+
 }
 
 .posts__nav {
     display: flex;
-    padding:40px 40px;
-    
+    padding: 40px 40px;
+
 
 }
 
@@ -252,23 +223,21 @@
 
 }
 
-.posts__nav-item {
-
-}
+.posts__nav-item {}
 
 .posts__nav-new-post {
     cursor: pointer;
 
 }
 
-.posts__nav-new-post:hover{
-    opacity:0.6;
+.posts__nav-new-post:hover {
+    opacity: 0.6;
 }
 
 .posts {
     overflow: auto;
     flex: 1 1 auto;
-    
+
 }
 
 .people {
@@ -276,72 +245,60 @@
 
 }
 
-.people__might-know {
+.people__might-know {}
 
-}
+.peope__active {}
 
-.peope__active {
+.people__active-item {}
 
-}
+.people__active-avatar {}
 
-.people__active-item {
+.people__active-info {}
 
-}
+.people__active-name {}
 
-.people__active-avatar {
+.people__active-state {}
 
-}
-
-.people__active-info {
-
-}
-
-.people__active-name {
-
-}
-
-.people__active-state {
-
-}
-
-.people__active-time {
-
-}
+.people__active-time {}
 
 
-.posts{
-    padding:0px 46px;
+.posts {
+    padding: 0px 46px;
 }
 
 .post {
-    &__item{
-        padding-bottom:18px;
-        padding-top:18px;
+    &__item {
+        padding-bottom: 18px;
+        padding-top: 18px;
 
-        border-bottom:#E6E6EA 1px solid;
+        border-bottom: #E6E6EA 1px solid;
     }
+
     &__person {
-   
+
         display: flex;
-        padding-bottom:14px;
+        padding-bottom: 14px;
         align-items: center;
         gap: 8px;
     }
 
     &__avatar {
-        border-radius:100%;
+        border-radius: 100%;
         overflow: hidden;
     }
 
     &__person-info {}
 
-    &__person-name, &__author , &__likes-count ,&__comments-count{
+    &__person-name,
+    &__author,
+    &__likes-count,
+    &__comments-count {
         color: #490057;
- 
+
         font-size: 16px;
 
         font-weight: 700;
-      
+
     }
 
     &__preson-time {}
@@ -349,7 +306,7 @@
     &__content {}
 
     &__cover {
-        max-width:100%;
+        max-width: 100%;
         height: 256px;
         margin-bottom: 21px;
     }
@@ -365,7 +322,7 @@
         align-items: center;
         display: flex;
         gap: 10px;
-        margin-bottom:15px;
+        margin-bottom: 15px;
     }
 
     &__author {
@@ -382,8 +339,9 @@
     &__info-item {
         display: flex;
         align-items: center;
-        gap: 5px;;    
-    }   
+        gap: 5px;
+        ;
+    }
 
     &__likes-count {}
 
@@ -401,22 +359,19 @@
     }
 
     &__active-avatar {
-         width:35px;
-            margin-right:6.2px;
+        width: 35px;
+        margin-right: 6.2px;
     }
 
     &__active-info {
-         flex: 1 1 auto;
+        flex: 1 1 auto;
     }
 
-    &__active-name {
-    }
+    &__active-name {}
 
-    &__active-state {
-    }
+    &__active-state {}
 
-    &__active-time {
-    }
+    &__active-time {}
 }
 
 
@@ -425,10 +380,11 @@
 .about {
     background: #fff;
     width: 100%;
-    max-width:260px;
-    min-width:260px;
-    padding:26px;
+    max-width: 260px;
+    min-width: 260px;
+    padding: 26px;
     border-radius: 10px;
+
     &__title {
         color: #A303A0;
         padding-bottom: 12px;
@@ -448,10 +404,82 @@
     }
 
     &__item {
-        padding:16px 0px;
+        padding: 16px 0px;
         display: flex;
-        gap:6px;
+        gap: 6px;
         align-items: center;
         border-bottom: #E6E6EA 1px solid;
+    }
+}
+
+
+
+.cover {
+    padding-bottom:40px;
+    margin-bottom: 30px;
+   overflow: hidden;
+    border-radius: 10px;
+    background: #fff;
+
+    &__main {}
+
+
+
+    &__background {
+        width: 100%;
+        height: 280px;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 0px 0px 10px 10px;
+        }
+    }
+
+
+    &__data {
+        color: #A303A0;
+        padding-top: 28px;
+        margin-left: -20px;
+    }
+
+
+
+
+    &__avatar {
+        margin-bottom: 48px;
+       
+        width: 180px;
+        height: 180px;
+
+        img {
+            object-fit: cover;
+            border: #fff 10px solid;
+            width: 100%;
+            height: 100%;
+            border-radius: 100%;
+        }
+    }
+
+    &__info {
+        display: flex;
+        margin-top: -147px;
+        align-items: flex-end;
+        padding-left: 57px;
+    }
+
+    &__name {
+
+        font-size: 30px;
+
+        font-weight: 700;
+
+    }
+
+    &__occupation {
+        font-weight: 400;
+        font-size: 16px;
+        margin-top:3px;
     }
 }

@@ -9,9 +9,9 @@ export const fetchUsers = createAsyncThunk('all-users/fetchAllUsers', async (ste
 
 const initialState = {
     People: [
-        { id: 0, name: "People Name", occupation: "some occup", follow: "Follow" },
-        { id: 1, name: "People Names", occupation: "some occup", follow: "Unfollow" },
-        { id: 3, name: "People Name", occupation: "some occup", follow: "Follow" }
+        { _id: 0, name: "People Name", occupation: "some occup", follow: "Follow" },
+        { _id: 1, name: "People Names", occupation: "some occup", follow: "Unfollow" },
+        { _id: 3, name: "People Name", occupation: "some occup", follow: "Follow" }
     ],
     isLoading:false,
     error:false,

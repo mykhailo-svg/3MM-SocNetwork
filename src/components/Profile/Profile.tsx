@@ -20,9 +20,7 @@ import ProfilePeople from './Profile_people/ProfilePeople';
 
 const Profile: React.FC = (props) => {
 
-    
-   
-    debugger
+
     
     let AboutMeData = useTypedSelector((state) => state.profile_reducer.User);
     let MyPostsData = useTypedSelector((state) => state.profile_reducer.Posts)

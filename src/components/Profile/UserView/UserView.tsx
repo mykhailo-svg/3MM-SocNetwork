@@ -11,6 +11,8 @@ import User_about from '../User_about/User_about';
 import MyPosts from '../Posts/MyPosts';
 import ProfilePeople from '../Profile_people/ProfilePeople';
 import { useTypedSelector } from '../../../hooks/useTypedSelector';
+import { useParams } from 'react-router-dom';
+import { useActions } from '../../../hooks/useActions';
 
 // import User_coverContainer from '../User_cover/User_coverContainer';
 // import User_aboutContainer from '../User_about/User_aboutContainer';
@@ -23,15 +25,15 @@ import { useTypedSelector } from '../../../hooks/useTypedSelector';
 
 const UserView:React.FC = () => {
 
+    let {fetchUserById} = useActions();   
 
-    let userInfo = {
-        Name:"view user",
-        Gender:"male",
-        Occupation:"view occupation"
+    
 
-    }
+    let userInfo = useTypedSelector((state)=>state.user_reducer.About)
     let userPosts = useTypedSelector((state)=> state.profile_reducer.Posts)
-
+    
+   fetchUserById(useParams().id);
+    
     return (
 
         <div className='_container'>

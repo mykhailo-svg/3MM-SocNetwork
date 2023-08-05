@@ -6,11 +6,12 @@ import { actions } from "../redux/slices/Messages/chat_slice.slice";
 
 
 import { actions as people_actions } from "../redux/slices/People/people_slice.slice";
+import { fetchUserById } from '../redux/slices/Profile/user_slice.slice';
 
 
 
 const rootActions = {
-    ...actions,fetchUsers
+    ...actions,fetchUsers,fetchUserById
 }
 
 export const useActions = () => {
