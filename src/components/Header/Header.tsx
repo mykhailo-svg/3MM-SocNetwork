@@ -13,7 +13,7 @@ const Header = () => {
             <div className="header__profile">
                 <div className="header__user-info">
                     <div className="header__user-name">Charles Deo</div>
-                    <NavLink to="/auth" className="header__log">Log out</NavLink>
+                    <NavLink to="auth/Signup" className="header__log">Log out</NavLink>
                 </div>
 
                 <div className="header__avatart">

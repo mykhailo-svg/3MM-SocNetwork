@@ -79,11 +79,13 @@ body {
   /* max-height:100vh; */
   color: #490057;
   font-family:Nunito;
- 
+  overflow-x: hidden;
   /* overflow: hidden; */
  
   
 }
+
+
 
 /* Styling the scrollbar track */
 ::-webkit-scrollbar {
@@ -127,6 +129,7 @@ a {
   max-width: 1174px;
   margin: 0 auto;
   padding-right:20px;
+  
 }
 
 
