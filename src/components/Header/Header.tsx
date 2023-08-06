@@ -2,6 +2,7 @@ import React from 'react';
 
 import avatar from '../../img/avatar.jpg';
 import './Header.scss';
+import { NavLink } from 'react-router-dom';
 const Header = () => {
     return (
         <header className="header _container">
@@ -12,7 +13,7 @@ const Header = () => {
             <div className="header__profile">
                 <div className="header__user-info">
                     <div className="header__user-name">Charles Deo</div>
-                    <button className="header__log">Log out</button>
+                    <NavLink to="/auth" className="header__log">Log out</NavLink>
                 </div>
 
                 <div className="header__avatart">
