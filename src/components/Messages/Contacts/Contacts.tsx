@@ -11,11 +11,11 @@ const Contacts: React.FC= () => {
    
     
 
-
+    
 
 
     let ContactElements = contactsData.map((contact: any) =>
-        <Contact online={contact.online} name={contact.name} />
+        <Contact  online={contact.online} name={contact.name} />
     );
 
     return (

@@ -13,8 +13,7 @@ import { NavLink } from 'react-router-dom';
 const Signup = () => {
     return (
 
-        <section className="signup">
-            <img className='auth-bg' src={background} alt="" />
+      
             <div className="signup__container">
                 <div className='signup__content'>
                     <h1 className="signup__title">Sign Up</h1>
@@ -81,7 +80,7 @@ const Signup = () => {
 
 
             </div>
-        </section>
+    
 
 
     )
