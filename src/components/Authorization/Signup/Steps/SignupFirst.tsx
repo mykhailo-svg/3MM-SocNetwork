@@ -1,21 +1,21 @@
 import React from 'react';
 
 
-import nextStepIcon from '../../img/next-sgup.svg'
-import googleIcon from '../../img/google-log.svg'
-import facebookIcon from '../../img/facebook-log.svg'
+import nextStepIcon from '../../../../img/next-sgup.svg'
+import googleIcon from '../../../../img/google-log.svg'
+import facebookIcon from '../../../../img/facebook-log.svg'
 
-import background from '../../img/auth-bg.svg'
+import background from '../../../../img/auth-bg.svg'
 
 import { NavLink } from 'react-router-dom';
 
 
-const Signup = () => {
+const SignupFirst = () => {
     return (
 
       
-            <div className="signup__container">
-                <div className='signup__content'>
+
+                <>
                     <h1 className="signup__title">Sign Up</h1>
                     <div className="signup__with">
                         <div className="signup__with-title">
@@ -72,17 +72,14 @@ const Signup = () => {
                         <img src={nextStepIcon} alt="" />
                     </button>
 
-                    <div className="signup__already">
-                        Already have an account ?    <NavLink to='/'><span>Sign in</span></NavLink>
-                    </div>
+                 
 
-                </div>
+                </>
 
 
-            </div>
-    
+   
 
 
     )
 }
-export default Signup;
+export default SignupFirst;

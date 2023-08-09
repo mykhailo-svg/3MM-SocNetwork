@@ -16,7 +16,7 @@ import UserView from './components/Profile/UserView/UserView';
 import Profile from './components/Profile/Profile';
 import AppMain from './components-main/Main';
 import Log from './components-main/Authorization';
-import Signup from './components/Authorization/Signup';
+import Signup from './components/Authorization/Signup/Signup';
 import Authorization from './components/Authorization/Login';
 
 
