@@ -6,6 +6,7 @@ import birthIcon from '../../../img/birth-ic.svg';
 import placeIcon from '../../../img/place-ic.svg';
 import mailIcon from '../../../img/Mail-ic.svg';
 import phoneIcon from '../../../img/phone-ic.svg';
+import { Skeleton } from '@mui/material';
 
 type typeUserAboutProps = {
 
@@ -23,8 +24,7 @@ type typeUserAboutProps = {
 
 const User_about: React.FC<typeUserAboutProps> = ({ userData }) => {
 
-    let userInfo = userData;
-
+    let loading = true;
     return (
 
         <section className="about">
@@ -32,11 +32,15 @@ const User_about: React.FC<typeUserAboutProps> = ({ userData }) => {
             {
 
                 <ul className="about__list">
-                    {<li className="about__item"> <img src={prsonIcon} alt="" />{userInfo.Gender}</li>}
-                    {userInfo.Born ? <li className="about__item"> <img src={birthIcon} alt="" />{userInfo.Born}</li> : <></>}
-                    {userInfo.Place ? <li className="about__item"> <img src={placeIcon} alt="" />{userInfo.Place}</li> : <></>}
-                    {<li className="about__item"> <img src={mailIcon} alt="" />{userInfo.Mail}</li>}
-                    {userInfo.Phone ? <li className="about__item"> <img src={phoneIcon} alt="" />{userInfo.Phone}</li> : <></>}
+
+                    {<li className="about__item"> <img src={prsonIcon} alt="" />
+                        {loading ? <Skeleton variant='rectangular' height='1em' sx={{ width: '100%' }} />
+                            : userData.Gender}
+                    </li>}
+                    {userData.Born ? <li className="about__item"> <img src={birthIcon} alt="" />{loading ? <Skeleton variant='rectangular' height='1em' sx={{ width: '100%' }} /> : userData.Born}</li> : <></>}
+                    {userData.Place ? <li className="about__item"> <img src={placeIcon} alt="" />{loading ? <Skeleton variant='rectangular' height='1em' sx={{ width: '100%' }} /> : userData.Place}</li> : <></>}
+                    {<li className="about__item"> <img src={mailIcon} alt="" />{loading ? <Skeleton variant='rectangular' height='1em' sx={{ width: '100%' }} /> : userData.Mail}</li>}
+                    {userData.Phone ? <li className="about__item"> <img src={phoneIcon} alt="" />{loading ? <Skeleton variant='rectangular' height='1em' sx={{ width: '100%' }} /> : userData.Phone}</li> : <></>}
 
                 </ul>
             }
