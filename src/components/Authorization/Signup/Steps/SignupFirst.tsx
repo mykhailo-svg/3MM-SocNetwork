@@ -16,7 +16,8 @@ const SignupFirst = () => {
       
 
                 <>
-                    <h1 className="signup__title">Sign Up</h1>
+                
+                   
                     <div className="signup__with">
                         <div className="signup__with-title">
                             <div className='signup__with-title-decor'></div>Sign up with
@@ -68,9 +69,7 @@ const SignupFirst = () => {
                     </div>
 
 
-                    <button className="signup__next-button">
-                        <img src={nextStepIcon} alt="" />
-                    </button>
+                    
 
                  
 
