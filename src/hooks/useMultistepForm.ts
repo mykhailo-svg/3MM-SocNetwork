@@ -11,6 +11,7 @@ export function useMultistepForm(steps: ReactElement[]) {
                 return i;
             }
             return i + 1
+           
         });
     }
     function previoustStep() {
