@@ -1,5 +1,5 @@
 
-import React, { useEffect, useRef } from "react";
+import React, { ReactNode, useEffect, useRef } from "react";
 import Person from "../Person";
 
 import errorSmile from '../../../../img/error-smile.svg';
@@ -8,6 +8,13 @@ import { useTypedSelector } from "../../../../hooks/useTypedSelector";
 
 import { CircularProgress } from "@mui/material";
 
+
+interface interfacePerson {
+    _id: number
+    name: string
+    occupation: string
+    follow: string
+}
 
 const PersonItems: React.FC = () => {
 
@@ -25,8 +32,8 @@ const PersonItems: React.FC = () => {
 
     const usersListElement = useRef<null | HTMLDivElement>(null);
 
-    let peopleItems: any = [];
-    // let peopleinfo:any = [];
+    let peopleItems: ReactNode = [];
+
 
 
 
@@ -45,16 +52,16 @@ const PersonItems: React.FC = () => {
 
     }
 
-    console.log("hi");
+ 
 
 
     if (peopleInfo) {
-        peopleItems = peopleInfo.map((item: any) => {
+        peopleItems = peopleInfo.map((item: interfacePerson) => {
             if (item.follow == "Follow") {
-                return <Person key={item.id} _id={item._id} occupation={item.occupation} name={item.name} follow={item.follow} />
+                return <Person key={item._id} _id={item._id} occupation={item.occupation} name={item.name} follow={item.follow} />
             }
             else {
-                return <Person key={item.id} _id={item._id} occupation={item.occupation} name={item.name} follow={item.follow} />
+                return <Person key={item._id} _id={item._id} occupation={item.occupation} name={item.name} follow={item.follow} />
             }
         })
         usersListElement.current?.scrollTo(0, usersListElement.current.scrollHeight)

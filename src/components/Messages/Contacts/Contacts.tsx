@@ -4,6 +4,12 @@ import { RootState } from '../../../redux/redux-store';
 import { useTypedSelector } from '../../../hooks/useTypedSelector';
 
 
+interface InterfaceContact {
+    id: number
+    name: string
+    online: string
+}
+
 const Contacts: React.FC= () => {
 
     
@@ -14,7 +20,7 @@ const Contacts: React.FC= () => {
     
 
 
-    let ContactElements = contactsData.map((contact: any) =>
+    let ContactElements = contactsData.map((contact: InterfaceContact) =>
         <Contact  online={contact.online} name={contact.name} />
     );
 

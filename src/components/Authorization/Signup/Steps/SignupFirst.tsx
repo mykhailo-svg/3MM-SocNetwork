@@ -10,7 +10,16 @@ import background from '../../../../img/auth-bg.svg'
 import { NavLink } from 'react-router-dom';
 
 
-const SignupFirst = () => {
+type userData = {
+    Name: string
+    Email: string
+}
+type TypeFirstFormProps = userData & {
+
+    updateForm: (fields: Partial<userData>) => void
+}
+
+const SignupFirst: React.FC<TypeFirstFormProps> = ({ Name, Email, updateForm }) => {
     return (
 
 
@@ -49,11 +58,13 @@ const SignupFirst = () => {
                 <div className='signup__fields-row'>
                     <div className="signup__mainfields-item">
                         <div className="signup__label">Name</div>
-                        <input type="text" className="signup__field" placeholder='Mykhailo Vyzdryk' />
+                        <input type="text" className="signup__field" placeholder='Mykhailo Vyzdryk' 
+                        onChange={e => updateForm({Name: e.target.value})} value={Name} />
                     </div>
                     <div className="signup__mainfields-item">
                         <div className="signup__label">Email</div>
-                        <input type="text" className="signup__field" placeholder='wyzdryk@gmail.com' />
+                        <input type="text" className="signup__field" placeholder='wyzdryk@gmail.com'  
+                        onChange={e => updateForm({Email: e.target.value})} value={Email} />
                     </div>
                 </div>
                 <div className="signup__agree-row">

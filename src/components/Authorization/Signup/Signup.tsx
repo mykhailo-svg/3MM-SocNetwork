@@ -1,4 +1,5 @@
-import React from 'react';
+
+import React, { useState } from 'react';
 
 
 import nextStepIcon from '../../../img/next-sgup.svg';
@@ -12,11 +13,40 @@ import { useMultistepForm } from '../../../hooks/useMultistepForm';
 import SignupSecond from './Steps/SignupSecond';
 import SignupThird from './Steps/SignupThird';
 
+type TypeUserForm = {
+    Name: string
+    Email: string
+    Year: string
+    Month: string
+    Day: string
+    Gender: string
+    Password: string
+}
+
+const initialData: TypeUserForm = {
+    Name: '',
+    Email: '',
+    Year: '',
+    Month: '',
+    Day: '',
+    Gender: '',
+    Password: 'sd',
+}
 
 const Signup = () => {
+    const [data, setData] = useState(initialData);
+
+    function updateFields(fields: Partial<TypeUserForm>) {
+        setData(prev => {
+            return { ...prev, ...fields }
+        });
+        console.log(data);
+        
+
+    }
     const { step, steps, currentStepIndex, nextStep, previoustStep, isFirst, isLast } = useMultistepForm([
-        <SignupFirst />,
-        <SignupSecond />,
+        <SignupFirst {...data} updateForm={updateFields} />,
+        <SignupSecond {...data} updateForm={updateFields} />,
         <SignupThird />
 
     ]);
@@ -28,6 +58,9 @@ const Signup = () => {
     const previousStepClick = () => {
         previoustStep();
     }
+
+
+
 
     return (
 
@@ -65,23 +98,26 @@ const Signup = () => {
                 </div>
                 {step}
                 <div className="signup__step-action-buttons">
-                {!isLast() ? (
-                    <button className="signup__next-button" onClick={nextStepClick}>
-                        <img src={nextStepIcon} alt="" />
+                    {!isLast() ? (
+                        <button className="signup__next-button" onClick={nextStepClick}>
+                            <img src={nextStepIcon} alt="" />
+                        </button>
+                    ) : (
+                        <button className="signup__next-button" onClick={()=>{
+                            nextStepClick();console.log(data);
+                            
+                        }}>
+                            <img src={finishpIcon} alt="" />
+                        </button>)
+                    }
+
+                    <button className="signup__step-skip">
+                        Skip
+
                     </button>
-                ) : (
-                    <button className="signup__next-button" onClick={nextStepClick}>
-                        <img src={finishpIcon} alt="" />
-                    </button>)
-                }
-
-                <button className="signup__step-skip">
-                    Skip
-
-                </button>
+                </div>
             </div>
-            </div>
-            
+
 
 
             <div className="signup__already">

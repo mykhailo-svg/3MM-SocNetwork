@@ -2,6 +2,14 @@ import React from 'react';
 
 import emptyPhoto from '../../../../img/empty_avatar.svg';
 import Button from '@mui/material/Button';
+
+
+
+
+
+
+
+
 const SignupThird = () => {
 
 
