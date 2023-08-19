@@ -18,6 +18,7 @@ import AppMain from './components-main/Main';
 import Log from './components-main/Authorization';
 import Signup from './components/Authorization/Signup/Signup';
 import Authorization from './components/Authorization/Login';
+import { useActions } from './hooks/useActions';
 
 
 
@@ -27,7 +28,7 @@ import Authorization from './components/Authorization/Login';
 
 
 function App() {
-
+    
 
     return (
 

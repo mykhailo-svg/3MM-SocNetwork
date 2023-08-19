@@ -26,7 +26,7 @@ const Chat: React.FC = (props) => {
     let newMessage = () => {
 
         // newMessage(messageInput.current?.value);
-        addMessage({ type: "NEW-MESSAGE", messages_text: messageInput.current?.value })
+        addMessage({ type: "NEW-MESSAGE", messages_text: messageInput.current?.value})
     }
 
     return (

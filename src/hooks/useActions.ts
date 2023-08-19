@@ -7,11 +7,12 @@ import { actions } from "../redux/slices/Messages/chat_slice.slice";
 
 import { actions as people_actions } from "../redux/slices/People/people_slice.slice";
 import { fetchUserById } from '../redux/slices/Profile/user_slice.slice';
+import { checkEmailDublicate } from '../redux/slices/Authorization/signup_slice.slice';
 
 
 
 const rootActions = {
-    ...actions,fetchUsers,fetchUserById
+    ...actions,fetchUsers,fetchUserById,checkEmailDublicate
 }
 
 export const useActions = () => {
