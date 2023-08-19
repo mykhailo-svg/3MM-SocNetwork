@@ -1,0 +1,52 @@
+.settings{
+    padding:26px;
+    background: #ffff;
+}
+.theme {
+    cursor: pointer;
+    display: inline-block;
+    
+    
+    background: #F7F7F8;
+    border-radius: 64px;
+    &__container {
+
+       padding:10px;
+       min-width:164px;
+    }
+
+    &__toggler {
+        overflow: hidden;
+        background: #E7E7E7;
+        width: 50px;
+        height: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 100%;
+        position: relative;
+    }
+
+    &__icon {
+        position: absolute;
+        transition: all ease 0.4s;
+
+        &.theme__icon-active{
+            transition: all ease 0.8s;
+            transform: translate(0,0);
+        }
+       
+    }
+
+
+    &__light-icon {
+        transform: translate(0%,-150%);
+        
+    }
+
+    &__dark-icon {
+
+        transform: translate(0%,150%);
+        
+    }
+}
