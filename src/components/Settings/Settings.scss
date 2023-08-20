@@ -1,21 +1,39 @@
-.settings{
-    padding:26px;
+.settings {
+    padding: 26px;
     background: #ffff;
 }
+
 .theme {
     cursor: pointer;
     display: inline-block;
-    
-    
+    display: flex;
+    transition: all ease 0.4s;
+
+    &.theme__dark {
+        background: #5E5E74;
+
+        .theme__toggler {
+            background: #302C4A;
+            transform: translate(187%, 0);
+        }
+    }
+
+
     background: #F7F7F8;
     border-radius: 64px;
-    &__container {
 
-       padding:10px;
-       min-width:164px;
+
+    padding:10px;
+    width:164px;
+
+    &__container {
+        position: relative;
     }
 
     &__toggler {
+        position: absolute;
+
+        transition: all ease 0.4s;
         overflow: hidden;
         background: #E7E7E7;
         width: 50px;
@@ -31,22 +49,22 @@
         position: absolute;
         transition: all ease 0.4s;
 
-        &.theme__icon-active{
-            transition: all ease 0.8s;
-            transform: translate(0,0);
+        &.theme__icon-active {
+            transition: all ease 0.6s;
+            transform: translate(0, 0);
         }
-       
+
     }
 
 
     &__light-icon {
-        transform: translate(0%,-150%);
-        
+        transform: translate(0%, -150%);
+
     }
 
     &__dark-icon {
 
-        transform: translate(0%,150%);
-        
+        transform: translate(0%, 150%);
+
     }
 }

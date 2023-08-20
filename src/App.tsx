@@ -17,6 +17,8 @@ import React from 'react';
 import UserView from './components/Profile/UserView/UserView';
 
 import Profile from './components/Profile/Profile';
+import { useTypedSelector } from './hooks/useTypedSelector';
+
 
 
 
@@ -26,13 +28,13 @@ import Profile from './components/Profile/Profile';
 
 
 function App() {
-
-    
+    const isDark = useTypedSelector((state)=> state.settings_reducer.themeIsDark)
     return (
 
-
+        
         <BrowserRouter>
-            <div className='wrapper'>
+
+            <div className={"wrapper" + (isDark ? " body-dark" : "")} >
 
                 <div className="content">
 
@@ -46,7 +48,7 @@ function App() {
                         <Header />
 
                         <Routes>
-                         
+
                             <Route path='/Home' element={<Home />} />
                             <Route path='/' element={<Profile />} />
                             <Route path='/User/:id' element={<UserView />} />

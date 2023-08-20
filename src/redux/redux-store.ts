@@ -11,6 +11,8 @@ import { reducer  as chatReducer} from "./slices/Messages/chat_slice.slice";
 import { reducer as people_reducer } from "./slices/People/people_slice.slice";
 import { reducer as profile_reducer } from "./slices/Profile/profile_slice.slice";
 import { reducer as user_reducer } from "./slices/Profile/user_slice.slice";
+import { reducer as settings_reducer} from "./slices/Settings/settings_slice.slice";
+
 
 let reducers = combineReducers({
     contacts_reducer:contactsReducer,
@@ -18,6 +20,7 @@ let reducers = combineReducers({
     people_reducer: people_reducer,
     profile_reducer:profile_reducer,
     user_reducer:user_reducer,
+    settings_reducer:settings_reducer,
  
 });
 
