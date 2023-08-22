@@ -187,21 +187,12 @@
 
 }
 
-.about {
-    background: #fff;
-    min-width: 260px;
-    padding: 26px;
 
-}
 
-.about__title {}
 
-.about__list {}
-
-.about__item {}
 
 .posts__container {
-    background: #fff;
+   
     height: calc(100vh - 204px);
     display: flex;
     flex-direction: column;
@@ -245,21 +236,6 @@
 
 }
 
-.people__might-know {}
-
-.peope__active {}
-
-.people__active-item {}
-
-.people__active-avatar {}
-
-.people__active-info {}
-
-.people__active-name {}
-
-.people__active-state {}
-
-.people__active-time {}
 
 
 .posts {
@@ -293,7 +269,7 @@
     &__author,
     &__likes-count,
     &__comments-count {
-        color: #490057;
+       
 
         font-size: 16px;
 
@@ -378,7 +354,7 @@
 
 
 .about {
-    background: #fff;
+
     width: 100%;
     max-width: 260px;
     min-width: 260px;
@@ -419,7 +395,7 @@
     margin-bottom: 30px;
    overflow: hidden;
     border-radius: 10px;
-    background: #fff;
+    // background: #fff;
 
     &__main {}
 

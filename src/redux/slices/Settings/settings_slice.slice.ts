@@ -1,11 +1,12 @@
 
 import { PayloadAction, createSlice } from "@reduxjs/toolkit";
+import { getThemeLS } from "../../../utils/getThemeLS";
 
 
 
 
 let initialState = {
-    themeIsDark:false,
+    themeIsDark:getThemeLS(),
 }
 type TypeSettingInitialState = typeof initialState;
 

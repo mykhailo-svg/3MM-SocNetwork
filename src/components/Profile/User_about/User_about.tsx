@@ -27,7 +27,7 @@ const User_about: React.FC<typeUserAboutProps> = ({ userData }) => {
 
     return (
 
-        <section className="about">
+        <section className="about dark-block">
             <div className="about__title">About</div>
             {
 

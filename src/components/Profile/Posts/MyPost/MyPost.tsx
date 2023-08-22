@@ -20,7 +20,7 @@ const MyPost:React.FC<TypeMyPostProps> = ({time,post_text,likes,comments}) => {
 
                     <img src={postAvatar} alt="" />
                 </div>
-                <div className="post__person-info">
+                <div className="post__person-info ligth_pink">
                     <div className="post__person-name">Charles Deo</div>
                     <div className="post__preson-time">{time}</div>
                 </div>
@@ -39,11 +39,11 @@ const MyPost:React.FC<TypeMyPostProps> = ({time,post_text,likes,comments}) => {
 
 
             <div className='post__data'>
-                <div className="post__info-item post__likes-count">
+                <div className="post__info-item post__likes-count ligth_pink">
                     <img src={like_icon} alt="" />
                     {likes}
                 </div>
-                <div className="post__info-item post__comments-count">
+                <div className="post__info-item post__comments-count ligth_pink">
                     <img src={comment_icon} alt="" />
                     {comments}
                 </div>

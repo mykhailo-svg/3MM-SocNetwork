@@ -55,7 +55,7 @@ const UserView:React.FC = () => {
 
 
 
-                <section className="posts__container">
+                <section className="posts__container dark-block">
                     
 
                     <MyPosts  myPostsData={userPosts} />

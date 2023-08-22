@@ -61,7 +61,7 @@ const Profile: React.FC = (props) => {
 
 
 
-            <section className="cover">
+            <section className="cover dark-block">
 
                 {/* <New_post newPost={props.newPost} dispatch={props.dispatch} dialog_window={postDialogWindow} reff={new_post_dialog} /> */}
 
@@ -119,7 +119,7 @@ const Profile: React.FC = (props) => {
 
 
 
-                <section className="posts__container">
+                <section className="posts__container dark-block">
                     <nav className="posts__nav">
                         <ul className="posts__nav-list">
                             <li className="posts__nav-item">Followers</li>

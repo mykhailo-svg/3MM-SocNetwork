@@ -11,9 +11,18 @@ const Theme = () => {
     let isDark = useTypedSelector((state) => state.settings_reducer.themeIsDark);
 
     const { toggleTheme } = useActions();
+    
+    const saveTheme = () =>{
+        toggleTheme();
+        let lsTheme = JSON.stringify(!isDark)
+        debugger
+        
+        localStorage.setItem("theme",lsTheme)
+        debugger
+    }
 
     return (
-        <div className={isDark ? "theme theme__dark" : "theme"} onClick={() => toggleTheme()}>
+        <div className={isDark ? "theme theme__dark" : "theme"} onClick={saveTheme}>
             <div className="theme__container">
                 <div className="theme__toggler">
 

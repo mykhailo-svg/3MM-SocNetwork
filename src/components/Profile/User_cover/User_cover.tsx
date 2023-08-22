@@ -1,6 +1,4 @@
 
-import { useTypedSelector } from '../../../hooks/useTypedSelector';
-import './User_cover.scss';
 
 
 
