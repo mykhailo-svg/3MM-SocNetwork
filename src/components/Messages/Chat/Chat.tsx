@@ -4,7 +4,10 @@ import Message from '../Message/Message';
 import { useActions } from '../../../hooks/useActions';
 import { useTypedSelector } from '../../../hooks/useTypedSelector';
 
+type TypeChatElement = {
 
+    message:string
+}
 
 
 const Chat: React.FC = (props) => {
@@ -15,7 +18,7 @@ const Chat: React.FC = (props) => {
 
     let chatInfo = useTypedSelector((state) => state.chat_reducer.New_messages);
 
-    let chatElems = chatInfo.map((chatElement: any) => <Message message={chatElement.message} />)
+    let chatElems = chatInfo.map((chatElement: TypeChatElement) => <Message message={chatElement.message} />)
 
     const { addMessage } = useActions()
 
@@ -23,7 +26,7 @@ const Chat: React.FC = (props) => {
     let newMessage = () => {
 
         // newMessage(messageInput.current?.value);
-        addMessage({ type: "NEW-MESSAGE", messages_text: messageInput.current?.value })
+        addMessage({ type: "NEW-MESSAGE", messages_text: messageInput.current?.value})
     }
 
     return (

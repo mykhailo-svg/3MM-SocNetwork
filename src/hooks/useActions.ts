@@ -9,6 +9,7 @@ import * as themeActions from "../redux/slices/Settings/settings_slice.slice";
 
 import { actions as people_actions } from "../redux/slices/People/people_slice.slice";
 import { fetchUserById } from '../redux/slices/Profile/user_slice.slice';
+import { checkEmailDublicate } from '../redux/slices/Authorization/signup_slice.slice';
 
 
 

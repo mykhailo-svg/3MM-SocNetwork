@@ -1,64 +1,79 @@
 
-import React, { useCallback, useEffect, useRef } from "react";
+import React, { ReactNode, useEffect, useRef } from "react";
 import Person from "../Person";
-import loader from '../../../../img/people_loader.svg'
+
 import errorSmile from '../../../../img/error-smile.svg';
 import { useActions } from "../../../../hooks/useActions";
 import { useTypedSelector } from "../../../../hooks/useTypedSelector";
-import { log } from "console";
+
+import { CircularProgress } from "@mui/material";
 
 
+interface interfacePerson {
+    _id: number
+    name: string
+    occupation: string
+    follow: string
+}
 
 const PersonItems: React.FC = () => {
+
+
+
+
 
     const { fetchUsers } = useActions();
 
     let { isLoading, People, error } = useTypedSelector((state) => state.people_reducer);
 
+
     let peopleInfo = People;
 
 
     const usersListElement = useRef<null | HTMLDivElement>(null);
-    const loaderContainer: any = useRef(null);
-    let peopleItems: any = [];
-    // let peopleinfo:any = [];
+
+    let peopleItems: ReactNode = [];
 
 
 
-    const getAllUsers = async() => {
+
+    const getAllUsers = async () => {
 
         try {
 
-           fetchUsers(peopleInfo.length)
-           
+            fetchUsers(peopleInfo.length)
+
         }
         catch (error) {
             alert(error);
 
 
         }
-        finally{
-             
-              
-                usersListElement.current?.scrollTo(0, usersListElement.current.scrollHeight);
-           
-        }
+
     }
 
-   console.log("hi");
-    
+ 
+
 
     if (peopleInfo) {
-        peopleItems = peopleInfo.map((item: any) => {
+        peopleItems = peopleInfo.map((item: interfacePerson) => {
             if (item.follow == "Follow") {
-                return <Person key={item.id} _id={item._id} occupation={item.occupation} name={item.name} follow={item.follow} />
+                return <Person key={item._id} _id={item._id} occupation={item.occupation} name={item.name} follow={item.follow} />
             }
             else {
-                return <Person key={item.id} _id={item._id} occupation={item.occupation} name={item.name} follow={item.follow} />
+                return <Person key={item._id} _id={item._id} occupation={item.occupation} name={item.name} follow={item.follow} />
             }
         })
         usersListElement.current?.scrollTo(0, usersListElement.current.scrollHeight)
     }
+
+    useEffect(() => {
+        if (!isLoading) {
+
+            usersListElement.current?.scrollTo(0, usersListElement.current.scrollHeight);
+
+        }
+    }, [isLoading]);
 
 
 
@@ -66,15 +81,11 @@ const PersonItems: React.FC = () => {
 
 
     return (
-        
+
 
         <div className="people__discover">
             {
-                !isLoading ?  usersListElement.current?.scrollTo(0, usersListElement.current.scrollHeight) 
-                 : loaderContainer.current.classList.toggle("loader_active")
-            }
-            {
-                
+
 
                 !error ? (
                     <div className="people__list" ref={usersListElement}>
@@ -92,9 +103,9 @@ const PersonItems: React.FC = () => {
 
 
 
-            <div ref={loaderContainer} className={isLoading ? "people__show-more loader_active" : "people__show-more"} >
-                <button onClick={getAllUsers} className="people__show-more-button">Show more</button>
-                <div className="people__loader-container"><img src={loader} alt="" className="people__loader" /></div>
+            <div className={isLoading ? "people__show-more loader_active" : "people__show-more"} >
+                <button onClick={() => { getAllUsers() }} className="people__show-more-button">Show more</button>
+                <div className="people__loader-container">{isLoading && (<CircularProgress thickness={5} color="inherit" sx={{ color: '#DBCCDD' }} />)} </div>
             </div>
         </div>
 

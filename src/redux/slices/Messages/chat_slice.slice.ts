@@ -13,7 +13,9 @@ let initialState = {
 
 }
 
-
+interface InterfaceMessage {
+    messages_text:string
+}
 
 export const chatSlice = createSlice({
     name: 'chatSlice',

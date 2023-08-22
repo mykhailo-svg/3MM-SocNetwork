@@ -12,6 +12,7 @@ import { reducer as people_reducer } from "./slices/People/people_slice.slice";
 import { reducer as profile_reducer } from "./slices/Profile/profile_slice.slice";
 import { reducer as user_reducer } from "./slices/Profile/user_slice.slice";
 import { reducer as settings_reducer} from "./slices/Settings/settings_slice.slice";
+import { reducer as signup_reducer} from "./slices/Authorization/signup_slice.slice";
 
 
 let reducers = combineReducers({
@@ -21,6 +22,7 @@ let reducers = combineReducers({
     profile_reducer:profile_reducer,
     user_reducer:user_reducer,
     settings_reducer:settings_reducer,
+    signup_reducer:signup_reducer,
  
 });
 

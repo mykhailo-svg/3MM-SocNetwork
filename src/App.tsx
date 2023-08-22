@@ -1,8 +1,5 @@
-
 import './App.scss';
 
-import Sidebar from './components/Nav/Nav';
-import Header from './components/Header/Header';
 
 import Messages from './components/Messages/Messages';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
@@ -19,6 +16,11 @@ import UserView from './components/Profile/UserView/UserView';
 import Profile from './components/Profile/Profile';
 import { useTypedSelector } from './hooks/useTypedSelector';
 
+import AppMain from './components-main/Main';
+import Log from './components-main/Authorization';
+import Signup from './components/Authorization/Signup/Signup';
+import Authorization from './components/Authorization/Login';
+import { useActions } from './hooks/useActions';
 
 
 
@@ -36,43 +38,42 @@ function App() {
 
             <div className={"wrapper" + (isDark ? " body-dark" : "")} >
 
-                <div className="content">
+            <Routes>
 
-
-                    <Sidebar />
-
-                    <main className="main">
-
-
-
-                        <Header />
-
-                        <Routes>
-
-                            <Route path='/Home' element={<Home />} />
-                            <Route path='/' element={<Profile />} />
-                            <Route path='/User/:id' element={<UserView />} />
-                            <Route path='/Messages' element={<Messages />} />
+                <Route path='/' element={<AppMain />}>
+                    <Route path='Home' element={<Home />} />
+                    <Route path='' element={<Profile />} />
+                    <Route path='User/:id' element={<UserView />} />
+                    <Route path='Messages' element={<Messages />} />
 
 
 
-                            <Route path='/Purchases' element={<Purchases />} />
-                            <Route path='/People' element={<Returns />} />
-                            <Route path='/Gallery' element={<Gallery />} />
+                    <Route path='Purchases' element={<Purchases />} />
+                    <Route path='People' element={<Returns />} />
+                    <Route path='Gallery' element={<Gallery />} />
 
-                            <Route path='/Analytics' element={<Analytics />} />
+                    <Route path='Analytics' element={<Analytics />} />
 
-                            <Route path='/Settings' element={<Settings />} />
+                    <Route path='Settings' element={<Settings />} />
+
+                </Route>
+
+
+                <Route path='/auth' element={<Log />}>
+                    <Route path='Signup' element={<Signup />} />
+                    <Route path='Log' element={<Authorization />} />
+                </Route>
 
 
 
-                        </Routes>
 
-                    </main>
 
-                </div>
+
+
+            </Routes>
 
             </div>
+
         </BrowserRouter>
     );
 }
