@@ -31,7 +31,7 @@ const Chat: React.FC = (props) => {
 
     return (
 
-        <div className="chat__container">
+        <div className="chat__container  dark-block">
             <div className="chat__current">
                 <div className="chat__current-avatar">
                     <img src={chat_avatar} alt="" />

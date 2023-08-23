@@ -10,7 +10,7 @@ const People:React.FC = () => {
     
     
     return (
-        <section className="people _container">
+        <section className="people _container  dark-block">
 
             <div className="people__container ">
                 <h1 className="people__title">

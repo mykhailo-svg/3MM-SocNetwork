@@ -17,7 +17,7 @@
 
 
         min-width: 385px;
-        background: #fff;
+   
 
         height: calc(100vh - 84px);
 
@@ -194,7 +194,7 @@
     &__container {
         border-radius: 10px;
         padding: 0px 27px;
-        background: #FFFF;
+        // background: #FFFF;
         display: flex;
         flex-direction: column;
         width: 100%;
@@ -207,7 +207,7 @@
     &__current-name {}
 
     &__messages {
-        background: #F7F7F8;
+        background: var(--chat-inside);
         border-radius: 10px;
         padding: 17px 14px;
         flex: 1 1 auto;

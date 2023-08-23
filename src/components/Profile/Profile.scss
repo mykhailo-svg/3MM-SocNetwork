@@ -1,4 +1,5 @@
 .newp {
+
     position: absolute;
 
     width: 100vw;
@@ -19,7 +20,21 @@
 
     transition: opacity 0.6s ease;
 
+    &__zone {
+        position: absolute;
+        background: #000;
+        width: 100%;
+        height: 100%;
+        background: var(--user-newpost-zone);
+        opacity: 0;
+        transition: opacity 0.6s ease;
+    }
+
 }
+
+
+
+
 
 
 
@@ -33,13 +48,13 @@
 
 
 .newp__zone {
-    position: absolute;
-    background: #000;
-    width: 100%;
-    height: 100%;
-    background: rgba(255, 255, 255, 0.70);
-    opacity: 0;
-    transition: opacity 0.6s ease;
+    // position: absolute;
+    // background: #000;
+    // width: 100%;
+    // height: 100%;
+    // background: rgba(255, 255, 255, 0.70);
+    // opacity: 0;
+    // transition: opacity 0.6s ease;
 
 }
 
@@ -192,7 +207,7 @@
 
 
 .posts__container {
-   
+
     height: calc(100vh - 204px);
     display: flex;
     flex-direction: column;
@@ -214,7 +229,15 @@
 
 }
 
-.posts__nav-item {}
+.posts__nav-item {
+    color: var(--user-tabs-text);
+    cursor: pointer;
+
+    &:hover {
+        font-weight: 800;
+    }
+
+}
 
 .posts__nav-new-post {
     cursor: pointer;
@@ -269,7 +292,7 @@
     &__author,
     &__likes-count,
     &__comments-count {
-       
+
 
         font-size: 16px;
 
@@ -384,16 +407,18 @@
         display: flex;
         gap: 6px;
         align-items: center;
-        border-bottom: #E6E6EA 1px solid;
+        border-bottom: 1px solid;
+        color: var(--user-about-text);
+        border-color: var(--user-about-border);
     }
 }
 
 
 
 .cover {
-    padding-bottom:40px;
+    padding-bottom: 40px;
     margin-bottom: 30px;
-   overflow: hidden;
+    overflow: hidden;
     border-radius: 10px;
     // background: #fff;
 
@@ -425,13 +450,13 @@
 
     &__avatar {
         margin-bottom: 48px;
-       
+
         width: 180px;
         height: 180px;
 
         img {
             object-fit: cover;
-            border: #fff 10px solid;
+            border: var(--user-avatar-border) 10px solid;
             width: 100%;
             height: 100%;
             border-radius: 100%;
@@ -456,6 +481,6 @@
     &__occupation {
         font-weight: 400;
         font-size: 16px;
-        margin-top:3px;
+        margin-top: 3px;
     }
 }

@@ -24,7 +24,7 @@ type typeUserAboutProps = {
 
 const User_about: React.FC<typeUserAboutProps> = ({ userData }) => {
 
-    let loading = true;
+    let loading = false;
     return (
 
         <section className="about dark-block">

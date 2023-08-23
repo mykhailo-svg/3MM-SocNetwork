@@ -113,7 +113,7 @@ body {
   min-height: 100vh;
   /* max-height:100vh; */
   color: #490057;
-  font-family:Nunito;
+  font-family: Nunito;
   overflow-x: hidden;
   /* overflow: hidden; */
 
@@ -163,9 +163,29 @@ body {
   --dark_block_bg: #fff;
 
 
+  --header-search-icon: #490057;
+
+
   --sidebar_bg: #490057;
   --sidebar_icons: #FFFFFF;
   --sidebar_text: rgba(255, 255, 255, 0.8);
+  --sidebar-hover: #FBB03B;
+  --sidebar-active-decoration: linear-gradient(90deg, #FBB03B 48.95%, rgba(255, 255, 255, 0) 91.25%);
+
+  --user-about-text: rgba(240, 168, 255, 1);
+  --user-about-border: #E6E6EA;
+  --user-avatar-border: #fff;
+  --user-tabs-text: #A303A0;
+  --user-newpost-zone: rgba(255, 255, 255, 0.70);
+
+
+
+
+
+
+  --chat-inside: #F7F7F8;
+
+
 
 
 
@@ -174,12 +194,35 @@ body {
     --main_backgound: #141414;
 
     --dark_block_bg: #0D0D0D;
-    --light_pink:#F0A8FF;
+    --light_pink: #F0A8FF;
 
+
+
+
+
+
+    --header-search-icon: #F0A8FF;
 
     --sidebar_bg: #F0A8FF;
     --sidebar_icons: #0D0D0D;
     --sidebar_text: #0D0D0D;
+    --sidebar-hover: #673372;
+    --sidebar-active-decoration: linear-gradient(90deg, #38004C 53.65%, rgba(255, 255, 255, 0.00) 100%);
+
+
+
+    --user-about-text: rgba(240, 168, 255, 0.7);
+    --user-about-border: rgba(255, 255, 255, 0.1);
+    --user-avatar-border: #0D0D0D;
+    --user-tabs-text: #BC03B9;
+    --user-newpost-zone: rgba(13, 13, 13, 0.70);
+    
+
+
+
+
+
+    --chat-inside: #141414;
   }
 
   flex-direction: column;
@@ -189,12 +232,6 @@ body {
   }
 }
 
-//dark mode
-
-
-.sidebar {
-  background: var(--sidebar_bg)
-}
 
 .sidebar-logo {
   path {
@@ -203,7 +240,7 @@ body {
 }
 
 .sidebar__nav-item {
-  color: var(--sidebar_text);
+  // color: var(--sidebar_text);
 
   path {
     fill: var(--sidebar_text);
@@ -212,12 +249,29 @@ body {
 
 
 
+.header {
+
+  &__search-icon {
+    path {
+      fill: var(--header-search-icon);
+    }
+  }
+
+
+}
+
+
+
+
+
+
 .dark-block {
 
   background: var(--dark_block_bg);
 
 }
-.ligth_pink{
+
+.ligth_pink {
   color: var(--light_pink);
 }
 
@@ -229,8 +283,8 @@ a {
 ._container {
   max-width: 1174px;
   margin: 0 auto;
-  padding-right:20px;
-  
+  padding-right: 20px;
+
 }
 
 
@@ -245,7 +299,7 @@ a {
 
   padding-left: 32px;
   overflow-y: hidden;
-  
+
 
 
 

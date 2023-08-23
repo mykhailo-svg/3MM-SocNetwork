@@ -26,7 +26,7 @@ const Contacts: React.FC= () => {
 
     return (
 
-        <div className="messages__sidebar">
+        <div className="messages__sidebar  dark-block">
             <div className="messages__sidebar-title">Messages</div>
             <div className="messages__contacts">
                 <div className='messages__list'>

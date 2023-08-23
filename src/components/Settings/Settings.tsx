@@ -5,7 +5,7 @@ import Theme from "./Theme/Theme";
 
 const Settings = () => {
     return (
-        <div className="settings _container">
+        <div className="settings  dark-block _container">
             <Theme />
         </div>
 

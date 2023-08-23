@@ -10,7 +10,7 @@
     height: 62px;
     padding:23px 47px;
     border-radius: 5px;
-    background: #fff;
+    
     display: flex;
     align-items: center;
     flex: 1 1 auto;
@@ -21,9 +21,9 @@
   
   .header__input ,.header__input::placeholder{
     margin-left:10px;
-  
-    color: #490057;
-  
+    background: transparent;
+   
+    color: var(--header-search-icon);
     opacity: 0.7;
     font-weight: 700;
     font-size: 16px;

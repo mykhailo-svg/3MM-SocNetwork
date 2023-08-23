@@ -30,7 +30,7 @@ const MyPost:React.FC<TypeMyPostProps> = ({time,post_text,likes,comments}) => {
                 <div className="post__cover">
                     <img src="https://cdn.pixabay.com/photo/2014/02/27/16/10/flowers-276014_640.jpg" alt="" className="post__cover-img" />
                 </div>
-                <div className="post__text">
+                <div className="post__text ligth_pink">
                     <div className="post__author">Charles Deo </div>
                     <div className="post__article">{post_text}</div>
                 </div>
