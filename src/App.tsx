@@ -19,7 +19,7 @@ import { useTypedSelector } from './hooks/useTypedSelector';
 import AppMain from './components-main/Main';
 import Log from './components-main/Authorization';
 import Signup from './components/Authorization/Signup/Signup';
-import Authorization from './components/Authorization/Login';
+import Authorization from './components/Authorization/Login/Login';
 import { useActions } from './hooks/useActions';
 
 

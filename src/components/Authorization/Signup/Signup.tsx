@@ -47,7 +47,7 @@ const Signup = () => {
     const { step, steps, currentStepIndex, nextStep, previoustStep, isFirst, isLast } = useMultistepForm([
         <SignupFirst {...data} updateForm={updateFields} />,
         <SignupSecond {...data} updateForm={updateFields} />,
-        <SignupThird />
+        
 
     ]);
 
@@ -111,10 +111,6 @@ const Signup = () => {
                         </button>)
                     }
 
-                    <button className="signup__step-skip">
-                        Skip
-
-                    </button>
                 </div>
             </div>
 
