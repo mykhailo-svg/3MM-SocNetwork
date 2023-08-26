@@ -11,7 +11,7 @@ import { NavLink } from 'react-router-dom';
 import SignupFirst from './Steps/SignupFirst';
 import { useMultistepForm } from '../../../hooks/useMultistepForm';
 import SignupSecond from './Steps/SignupSecond';
-import SignupThird from './Steps/SignupThird';
+import { useActions } from '../../../hooks/useActions';
 
 type TypeUserForm = {
     Name: string
@@ -60,7 +60,7 @@ const Signup = () => {
     }
 
 
-
+    const {login,logout} = useActions();
 
     return (
 
@@ -99,12 +99,14 @@ const Signup = () => {
                 {step}
                 <div className="signup__step-action-buttons">
                     {!isLast() ? (
-                        <button className="signup__next-button" onClick={nextStepClick}>
+                        <button className="signup__next-button" onClick={()=>{
+                            nextStepClick();
+                        }}>
                             <img src={nextStepIcon} alt="" />
                         </button>
                     ) : (
                         <button className="signup__next-button" onClick={()=>{
-                            nextStepClick();console.log(data);
+                            nextStepClick();console.log(data);login('1');
                             
                         }}>
                             <img src={finishpIcon} alt="" />
@@ -114,10 +116,10 @@ const Signup = () => {
                 </div>
             </div>
 
-
+                    <button onClick={logout}>log out</button>
 
             <div className="signup__already">
-                Already have an account ?    <NavLink to='/'><span>Sign in</span></NavLink>
+                Already have an account ?    <NavLink to='/auth/Log'><span>Log in</span></NavLink>
             </div>
 
         </div>

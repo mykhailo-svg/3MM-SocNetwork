@@ -19,6 +19,8 @@ $main-color : #FFB7D5;
     }
 
     &__title {
+        display: flex;
+        gap: 30px;
         color: #000;
 
         font-size: 48px;
@@ -73,9 +75,11 @@ $main-color : #FFB7D5;
         color: #343333;
 
         font-size: 16px;
-        svg{
+
+        svg {
             margin-right: 15px;
         }
+
         font-weight: 600;
     }
 
@@ -187,7 +191,7 @@ $main-color : #FFB7D5;
     }
 
     &__next-button {
-        margin: 33px 0px;
+        margin-top: 33px;
         background: $main-color;
         width: 80px;
         height: 80px;
@@ -213,6 +217,7 @@ $main-color : #FFB7D5;
     }
 
     &__already {
+        margin-top: 33px;
         color: #000;
         gap: 200px;
         font-size: 20px;
@@ -326,6 +331,25 @@ $main-color : #FFB7D5;
 
     }
 
+    &__forgot {
+        color: #A303A0;
+        display: flex;
+        align-items: center;
+        gap: 13px;
+        margin-top:30px;
+        padding: 5px;
+        &:hover{
+            opacity:0.7;
+            cursor: pointer;
+        }
+        
+        font-size: 16px;
+        
+        font-weight: 400;
+        
+        letter-spacing: 0.48px;
+    }
+
     &__step-action-buttons {
 
         width: 100%;
@@ -337,23 +361,27 @@ $main-color : #FFB7D5;
 
 
     &__progress {
-        margin-bottom:62px;
+        margin-bottom: 62px;
         display: flex;
     }
 
     &__progress-item {
         display: flex;
         align-items: center;
-        &.signup-active{
-            .signup__progress-icon ,.signup__progress-decor{
+
+        &.signup-active {
+
+            .signup__progress-icon,
+            .signup__progress-decor {
                 background: #FFB7D5;
             }
-            svg{
-                path{
+
+            svg {
+                path {
                     fill: #FBF2F2;
                 }
             }
-          
+
         }
     }
 
@@ -371,7 +399,7 @@ $main-color : #FFB7D5;
 
     &__progress-decor {
         transition: background 0.4s ease;
-        margin:0px 7px;
+        margin: 0px 7px;
         height: 7px;
         width: 83px;
         background: #FBF2F2;

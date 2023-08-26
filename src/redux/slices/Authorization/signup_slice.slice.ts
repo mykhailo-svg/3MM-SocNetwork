@@ -1,17 +1,47 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
+import AuthService from "../../../services/authService";
+import { IUser } from "../../../@types/Auth/IUser";
 
-export const checkEmailDublicate = createAsyncThunk('all-users/fetchAllUsers', async (step:number) => {
-    const { data } = await axios.get(`http://localhost:3001/all-users?step=${step}`);
+export const login = createAsyncThunk('auth/login', async (email: string, password: any) => {
     
+    const { data } = await AuthService.login("wyzdrykm@gmail.com", '12345');
+
+
+
     return data;
 });
 
-const initialState = {
-    Dublicate: false,
-    isLoading:false,
-    error:false,
+export const logout = createAsyncThunk('auth/logout', async () => {
+    alert('hi')
+    const response = await AuthService.logout();
     
+    
+
+
+
+    
+});
+
+
+export const registration = createAsyncThunk('all-users/fetchAllUsers', async (email: string, password: any) => {
+    alert('hi')
+    const { data } = await AuthService.login(email, password);
+
+
+
+    return data;
+});
+
+
+const initialState = {
+    Auth: false,
+    User:{
+
+    },
+    isLoading: false,
+    error: false,
+
 };
 
 export const signupSlice = createSlice({
@@ -22,32 +52,75 @@ export const signupSlice = createSlice({
         //     state.People = [...state.People, ...action.payload];
         // }
     },
-    extraReducers: builder =>{
+    extraReducers: builder => {
 
-        builder.addCase(checkEmailDublicate.pending, (state)=>{
-            console.log("is loading")
-            state.isLoading = true;
+
+
+
+        builder.addCase(registration.pending, (state) => {
+
         })
-        
-        
+        builder.addCase(registration.fulfilled, (state, action) => {
+           
 
-        builder.addCase(checkEmailDublicate.fulfilled, (state,action)=>{
-            console.log("got data")
-            // alert(action.payload)
+            state.Auth = true;
+            state.User = action.payload.user;
+            localStorage.setItem('token' , action.payload.accesToken)
+
+
+        })
+
+        builder.addCase(registration.rejected, (state,action) => {
+            console.log(action.error);
             
-            return(
-                {
-                    ...state,
-                    Dublicate:action.payload
-                }
-            )
+            
         })
 
-        builder.addCase(checkEmailDublicate.rejected, state=>{
-            state.error = true;
-            state.isLoading = false;
+
+
+
+
+        builder.addCase(logout.pending, (state) => {
+
+        })
+        builder.addCase(logout.fulfilled, (state, action) => {
+           
+
+            state.Auth = false;
+            localStorage.removeItem('token');
+            state.User = {} as IUser;
+
+
+        })
+
+        builder.addCase(logout.rejected, (state,action) => {
+            console.log(action.error);
+            
+            
+        })
+
+
+        builder.addCase(login.pending, (state) => {
+            alert('pending')
+        })
+
+
+
+        builder.addCase(login.fulfilled, (state, action) => {
+            localStorage.setItem('token', action.payload.accesToken);
+
+            state.Auth = true;
+
+
+        })
+
+        builder.addCase(login.rejected, (state,action) => {
+            console.log(action.error);
+            
+            
         })
     }
+
 });
 
 export const { actions, reducer } = signupSlice;

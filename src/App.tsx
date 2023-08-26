@@ -21,6 +21,7 @@ import Log from './components-main/Authorization';
 import Signup from './components/Authorization/Signup/Signup';
 import Authorization from './components/Authorization/Login/Login';
 import { useActions } from './hooks/useActions';
+import Recovery from './components/Authorization/Recovery/Recovery';
 
 
 
@@ -62,6 +63,7 @@ function App() {
                 <Route path='/auth' element={<Log />}>
                     <Route path='Signup' element={<Signup />} />
                     <Route path='Log' element={<Authorization />} />
+                    <Route path='Recovery' element={<Recovery />} />
                 </Route>
 
 
