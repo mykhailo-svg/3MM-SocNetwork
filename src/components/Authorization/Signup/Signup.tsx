@@ -12,6 +12,7 @@ import SignupFirst from './Steps/SignupFirst';
 import { useMultistepForm } from '../../../hooks/useMultistepForm';
 import SignupSecond from './Steps/SignupSecond';
 import { useActions } from '../../../hooks/useActions';
+import Loading from '../../Loading/Loading';
 
 type TypeUserForm = {
     Name: string
@@ -59,8 +60,10 @@ const Signup = () => {
         previoustStep();
     }
 
+    
 
-    const {login,logout} = useActions();
+
+    const {registration} = useActions();
 
     return (
 
@@ -68,6 +71,9 @@ const Signup = () => {
         <div className="signup__container">
 
             <div className='signup__content'>
+
+
+                {/* <Loading isLoading={false}/> */}
 
 
 
@@ -106,7 +112,8 @@ const Signup = () => {
                         </button>
                     ) : (
                         <button className="signup__next-button" onClick={()=>{
-                            nextStepClick();console.log(data);login('1');
+                            console.log(data);
+                            registration({email:data.Email,password:data.Password})
                             
                         }}>
                             <img src={finishpIcon} alt="" />
@@ -116,7 +123,7 @@ const Signup = () => {
                 </div>
             </div>
 
-                    <button onClick={logout}>log out</button>
+       
 
             <div className="signup__already">
                 Already have an account ?    <NavLink to='/auth/Log'><span>Log in</span></NavLink>

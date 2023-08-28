@@ -2,10 +2,11 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
 import AuthService from "../../../services/authService";
 import { IUser } from "../../../@types/Auth/IUser";
+import { ILogin, IRegistration } from "../../../@types/Auth/AuthPayload";
 
-export const login = createAsyncThunk('auth/login', async (email: string, password: any) => {
+export const login = createAsyncThunk('auth/login', async ({email,password}:ILogin) => {
     
-    const { data } = await AuthService.login("wyzdrykm@gmail.com", '12345');
+    const { data } = await AuthService.login(email, password);
 
 
 
@@ -24,9 +25,9 @@ export const logout = createAsyncThunk('auth/logout', async () => {
 });
 
 
-export const registration = createAsyncThunk('all-users/fetchAllUsers', async (email: string, password: any) => {
+export const registration = createAsyncThunk('all-users/fetchAllUsers', async ({email,password}:IRegistration) => {
     alert('hi')
-    const { data } = await AuthService.login(email, password);
+    const { data } = await AuthService.registration(email, password);
 
 
 
@@ -63,8 +64,7 @@ export const signupSlice = createSlice({
         builder.addCase(registration.fulfilled, (state, action) => {
            
 
-            state.Auth = true;
-            state.User = action.payload.user;
+           
             localStorage.setItem('token' , action.payload.accesToken)
 
 

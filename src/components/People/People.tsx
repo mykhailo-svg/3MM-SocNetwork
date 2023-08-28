@@ -16,7 +16,7 @@ const People:React.FC = () => {
                 <h1 className="people__title">
                     Get in touch
                 </h1>
-
+                
                 <PersonItems/>
 
                 

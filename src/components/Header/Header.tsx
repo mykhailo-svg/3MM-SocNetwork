@@ -3,7 +3,12 @@ import React from 'react';
 import avatar from '../../img/avatar.jpg';
 import './Header.scss';
 import { NavLink } from 'react-router-dom';
+import { useActions } from '../../hooks/useActions';
+
+
+
 const Header = () => {
+    const {logout} = useActions();
     return (
         <header className="header _container">
             <div className="header__search dark-block">
@@ -13,7 +18,7 @@ const Header = () => {
             <div className="header__profile ligth_pink">
                 <div className="header__user-info">
                     <div className="header__user-name">Charles Deo</div>
-                    <NavLink to="auth/Signup" className="header__log">Log out</NavLink>
+                    <NavLink onClick={logout} to="auth/Signup" className="header__log">Log out</NavLink>
                 </div>
 
                 <div className="header__avatart">

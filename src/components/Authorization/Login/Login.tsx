@@ -1,23 +1,44 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import nextStepIcon from '../../../img/next-sgup.svg';
+import { useActions } from '../../../hooks/useActions';
+
+
 
 const Login = () => {
+    const { login } = useActions();
+
+    type TypeLoginForm = {
+        email: string
+        password: string
+    }
+
+    const [logdata, setLogData] = useState({ email: '', password: '' })
+
+
+    let updateFields = (fields: Partial<TypeLoginForm>) => {
+        setLogData(prev => {
+            return { ...prev, ...fields }
+        })
+    }
+
+    
     return (
+
         <div className="signup__container">
 
             <div className='signup__content'>
                 <h1 className="signup__title">Log in</h1>
                 <div className="signup__mainfields-item">
                     <div className="signup__label">Email</div>
-                    <input type="text" className="signup__field" placeholder='wyzdryk@gmail.com' />
+                    <input type="text" onChange={e => updateFields({ email: e.target.value })} className="signup__field" placeholder='wyzdryk@gmail.com' />
 
                 </div>
-                <div className="signup__password" style={{marginTop:'32px'}}>
+                <div className="signup__password" style={{ marginTop: '32px' }}>
                     <div className="signup__mainfields-item">
                         <div className="signup__label">Password</div>
                         <div className='signup__input-wrapper'>
-                            <input type="password" className="signup__field-password" placeholder='sdsdsd@3231qws' />
+                            <input type="password" onChange={e => updateFields({ password: e.target.value })} className="signup__field-password" placeholder='sdsdsd@3231qws' />
                             <div className='signup__password-toggle'><img src='' alt="" /></div>
                         </div>
                     </div>
@@ -29,9 +50,10 @@ const Login = () => {
 
                 </NavLink>
 
-                <button className="signup__next-button">
-                            <img src={nextStepIcon} alt="" />
-                        </button>
+                <button className="signup__next-button" onClick={() => login(logdata)
+                }>
+                    <img src={nextStepIcon} alt="" />
+                </button>
 
                 <div className="signup__already">
                     Don't have an account ?    <NavLink to='/auth/Signup'><span>Sign up</span></NavLink>
@@ -39,7 +61,7 @@ const Login = () => {
             </div>
         </div>
 
-
+                
     )
 }
 export default Login;
