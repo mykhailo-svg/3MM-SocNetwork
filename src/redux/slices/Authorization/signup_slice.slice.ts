@@ -25,9 +25,9 @@ export const logout = createAsyncThunk('auth/logout', async () => {
 });
 
 
-export const registration = createAsyncThunk('all-users/fetchAllUsers', async ({email,password}:IRegistration) => {
+export const registration = createAsyncThunk('all-users/fetchAllUsers', async ({email,password , name,gender,birth}:IRegistration) => {
     alert('hi')
-    const { data } = await AuthService.registration(email, password);
+    const { data } = await AuthService.registration(email, password,name,gender,birth);
 
 
 

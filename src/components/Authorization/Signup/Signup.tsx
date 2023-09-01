@@ -42,13 +42,23 @@ const Signup = () => {
             return { ...prev, ...fields }
         });
         console.log(data);
-        
 
+
+    }
+
+    let { Email,Password ,Year, Day, Month, Name, Gender} = data;
+
+    let regParams = {
+        password:Password,
+        email:Email,
+        birth:`${Day} ${Month} ${Year}`,
+        name:Name,
+        gender:Gender
     }
     const { step, steps, currentStepIndex, nextStep, previoustStep, isFirst, isLast } = useMultistepForm([
         <SignupFirst {...data} updateForm={updateFields} />,
         <SignupSecond {...data} updateForm={updateFields} />,
-        
+
 
     ]);
 
@@ -60,10 +70,10 @@ const Signup = () => {
         previoustStep();
     }
 
-    
 
 
-    const {registration} = useActions();
+
+    const { registration } = useActions();
 
     return (
 
@@ -105,16 +115,16 @@ const Signup = () => {
                 {step}
                 <div className="signup__step-action-buttons">
                     {!isLast() ? (
-                        <button className="signup__next-button" onClick={()=>{
+                        <button className="signup__next-button" onClick={() => {
                             nextStepClick();
                         }}>
                             <img src={nextStepIcon} alt="" />
                         </button>
                     ) : (
-                        <button className="signup__next-button" onClick={()=>{
+                        <button className="signup__next-button" onClick={() => {
                             console.log(data);
-                            registration({email:data.Email,password:data.Password})
-                            
+                            registration(regParams)
+
                         }}>
                             <img src={finishpIcon} alt="" />
                         </button>)
@@ -123,7 +133,7 @@ const Signup = () => {
                 </div>
             </div>
 
-       
+
 
             <div className="signup__already">
                 Already have an account ?    <NavLink to='/auth/Log'><span>Log in</span></NavLink>
