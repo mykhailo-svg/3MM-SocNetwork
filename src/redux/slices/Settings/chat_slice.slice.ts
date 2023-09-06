@@ -11,7 +11,7 @@ export const cSlice = createSlice({
   initialState: initialState,
   reducers: {
     addMessage: (state, action: PayloadAction<any>) => {
-      let newMessage = {
+      const newMessage = {
         message: action.payload.messages_text,
         time: "20:10",
         state: "notRead",
@@ -19,7 +19,7 @@ export const cSlice = createSlice({
         id: 1,
       };
 
-      let state_copy = { ...state };
+      const state_copy = { ...state };
 
       state_copy.New_messages = [...state.New_messages];
 

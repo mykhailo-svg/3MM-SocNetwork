@@ -19,7 +19,6 @@ import AppMain from "./components-main/Main";
 import Log from "./components-main/Authorization";
 import Signup from "./components/Authorization/Signup/Signup";
 import Authorization from "./components/Authorization/Login/Login";
-import { useActions } from "./hooks/useActions";
 import Recovery from "./components/Authorization/Recovery/Recovery";
 
 function App() {

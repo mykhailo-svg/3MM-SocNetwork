@@ -1,5 +1,3 @@
-import Sidebar from "../components/Nav/Nav";
-import Header from "../components/Header/Header";
 import "./Authorization.scss";
 import { Outlet } from "react-router-dom";
 
