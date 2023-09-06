@@ -2,7 +2,7 @@ import React from "react";
 import chat_avatar from "../../../img/chat_profile.jpg";
 
 type typeMessageProps = {
-  message: string;
+  message: string | undefined;
 };
 
 const Message = (props: typeMessageProps) => {

@@ -4,14 +4,17 @@ type newMessagePayload = {
   messages_text: string | undefined;
   type: "NEW-MESSAGE";
 };
-type newMessage = {
+interface newMessage {
   message: string | undefined;
   time: string;
   state: string;
   isUser: string;
   id: number;
+}
+type initialState = {
+  New_messages: newMessage[];
 };
-const initialState = {
+const initialState: initialState = {
   New_messages: [
     { id: 1, message: "sdsdssd", time: "20:10", state: "Read", isUser: "User" },
   ],

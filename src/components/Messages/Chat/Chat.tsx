@@ -5,7 +5,11 @@ import { useActions } from "../../../hooks/useActions";
 import { useTypedSelector } from "../../../hooks/useTypedSelector";
 
 type TypeChatElement = {
-  message: string;
+  message: string | undefined;
+  time: string;
+  state: string;
+  isUser: string;
+  id: number;
 };
 
 const Chat: React.FC = () => {
