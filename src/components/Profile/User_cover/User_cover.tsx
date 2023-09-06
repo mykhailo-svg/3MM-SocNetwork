@@ -4,13 +4,13 @@ import React from "react";
 
 type typeUser_coverProps = {
   userCoverInfo: {
-    Name: String;
-    Occupation: String;
+    Name: string;
+    Occupation: string;
   };
 };
 
 const User_cover: React.FC<typeUser_coverProps> = ({ userCoverInfo }) => {
-  let loading = false;
+  const loading = false;
 
   return (
     <div className="cover__main">

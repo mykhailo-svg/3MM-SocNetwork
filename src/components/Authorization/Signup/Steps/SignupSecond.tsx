@@ -2,7 +2,6 @@ import React, { ReactNode } from "react";
 
 import {
   FormControl,
-  FormControlLabel,
   InputLabel,
   MenuItem,
   Radio,
@@ -30,9 +29,9 @@ const SignupSecond: React.FC<TypeFirstFormProps> = ({
   Gender,
   updateForm,
 }) => {
-  let dayItems: ReactNode[] = [];
+  const dayItems: ReactNode[] = [];
 
-  let yearItems: ReactNode[] = [];
+  const yearItems: ReactNode[] = [];
 
   const months = [
     "January",

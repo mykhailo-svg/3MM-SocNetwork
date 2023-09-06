@@ -1,21 +1,27 @@
 import { PayloadAction, createSlice } from "@reduxjs/toolkit";
 
-let initialState = {
+type newMessagePayload = {
+  messages_text: string | undefined;
+  type: "NEW-MESSAGE";
+};
+type newMessage = {
+  message: string | undefined;
+  time: string;
+  state: string;
+  isUser: string;
+  id: number;
+};
+const initialState = {
   New_messages: [
     { id: 1, message: "sdsdssd", time: "20:10", state: "Read", isUser: "User" },
   ],
 };
-
-interface InterfaceMessage {
-  messages_text: string;
-}
-
 export const chatSlice = createSlice({
   name: "chatSlice",
   initialState: initialState,
   reducers: {
-    addMessage: (state, action: PayloadAction<any>) => {
-      let newMessage = {
+    addMessage: (state, action: PayloadAction<newMessagePayload>) => {
+      const newMessage: newMessage = {
         message: action.payload.messages_text,
         time: "20:10",
         state: "notRead",
@@ -23,7 +29,7 @@ export const chatSlice = createSlice({
         id: 1,
       };
 
-      let state_copy = { ...state };
+      const state_copy = { ...state };
 
       state_copy.New_messages = [...state.New_messages];
 

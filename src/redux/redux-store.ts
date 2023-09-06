@@ -1,4 +1,4 @@
-import { combineReducers, legacy_createStore as createStore } from "redux";
+import { combineReducers } from "redux";
 
 import { configureStore } from "@reduxjs/toolkit";
 
@@ -11,7 +11,7 @@ import { reducer as user_reducer } from "./slices/Profile/user_slice.slice";
 import { reducer as settings_reducer } from "./slices/Settings/settings_slice.slice";
 import { reducer as signup_reducer } from "./slices/Authorization/signup_slice.slice";
 
-let reducers = combineReducers({
+const reducers = combineReducers({
   contacts_reducer: contactsReducer,
   chat_reducer: chatReducer,
   people_reducer: people_reducer,

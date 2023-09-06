@@ -1,6 +1,4 @@
 import React from "react";
-
-import person_avatar from "../../../img/empty_avatar.svg";
 import { NavLink } from "react-router-dom";
 
 type TypePersonProps = {
@@ -16,7 +14,7 @@ const Person: React.FC<TypePersonProps> = ({
   _id,
   follow,
 }) => {
-  let action = () => {
+  const action = () => {
     alert(_id);
   };
 

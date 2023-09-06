@@ -1,6 +1,6 @@
 import { PayloadAction, createSlice } from "@reduxjs/toolkit";
 
-let initialState = {
+const initialState = {
   Posts: [
     {
       id: 1,
@@ -58,21 +58,24 @@ let initialState = {
   ],
 };
 
+type newMessage = {
+  message: string;
+};
+
 export const profileSlice = createSlice({
   name: "chatSlice",
   initialState: initialState,
   reducers: {
-    addPost: (state, action: PayloadAction<any>) => {
-      let newPost = {
+    addPost: (state, action: PayloadAction<newMessage>) => {
+      const newPost = {
         id: 5,
         post_text: action.payload.message,
         likes: 0,
         comments: 1,
         time: "12",
       };
-      // console.log(this.profileData);
 
-      let state_copy = { ...state };
+      const state_copy = { ...state };
 
       state_copy.Posts = [...state.Posts];
 

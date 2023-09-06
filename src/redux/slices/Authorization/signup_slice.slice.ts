@@ -1,5 +1,5 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import axios from "axios";
+
 import AuthService from "../../../services/authService";
 import { IUser } from "../../../@types/Auth/IUser";
 import { ILogin, IRegistration } from "../../../@types/Auth/AuthPayload";
@@ -16,6 +16,7 @@ export const login = createAsyncThunk(
 export const logout = createAsyncThunk("auth/logout", async () => {
   alert("hi");
   const response = await AuthService.logout();
+  console.log(response);
 });
 
 export const registration = createAsyncThunk(
@@ -50,27 +51,27 @@ export const signupSlice = createSlice({
     // }
   },
   extraReducers: (builder) => {
-    builder.addCase(registration.pending, (state) => {});
+    builder.addCase(registration.pending, () => {});
     builder.addCase(registration.fulfilled, (state, action) => {
       localStorage.setItem("token", action.payload.accesToken);
     });
 
-    builder.addCase(registration.rejected, (state, action) => {
+    builder.addCase(registration.rejected, (action) => {
       console.log(action.error);
     });
 
-    builder.addCase(logout.pending, (state) => {});
-    builder.addCase(logout.fulfilled, (state, action) => {
+    builder.addCase(logout.pending, () => {});
+    builder.addCase(logout.fulfilled, (state) => {
       state.Auth = false;
       localStorage.removeItem("token");
       state.User = {} as IUser;
     });
 
-    builder.addCase(logout.rejected, (state, action) => {
+    builder.addCase(logout.rejected, (action) => {
       console.log(action.error);
     });
 
-    builder.addCase(login.pending, (state) => {
+    builder.addCase(login.pending, () => {
       alert("pending");
     });
 
@@ -80,7 +81,7 @@ export const signupSlice = createSlice({
       state.Auth = true;
     });
 
-    builder.addCase(login.rejected, (state, action) => {
+    builder.addCase(login.rejected, (action) => {
       console.log(action.error);
     });
   },

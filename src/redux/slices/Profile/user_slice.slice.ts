@@ -3,7 +3,7 @@ import axios from "axios";
 
 export const fetchUserById = createAsyncThunk(
   "user-view/fetchUserById",
-  async (id: string) => {
+  async (id: string | undefined) => {
     const { data } = await axios.get(`http://localhost:3001/get-user/${id}`);
 
     return data;
@@ -17,6 +17,8 @@ const initialState = {
     Occupation: "view occupation",
     Mail: "12",
     Born: "sd",
+    Phone:'+3078078070',
+    Place:'some place'
   },
   isLoading: false,
   error: false,

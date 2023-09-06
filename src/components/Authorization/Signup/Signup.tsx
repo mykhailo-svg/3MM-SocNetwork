@@ -10,7 +10,6 @@ import SignupFirst from "./Steps/SignupFirst";
 import { useMultistepForm } from "../../../hooks/useMultistepForm";
 import SignupSecond from "./Steps/SignupSecond";
 import { useActions } from "../../../hooks/useActions";
-import Loading from "../../Loading/Loading";
 
 type TypeUserForm = {
   Name: string;
@@ -42,9 +41,9 @@ const Signup = () => {
     console.log(data);
   }
 
-  let { Email, Password, Year, Day, Month, Name, Gender } = data;
+  const { Email, Password, Year, Day, Month, Name, Gender } = data;
 
-  let regParams = {
+  const regParams = {
     password: Password,
     email: Email,
     birth: `${Day} ${Month} ${Year}`,

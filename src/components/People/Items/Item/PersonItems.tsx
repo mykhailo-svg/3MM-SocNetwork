@@ -17,11 +17,11 @@ interface interfacePerson {
 const PersonItems: React.FC = () => {
   const { fetchUsers } = useActions();
 
-  let { isLoading, People, error } = useTypedSelector(
+  const { isLoading, People, error } = useTypedSelector(
     (state) => state.people_reducer
   );
 
-  let peopleInfo = People;
+  const peopleInfo = People;
 
   const usersListElement = useRef<null | HTMLDivElement>(null);
 

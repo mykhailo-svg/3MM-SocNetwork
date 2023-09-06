@@ -3,17 +3,17 @@ import { useActions } from "../../../hooks/useActions";
 import { useTypedSelector } from "../../../hooks/useTypedSelector";
 
 const Theme = () => {
-  let isDark = useTypedSelector((state) => state.settings_reducer.themeIsDark);
+  const isDark = useTypedSelector(
+    (state) => state.settings_reducer.themeIsDark
+  );
 
   const { toggleTheme } = useActions();
 
   const saveTheme = () => {
     toggleTheme();
-    let lsTheme = JSON.stringify(!isDark);
-    debugger;
+    const lsTheme = JSON.stringify(!isDark);
 
     localStorage.setItem("theme", lsTheme);
-    debugger;
   };
 
   return (

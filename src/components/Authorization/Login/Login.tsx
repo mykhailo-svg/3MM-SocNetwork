@@ -13,7 +13,7 @@ const Login = () => {
 
   const [logdata, setLogData] = useState({ email: "", password: "" });
 
-  let updateFields = (fields: Partial<TypeLoginForm>) => {
+  const updateFields = (fields: Partial<TypeLoginForm>) => {
     setLogData((prev) => {
       return { ...prev, ...fields };
     });

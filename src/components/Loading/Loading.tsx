@@ -1,6 +1,6 @@
 import { CircularProgress } from "@mui/material";
 import "./Loading.scss";
-import React, { useState } from "react";
+import React from "react";
 
 interface ILoadingProps {
   isLoading: boolean;

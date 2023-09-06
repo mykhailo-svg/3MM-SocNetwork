@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { getThemeLS } from "../../../utils/getThemeLS";
 
-let initialState = {
+const initialState = {
   themeIsDark: getThemeLS(),
 };
 type TypeSettingInitialState = typeof initialState;

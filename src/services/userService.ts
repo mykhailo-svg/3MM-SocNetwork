@@ -4,8 +4,8 @@ import { IUser } from "../@types/Auth/IUser";
 
 export default class UserService {
   static async fetchUsers(
-    email: string,
-    password: string
+    // email: string,
+    // password: string
   ): Promise<AxiosResponse<IUser[]>> {
     return axiosAPI.get<IUser[]>("/users");
   }

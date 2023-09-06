@@ -14,7 +14,7 @@ type TypeProfilePeopleProps = {
 const ProfilePeople: React.FC<TypeProfilePeopleProps> = ({
   activePeopleData,
 }) => {
-  let activeItems = activePeopleData.map((active: TypePerson) => (
+  const activeItems = activePeopleData.map((active: TypePerson) => (
     <Friend
       name={active.name}
       friend_state={active.friend_state}

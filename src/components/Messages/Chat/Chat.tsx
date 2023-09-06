@@ -8,19 +8,18 @@ type TypeChatElement = {
   message: string;
 };
 
-const Chat: React.FC = (props) => {
+const Chat: React.FC = () => {
   const messageInput = useRef<null | HTMLInputElement>(null);
 
-  let chatInfo = useTypedSelector((state) => state.chat_reducer.New_messages);
+  const chatInfo = useTypedSelector((state) => state.chat_reducer.New_messages);
 
-  let chatElems = chatInfo.map((chatElement: TypeChatElement) => (
+  const chatElems = chatInfo.map((chatElement: TypeChatElement) => (
     <Message message={chatElement.message} />
   ));
 
   const { addMessage } = useActions();
 
-  let newMessage = () => {
-    // newMessage(messageInput.current?.value);
+  const newMessage = () => {
     addMessage({
       type: "NEW-MESSAGE",
       messages_text: messageInput.current?.value,

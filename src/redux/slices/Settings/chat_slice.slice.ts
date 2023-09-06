@@ -1,16 +1,20 @@
 import { PayloadAction, createSlice } from "@reduxjs/toolkit";
 
-let initialState = {
+const initialState = {
   New_messages: [
     { id: 1, message: "sdsdssd", time: "20:10", state: "Read", isUser: "User" },
   ],
+};
+
+type NewMessage = {
+  messages_text: string;
 };
 
 export const cSlice = createSlice({
   name: "cSlice",
   initialState: initialState,
   reducers: {
-    addMessage: (state, action: PayloadAction<any>) => {
+    addMessage: (state, action: PayloadAction<NewMessage>) => {
       const newMessage = {
         message: action.payload.messages_text,
         time: "20:10",

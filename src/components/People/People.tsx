@@ -1,8 +1,5 @@
 import React from "react";
-import axios from "axios";
 import "./People.scss";
-import Items from "./Items/Item/PersonItems";
-
 import PersonItems from "./Items/Item/PersonItems";
 
 const People: React.FC = () => {

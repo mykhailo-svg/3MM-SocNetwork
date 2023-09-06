@@ -14,8 +14,8 @@ type TypeMyPostsProps = {
 };
 
 const MyPosts: React.FC<TypeMyPostsProps> = ({ myPostsData }) => {
-  let postsInfo = myPostsData;
-  let postsComponents = postsInfo.map((post: InterfacePost) => (
+  const postsInfo = myPostsData;
+  const postsComponents = postsInfo.map((post: InterfacePost) => (
     <MyPost
       time={post.time}
       post_text={post.post_text}

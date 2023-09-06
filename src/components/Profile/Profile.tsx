@@ -9,14 +9,14 @@ import User_about from "./User_about/User_about";
 import MyPosts from "./Posts/MyPosts";
 import ProfilePeople from "./Profile_people/ProfilePeople";
 
-const Profile: React.FC = (props) => {
-  let AboutMeData = useTypedSelector((state) => state.profile_reducer.User);
-  let MyPostsData = useTypedSelector((state) => state.profile_reducer.Posts);
-  let activePeopleData = useTypedSelector(
+const Profile: React.FC = () => {
+  const AboutMeData = useTypedSelector((state) => state.profile_reducer.User);
+  const MyPostsData = useTypedSelector((state) => state.profile_reducer.Posts);
+  const activePeopleData = useTypedSelector(
     (state) => state.profile_reducer.Active
   );
 
-  let postsTextArea: RefObject<HTMLTextAreaElement> = React.useRef(null);
+  const postsTextArea: RefObject<HTMLTextAreaElement> = React.useRef(null);
 
   function addPost() {
     // // props.dispatch(addPostActionCreator(postsTextArea.current.value));
@@ -24,7 +24,7 @@ const Profile: React.FC = (props) => {
     // postDialogWindow();
   }
 
-  let new_post_dialog: RefObject<HTMLDivElement> = React.createRef();
+  const new_post_dialog: RefObject<HTMLDivElement> = React.createRef();
 
   const postDialogWindow = () => {
     new_post_dialog.current?.classList.toggle("new_post_dialog-show");
@@ -33,8 +33,6 @@ const Profile: React.FC = (props) => {
   return (
     <div className="_container">
       <section className="cover dark-block">
-        {/* <New_post newPost={props.newPost} dispatch={props.dispatch} dialog_window={postDialogWindow} reff={new_post_dialog} /> */}
-
         <div className="newp" ref={new_post_dialog}>
           <div className="newp__zone" onClick={postDialogWindow}></div>
           <div className="newp__container">
