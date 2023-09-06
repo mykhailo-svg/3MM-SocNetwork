@@ -1,18 +1,17 @@
 .loader {
+  &__container {
+    background: rgba(255, 255, 255, 0.7);
+    position: fixed;
 
-    &__container {
-        background: rgba(255,255,255, 0.7);
-        position: fixed;
-       
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        left: 0;
-        right: 0;
-        top: 0;
-        bottom: 0;
-    }
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+  }
 
-    &__item {
-    }
+  &__item {
+  }
 }

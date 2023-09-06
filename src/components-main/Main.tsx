@@ -1,47 +1,24 @@
-import Sidebar from '../components/Nav/Nav';
-import Header from '../components/Header/Header';
+import Sidebar from "../components/Nav/Nav";
+import Header from "../components/Header/Header";
 
-import { Outlet } from 'react-router-dom';
+import { Outlet } from "react-router-dom";
 
-import React from 'react';
-import NavMobile from '../components/Nav/Mobile/NavMobile';
-
-
-
-
-
-
-
-
-
+import React from "react";
+import NavMobile from "../components/Nav/Mobile/NavMobile";
 
 function AppMain() {
+  return (
+    <div className="content">
+      {/* <NavMobile /> */}
+      <Sidebar />
 
+      <main className="main">
+        <Header />
 
-    return (
-      
-
-            <div className="content">
-
-                {/* <NavMobile /> */}
-                <Sidebar />
-
-                <main className="main">
-
-
-
-                    <Header />
-
-                    <Outlet></Outlet>
-
-                </main>
-
-            </div>
-
-        
-    );
+        <Outlet></Outlet>
+      </main>
+    </div>
+  );
 }
-
-
 
 export default AppMain;

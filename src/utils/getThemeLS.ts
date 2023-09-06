@@ -1,5 +1,5 @@
 export const getThemeLS = () => {
-    let theme = localStorage.getItem("theme");
+  let theme = localStorage.getItem("theme");
 
-    return theme ? JSON.parse(theme) : false;
-}
+  return theme ? JSON.parse(theme) : false;
+};
