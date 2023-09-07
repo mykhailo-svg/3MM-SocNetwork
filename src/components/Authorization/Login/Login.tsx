@@ -1,11 +1,14 @@
 import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 import nextStepIcon from "../../../img/next-sgup.svg";
-import { useActions } from "../../../hooks/useActions";
+
+import { useForm } from "react-hook-form";
+import { LoginForm } from "../../../@types/Auth/LoginForm";
+import { Password } from "../components/Fields/Password";
+import { EmailField } from "../components/Fields/EmailField";
+import { AuthAlready } from "../components/Fields/AuthAlready";
 
 const Login = () => {
-  const { login } = useActions();
-
   type TypeLoginForm = {
     email: string;
     password: string;
@@ -17,37 +20,28 @@ const Login = () => {
     setLogData((prev) => {
       return { ...prev, ...fields };
     });
+    alert(logdata.email);
   };
+
+  const updatePassword = (password: string) => {
+    updateFields({ password });
+  };
+  const updateEmail = (email: string) => {
+    updateFields({ email });
+  };
+
+  const {
+    formState: { errors },
+  } = useForm<LoginForm>();
 
   return (
     <div className="signup__container">
-      <div className="signup__content">
+      <div className="">{logdata.email}</div>
+      <form onSubmit={() => {}} className="signup__content">
         <h1 className="signup__title">Log in</h1>
-        <div className="signup__mainfields-item">
-          <div className="signup__label">Email</div>
-          <input
-            type="text"
-            onChange={(e) => updateFields({ email: e.target.value })}
-            className="signup__field"
-            placeholder="wyzdryk@gmail.com"
-          />
-        </div>
-        <div className="signup__password" style={{ marginTop: "32px" }}>
-          <div className="signup__mainfields-item">
-            <div className="signup__label">Password</div>
-            <div className="signup__input-wrapper">
-              <input
-                type="password"
-                onChange={(e) => updateFields({ password: e.target.value })}
-                className="signup__field-password"
-                placeholder="sdsdsd@3231qws"
-              />
-              <div className="signup__password-toggle">
-                <img src="" alt="" />
-              </div>
-            </div>
-          </div>
-        </div>
+
+        <EmailField updateFields={updateEmail} />
+        <Password updateField={updatePassword} />
 
         <NavLink to="/auth/Recovery" className="signup__forgot">
           <svg
@@ -64,17 +58,17 @@ const Login = () => {
           Forgot password
         </NavLink>
 
-        <button className="signup__next-button" onClick={() => login(logdata)}>
+        <button className="signup__next-button" onClick={() => {}}>
           <img src={nextStepIcon} alt="" />
         </button>
+        {errors.email?.message}
 
-        <div className="signup__already">
-          Don't have an account ?{" "}
-          <NavLink to="/auth/Signup">
-            <span>Sign up</span>
-          </NavLink>
-        </div>
-      </div>
+        <AuthAlready
+          buttonText="Sign up"
+          title="Don't have an account ?"
+          link="/auth/Signup"
+        />
+      </form>
     </div>
   );
 };

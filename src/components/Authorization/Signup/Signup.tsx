@@ -1,15 +1,12 @@
 import React, { useState } from "react";
-
 import nextStepIcon from "../../../img/next-sgup.svg";
 import finishpIcon from "../../../img/signup-finish.svg";
-
 import backIcon from "../../../img/signup-back.svg";
-
-import { NavLink } from "react-router-dom";
 import SignupFirst from "./Steps/SignupFirst";
 import { useMultistepForm } from "../../../hooks/useMultistepForm";
 import SignupSecond from "./Steps/SignupSecond";
 import { useActions } from "../../../hooks/useActions";
+import { AuthAlready } from "../components/Fields/AuthAlready";
 
 type TypeUserForm = {
   Name: string;
@@ -181,13 +178,11 @@ const Signup = () => {
           )}
         </div>
       </div>
-
-      <div className="signup__already">
-        Already have an account ?{" "}
-        <NavLink to="/auth/Log">
-          <span>Log in</span>
-        </NavLink>
-      </div>
+      <AuthAlready
+        buttonText="Log in"
+        title="Already have an account ?"
+        link="/auth/Log"
+      />
     </div>
   );
 };
