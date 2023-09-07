@@ -4,7 +4,7 @@ type psswordFieldProps = {
   updateField:(password:string)=>void
 }
 
-export const Password: React.FC<psswordFieldProps> = ({updateField}) => {
+export const PasswordField: React.FC<psswordFieldProps> = ({updateField}) => {
   return (
     <div className="signup__password" style={{ marginTop: "32px" }}>
       <div className="signup__mainfields-item">

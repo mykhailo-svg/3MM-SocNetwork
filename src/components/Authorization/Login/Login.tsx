@@ -2,11 +2,12 @@ import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 import nextStepIcon from "../../../img/next-sgup.svg";
 
-import { useForm } from "react-hook-form";
-import { LoginForm } from "../../../@types/Auth/LoginForm";
-import { Password } from "../components/Fields/Password";
-import { EmailField } from "../components/Fields/EmailField";
+// import { useForm } from "react-hook-form";
+// import { LoginForm } from "../../../@types/Auth/LoginForm";
+
+import { AuthMainField } from "../components/Fields/AuthMainField";
 import { AuthAlready } from "../components/Fields/AuthAlready";
+import { PasswordField } from "../components/Fields/PasswordField";
 
 const Login = () => {
   type TypeLoginForm = {
@@ -30,9 +31,7 @@ const Login = () => {
     updateFields({ email });
   };
 
-  const {
-    formState: { errors },
-  } = useForm<LoginForm>();
+
 
   return (
     <div className="signup__container">
@@ -40,8 +39,12 @@ const Login = () => {
       <form onSubmit={() => {}} className="signup__content">
         <h1 className="signup__title">Log in</h1>
 
-        <EmailField updateFields={updateEmail} />
-        <Password updateField={updatePassword} />
+        <AuthMainField
+          placeholder="wyzdrykm@gmail.com"
+          label="Email"
+          updateFields={updateEmail}
+        />
+        <PasswordField updateField={updatePassword} />
 
         <NavLink to="/auth/Recovery" className="signup__forgot">
           <svg
@@ -61,7 +64,6 @@ const Login = () => {
         <button className="signup__next-button" onClick={() => {}}>
           <img src={nextStepIcon} alt="" />
         </button>
-        {errors.email?.message}
 
         <AuthAlready
           buttonText="Sign up"

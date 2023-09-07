@@ -1,7 +1,7 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import backIcon from "../../../img/signup-back.svg";
-import { EmailField } from "../components/Fields/EmailField";
+import { AuthMainField } from "../components/Fields/AuthMainField";
 
 const Recovery = () => {
   return (
@@ -13,7 +13,7 @@ const Recovery = () => {
           </NavLink>
           Password Recovery
         </h1>
-        <EmailField updateFields={()=>{}} />
+        <AuthMainField label="Email" updateFields={()=>{}} />
       </div>
     </div>
   );

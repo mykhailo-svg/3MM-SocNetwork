@@ -8,7 +8,7 @@ import {
   RadioGroup,
   Select,
 } from "@mui/material";
-import passwordShownIcon from "../../../../img/password-shown.svg";
+import { PasswordField } from "../../components/Fields/PasswordField";
 
 type userData = {
   Password: string;
@@ -25,7 +25,7 @@ const SignupSecond: React.FC<TypeFirstFormProps> = ({
   Day,
   Month,
   Year,
-  Password,
+  // Password,
   Gender,
   updateForm,
 }) => {
@@ -208,23 +208,7 @@ const SignupSecond: React.FC<TypeFirstFormProps> = ({
           </RadioGroup>
         </div>
 
-        <div className="signup__password">
-          <div className="signup__mainfields-item">
-            <div className="signup__label">Password</div>
-            <div className="signup__input-wrapper">
-              <input
-                type="password"
-                className="signup__field-password"
-                onChange={(e) => updateForm({ Password: e.target.value })}
-                value={Password}
-                placeholder="*********"
-              />
-              <div className="signup__password-toggle">
-                <img src={passwordShownIcon} alt="" />
-              </div>
-            </div>
-          </div>
-        </div>
+        <PasswordField updateField={()=>{}} />
       </div>
     </>
   );

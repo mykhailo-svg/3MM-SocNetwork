@@ -1,4 +1,5 @@
 import React from "react";
+import { AuthMainField } from "../../components/Fields/AuthMainField";
 
 type userData = {
   Name: string;
@@ -11,32 +12,14 @@ type TypeFirstFormProps = userData & {
 const SignupFirst: React.FC<TypeFirstFormProps> = ({
   Name,
   Email,
-  updateForm,
+  // updateForm,
 }) => {
   return (
     <>
       <div className="signup__mainfields">
         <div className="signup__fields-row">
-          <div className="signup__mainfields-item">
-            <div className="signup__label">Name</div>
-            <input
-              type="text"
-              className="signup__field"
-              placeholder="Mykhailo Vyzdryk"
-              onChange={(e) => updateForm({ Name: e.target.value })}
-              value={Name}
-            />
-          </div>
-          <div className="signup__mainfields-item">
-            <div className="signup__label">Email</div>
-            <input
-              type="text"
-              className="signup__field"
-              placeholder="wyzdryk@gmail.com"
-              onChange={(e) => updateForm({ Email: e.target.value })}
-              value={Email}
-            />
-          </div>
+          <AuthMainField label="Name"  value={Name} updateFields={()=>{}} />
+          <AuthMainField label="Email"  value={Email} updateFields={()=>{}} />
         </div>
         <div className="signup__agree-row">
           <div className="signup__agree-checkbox">
