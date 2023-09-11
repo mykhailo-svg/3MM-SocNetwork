@@ -1,27 +1,20 @@
+/* eslint-disable */
 import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 import nextStepIcon from "../../../img/next-sgup.svg";
-
-// import { useForm } from "react-hook-form";
-// import { LoginForm } from "../../../@types/Auth/LoginForm";
-
 import { AuthMainField } from "../components/Fields/AuthMainField";
 import { AuthAlready } from "../components/Fields/AuthAlready";
 import { PasswordField } from "../components/Fields/PasswordField";
+import { LoginForm } from "../../../@types/Auth/LoginForm";
+import { useForm, SubmitHandler } from "react-hook-form";
 
 const Login = () => {
-  type TypeLoginForm = {
-    email: string;
-    password: string;
-  };
-
   const [logdata, setLogData] = useState({ email: "", password: "" });
 
-  const updateFields = (fields: Partial<TypeLoginForm>) => {
+  const updateFields = (fields: Partial<LoginForm>) => {
     setLogData((prev) => {
       return { ...prev, ...fields };
     });
-    alert(logdata.email);
   };
 
   const updatePassword = (password: string) => {
@@ -31,15 +24,25 @@ const Login = () => {
     updateFields({ email });
   };
 
-
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<LoginForm>({
+    mode: "onChange",
+  });
+  const onSubmit: SubmitHandler<LoginForm> = (data) => {
+    alert(`Your email ${data.email}`);
+  };
 
   return (
     <div className="signup__container">
       <div className="">{logdata.email}</div>
-      <form onSubmit={() => {}} className="signup__content">
+      <form onSubmit={handleSubmit(onSubmit)} className="signup__content">
         <h1 className="signup__title">Log in</h1>
 
         <AuthMainField
+          register={register}
           placeholder="wyzdrykm@gmail.com"
           label="Email"
           updateFields={updateEmail}
@@ -64,7 +67,7 @@ const Login = () => {
         <button className="signup__next-button" onClick={() => {}}>
           <img src={nextStepIcon} alt="" />
         </button>
-
+        <div className="">{errors.email?.message}</div>
         <AuthAlready
           buttonText="Sign up"
           title="Don't have an account ?"
